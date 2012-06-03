@@ -1,0 +1,662 @@
+Apr 22 15:00:17 <goncalopp>	rivalo, nim, anon, you mind if I show your homework in the class? If we have the time, there's some pointers I want to give
+Apr 22 15:00:27 <neetismurder>	no problems here
+Apr 22 15:00:32 <Anonymous968574>	Go ahead
+Apr 22 15:00:39 <Rivalo>	I don't mind. show it :)
+Apr 22 15:00:47 <goncalopp>	It's good to have you attending Rivalo, hope you enjoy the class :)
+Apr 22 15:00:53 <goncalopp>	ok then, thanks guys
+Apr 22 15:01:08 <neetismurder>	I sent you an updated version that fixed something though
+Apr 22 15:01:51 <goncalopp>	didn't see the code yet NiM, but we'll get to that
+Apr 22 15:02:05 <goncalopp>	we should be starting, I have 14:01 utc here...
+Apr 22 15:02:25 <goncalopp>	Though I expected some more people, by doodle...
+Apr 22 15:02:36 <Rivalo>	16:02 GMT+1 (wintertime) here.
+Apr 22 15:03:16 <goncalopp>	ah well...
+Apr 22 15:03:37 <goncalopp>	Everyone, please join the pad, late comers will have to catch up
+Apr 22 15:03:45 <goncalopp>	http://piratepad.net/BTzidgjulX
+Apr 22 15:05:37 <goncalopp>	I'm guessing Zeta's afk, Zeta, please join when you can :)
+Apr 22 15:05:53 <goncalopp>	ok, we''ll cover dictionaries first
+Apr 22 15:06:44 <goncalopp>	What is a dictionary? Well, think of a telephone list (?). You use it if you want to get a person's telephone number
+Apr 22 15:07:12 <goncalopp>	How do you do that? You know the person name, then go through the list until you find the number
+Apr 22 15:07:40 <goncalopp>	more importantly: the telephone list just *associates* each name with a telephone number
+Apr 22 15:07:47 <goncalopp>	a dictionary is pretty much the sames
+Apr 22 15:07:57 <goncalopp>	it associates any data type with another
+Apr 22 15:07:58 <Rivalo>	So it's like a database?
+Apr 22 15:08:03 <goncalopp>	here's an example:
+Apr 22 15:08:36 <Anonymous968574>	ooh, curly brackets
+Apr 22 15:09:28 <goncalopp>	yes :)
+Apr 22 15:09:52 <goncalopp>	now, what's so special about dictionaries, compared to lists?
+Apr 22 15:10:20 <goncalopp>	well, first, they can obviously index by any data type, while lists can only index by integer
+Apr 22 15:10:21 <goncalopp>	right?
+Apr 22 15:10:45 <neetismurder>	with you so far
+Apr 22 15:10:50 <Rivalo>	yes.
+Apr 22 15:10:51 <Anonymous968574>	yep
+Apr 22 15:10:54 <goncalopp>	However, more importantly than that: dictionary have what's called "constant lookup time"
+Apr 22 15:11:24 <goncalopp>	think of a list. It has N elements. How can you tell if a given element is in the list?
+Apr 22 15:11:34 <goncalopp>	well, you use X in list, ofc
+Apr 22 15:11:50 <goncalopp>	what the in operator does, internally, is this:
+Apr 22 15:13:26 <Rivalo>	Don't you have to type 'Else:' before return false?
+Apr 22 15:14:00 <goncalopp>	No. If we did that, it would return false if "the first element is different from element"
+Apr 22 15:14:18 <Rivalo>	Oh ok.
+Apr 22 15:14:26 <Anonymous968574>	so when it returns something it gets out of the function?
+Apr 22 15:14:29 <goncalopp>	that's not what you want. You go through the list, return true if there's a match. After you've done that, you're sure there's none, so you return false
+Apr 22 15:14:41 <goncalopp>	yes, return exits immediatelly
+Apr 22 15:15:06 <goncalopp>	sorry, I wasn't clear with that before, i think
+Apr 22 15:15:19 <goncalopp>	but there, it does :)
+Apr 22 15:15:42 <goncalopp>	with that told, all following?
+Apr 22 15:15:59 <Rivalo>	Yeah
+Apr 22 15:16:00 <Anonymous968574>	yup
+Apr 22 15:16:12 <neetismurder>	yup
+Apr 22 15:16:49 <goncalopp>	ok. as you can see, if a list has N elements, it takes N loop iterations to check that the element's not in there.
+Apr 22 15:17:14 <goncalopp>	if the element is in there, it takes N/2 (probabilistically expected value)
+Apr 22 15:17:46 <goncalopp>	My point is: the more elements the list has, the longer it takes to check for presence of the element
+Apr 22 15:18:38 <goncalopp>	This is not true with dictionaries. Dictionaries are a complex data structure, and as I said, they have constant lookup time
+Apr 22 15:18:53 <goncalopp>	which means "X in d" takes exactly "one iteration"
+Apr 22 15:19:13 <neetismurder>	could you mitigate the performance hit using a hashtable? Is that what dictionaries do?
+Apr 22 15:19:27 <goncalopp>	a dictionary IS an hashtable :)
+Apr 22 15:19:43 <neetismurder>	ok cool
+Apr 22 15:20:03 <goncalopp>	well, kind of. HashTable referes to a specific implementation of dictionaries, IIRC
+Apr 22 15:20:56 <Zeta_Labda>	Joining!
+Apr 22 15:21:08 <goncalopp>	Ok then. Also, I'm not sure if you're aware of this, but inserting an element in the middle of a list also takes N/2 iterations
+Apr 22 15:21:24 <goncalopp>	while in dictionaries, only one is needed, too
+Apr 22 15:21:29 <goncalopp>	welcome, Zeta :)
+Apr 22 15:22:14 <goncalopp>	So, if you need to deal with lookups in huge amounts of data, using dictionaries is probably a good idea
+Apr 22 15:22:18 <goncalopp>	very roughly said :)
+Apr 22 15:22:35 <Rivalo>	So when inserting an element in the list, it iterates every index,item till it's in the middle?
+Apr 22 15:22:41 <Zeta_Labda>	what do you mean by N/2?
+Apr 22 15:23:06 <goncalopp>	Zeta, you're going to need to read up, probably. N is the number of elements in the list
+Apr 22 15:23:15 <goncalopp>	Rivalo, not exactly
+Apr 22 15:23:30 <goncalopp>	Here's pseudocode for inserting an element in a list
+Apr 22 15:23:38 <Zeta_Labda>	oh I see it
+Apr 22 15:24:54 <goncalopp>	here. this is how you'd do it in a lower level language
+Apr 22 15:25:08 <goncalopp>	(arrays in C, etc)
+Apr 22 15:25:39 <goncalopp>	when you call a function on a list, always think: how is this function implemented?
+Apr 22 15:25:57 <goncalopp>	This will help you understand how fast you can expect the function to run
+Apr 22 15:26:28 <goncalopp>	list.index , for example, is very similar to the inside_list function in the pad
+Apr 22 15:26:39 <goncalopp>	only returning the index instead of a boolean
+Apr 22 15:26:49 <goncalopp>	all ok?
+Apr 22 15:26:57 <neetismurder>	yep
+Apr 22 15:26:59 <Anonymous968574>	yes
+Apr 22 15:27:01 <Rivalo>	yea
+Apr 22 15:27:14 <Zeta_Labda>	yea
+Apr 22 15:27:19 <goncalopp>	Zeta, you've catched up?
+Apr 22 15:27:52 <Zeta_Labda>	pretty much
+Apr 22 15:28:03 <Zeta_Labda>	the definition of dictionaries is pretty simple
+Apr 22 15:28:20 <goncalopp>	ok then. that's it for basic use of dictionaries. Let's now see what functions they offer
+Apr 22 15:28:35 <goncalopp>	dir(dict)==...
+Apr 22 15:28:47 <goncalopp>	['__class__', '__cmp__', '__contains__', '__delattr__', '__delitem__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteri
+Apr 22 15:28:47 <goncalopp>	tems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+Apr 22 15:29:14 <goncalopp>	ignoring the _, we have: 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteritems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'
+Apr 22 15:29:41 <goncalopp>	clear removes all the information inside
+Apr 22 15:29:49 <Rivalo>	This is for dictionaries?
+Apr 22 15:29:59 <goncalopp>	is, these are dictionary functions
+Apr 22 15:30:05 <Rivalo>	ok
+Apr 22 15:30:07 <goncalopp>	d.clear(), for example
+Apr 22 15:30:16 <goncalopp>	copy is self descriptive
+Apr 22 15:30:19 <Zeta_Labda>	what does iterkey and from key do?
+Apr 22 15:30:54 <goncalopp>	no idea, I'm looking these up as I type ;)
+Apr 22 15:31:05 <Zeta_Labda>	hehe
+Apr 22 15:31:07 <Rivalo>	:D
+Apr 22 15:31:16 <goncalopp>	personally, I've used items, keys, values, update, pop
+Apr 22 15:31:52 <Anonymous968574>	I'm guessing pop is the same as in lists but faster
+Apr 22 15:32:04 <goncalopp>	fromkeys seems to be a a shorthand for the dict() constructor, I'll tell you about that in a moment
+Apr 22 15:32:08 <Rivalo>	luckily there's a python documentation :P
+Apr 22 15:32:13 <goncalopp>	yes, pop removes the element, as in lists
+Apr 22 15:32:20 <goncalopp>	oh, btw
+Apr 22 15:32:22 <neetismurder>	what does popitem do then?
+Apr 22 15:32:45 <goncalopp>	in dicitonaries we don't talk about indices and elements. These are called, respectivelly, keys and values
+Apr 22 15:32:58 <Zeta_Labda>	keys hold values..right?
+Apr 22 15:33:00 <goncalopp>	pops by values, probably
+Apr 22 15:33:13 <neetismurder>	ah
+Apr 22 15:33:23 <goncalopp>	in d['bob']=1, 'bob' is the key, 1 is the value
+Apr 22 15:33:46 <goncalopp>	iteritems and iterkeys return iterators
+Apr 22 15:33:55 <goncalopp>	items() and keys() return lists
+Apr 22 15:34:07 <goncalopp>	of the values and keys, ofc
+Apr 22 15:34:23 <goncalopp>	an iterator is very much like an list, but is NOT indexable
+Apr 22 15:34:32 <Zeta_Labda>	zo example.items() returns all keys in the dictionary example?
+Apr 22 15:34:40 <goncalopp>	you can loop over it, but you can't do iterator[8], for example
+Apr 22 15:34:46 <neetismurder>	returns the values I think zeta
+Apr 22 15:34:57 <goncalopp>	yes, values
+Apr 22 15:35:10 <goncalopp>	specifically a LIST with all the values in the dictionary
+Apr 22 15:35:32 <goncalopp>	the difference between a list and an iterator is very crucial here
+Apr 22 15:35:49 <goncalopp>	let's say you have a dictionary with 1 billion items
+Apr 22 15:36:13 <goncalopp>	a telephone list, as in the pad
+Apr 22 15:36:40 <goncalopp>	and let's say you want to check if a given NUMBER is in the dictionary
+Apr 22 15:36:48 <goncalopp>	so you can't lookup by keys
+Apr 22 15:36:56 <goncalopp>	one alternative would be this:
+Apr 22 15:38:05 <goncalopp>	which is best, and why? any takers?
+Apr 22 15:38:21 <neetismurder>	2nd?
+Apr 22 15:38:35 <Anonymous968574>	I have a feeling that the first is faster
+Apr 22 15:38:38 <goncalopp>	nope :) the first is better. let's see why
+Apr 22 15:38:41 <goncalopp>	yes anon :)
+Apr 22 15:38:42 <Rivalo>	So when compared to lists its like list[list.index(value)] ?
+Apr 22 15:39:07 <goncalopp>	hoa, rivalo, let me just finish this, I'll go there after
+Apr 22 15:39:12 <goncalopp>	now
+Apr 22 15:39:16 <Rivalo>	ok :)
+Apr 22 15:39:53 <goncalopp>	if you opt for the first alternative, python constructs an iterator of the items, goes over them one by one, and returns a boolean if equal to value
+Apr 22 15:40:10 <goncalopp>	the same is exacly alike, except that python constructs a list instead
+Apr 22 15:40:27 <goncalopp>	now, what's so important about this is the following: lists are regions in memory!
+Apr 22 15:40:58 <goncalopp>	if your dictionary has one billion items, python will COPY them, one by one, to a list in a different region
+Apr 22 15:41:13 <goncalopp>	so, you'll end up with double the memory used
+Apr 22 15:41:41 <goncalopp>	an iterator, however, *iterates* over the dictionary's memory space, so it needn't create a copy
+Apr 22 15:41:47 <goncalopp>	got it?
+Apr 22 15:41:57 <neetismurder>	I think so
+Apr 22 15:42:04 <Rivalo>	Yeah
+Apr 22 15:42:07 <Zeta_Labda>	yup
+Apr 22 15:42:14 <Anonymous968574>	then the second one would take a lot longer even if it's at the start?
+Apr 22 15:42:16 <goncalopp>	basically, items() creates a copy
+Apr 22 15:42:41 <Rivalo>	And iterates the copy?
+Apr 22 15:42:52 <goncalopp>	Maybe not a lot longer, anon, i'm not sure about that. But it would take double the memory
+Apr 22 15:42:55 <neetismurder>	that said, why would you ever use items() of iteritems()?
+Apr 22 15:42:59 <goncalopp>	yes, rivalo
+Apr 22 15:43:03 <neetismurder>	over*
+Apr 22 15:43:24 <goncalopp>	ok, I didn't really understand you previous question:  So when compared to lists its like list[list.index(value)] ?
+Apr 22 15:43:30 <goncalopp>	what are you refering to?
+Apr 22 15:43:51 <goncalopp>	items() vs iteritems()?
+Apr 22 15:44:12 <Rivalo>	No, just the difference between searching for values in a list and a dictionary
+Apr 22 15:44:42 <goncalopp>	oh. searching in dictionaries is very complex, really
+Apr 22 15:44:53 <goncalopp>	basically, you have what you call an "hash function"
+Apr 22 15:45:03 <goncalopp>	that associates each key with an unique integer
+Apr 22 15:45:15 <goncalopp>	that hash function runs in constant time
+Apr 22 15:45:47 <goncalopp>	so, very roughly, you calculate hash(bob), and use the result as an index in a massive table with mostly empty space
+Apr 22 15:46:11 <goncalopp>	don't be too worried about that :)
+Apr 22 15:46:24 <Rivalo>	ok.
+Apr 22 15:46:27 <Zeta_Labda>	are dictionaries like hashtables in C++?
+Apr 22 15:46:29 <Anonymous968574>	I'll just read about it on wikipedia later
+Apr 22 15:46:29 <goncalopp>	That's Data Structures and Algorithms class :P
+Apr 22 15:46:49 <goncalopp>	In CPython, I believe so, zeta
+Apr 22 15:46:59 <goncalopp>	can't say for other python implementations
+Apr 22 15:47:10 <Zeta_Labda>	ah ok
+Apr 22 15:47:19 <goncalopp>	again, hashtable is only one way to implement the dictionary data structure
+Apr 22 15:47:33 <neetismurder>	why would you use items over iteritems ever?
+Apr 22 15:47:46 <goncalopp>	well, in case you *really* need a copy :)
+Apr 22 15:48:17 <goncalopp>	let's say you want change the elements in the list but not the dictionary. that's one use case
+Apr 22 15:48:47 <neetismurder>	ok
+Apr 22 15:49:30 <goncalopp>	ok then. Let's just cover the dict constructor in a hurry :)
+Apr 22 15:50:05 <goncalopp>	dict is obviously a function
+Apr 22 15:50:22 <goncalopp>	the same exists for lists, too:
+Apr 22 15:50:42 <goncalopp>	there
+Apr 22 15:50:55 <Rivalo>	looks nicer
+Apr 22 15:51:06 <goncalopp>	for list(), you can pass it an iterator, or another list, and it'll create a copy
+Apr 22 15:51:20 <goncalopp>	more readable for python begginers, yes rivalo
+Apr 22 15:51:58 <goncalopp>	now, I don't think you can do that for dict...
+Apr 22 15:52:23 <goncalopp>	ok, wrong, you can, actually
+Apr 22 15:52:49 <goncalopp>	btw, this is how you create a preinitiallized dictionary:
+Apr 22 15:53:38 <goncalopp>	always remember a dicitonary can hold any data type both as keys and values
+Apr 22 15:53:43 <goncalopp>	not only strings and integers
+Apr 22 15:53:44 <neetismurder>	just like objects in js?
+Apr 22 15:53:52 <goncalopp>	yes
+Apr 22 15:54:04 <goncalopp>	objects in js are dictionaries :)
+Apr 22 15:54:18 <goncalopp>	in python too, kind of
+Apr 22 15:54:18 <neetismurder>	nice
+Apr 22 15:54:33 <goncalopp>	we'll cover that on the introspection/reflection class
+Apr 22 15:54:53 <Rivalo>	Now the dictionary has 2 things in it. Are 3 also possible Like name, number and address?
+Apr 22 15:54:55 <goncalopp>	now, the dict constructor has one other use
+Apr 22 15:55:00 <goncalopp>	which is very handy
+Apr 22 15:55:10 <goncalopp>	let's say you have two lists
+Apr 22 15:56:00 <goncalopp>	here. the lists are ordered, so the first number corresponds to the first friend
+Apr 22 15:56:19 <goncalopp>	how do we create a dictionary from this info?
+Apr 22 15:56:29 <goncalopp>	first, let's learn  about zip() !
+Apr 22 15:56:43 <goncalopp>	zip() is a function that, well, "zips" iterables
+Apr 22 15:56:51 <goncalopp>	as in, "one from each side"
+Apr 22 15:56:54 <goncalopp>	let's see:
+Apr 22 15:57:11 <neetismurder>	so like a zipper, and not compression?
+Apr 22 15:57:28 <goncalopp>	yes, nothing to do with the zip compression format
+Apr 22 15:57:44 <goncalopp>	try this code :)
+Apr 22 15:58:18 <neetismurder>	did it make tuples?
+Apr 22 15:58:22 <goncalopp>	as you can see, zip_element is always a tuple with two elements
+Apr 22 15:58:23 <goncalopp>	yes :)
+Apr 22 15:58:34 <Rivalo>	So Zip is the opposite of: for index,item in enumerate(list)   ?
+Apr 22 15:58:45 <goncalopp>	ofc, if you had provided 3 arguments, they'd have 3 elements
+Apr 22 15:59:01 <goncalopp>	hm, not exactly rivalo. enumerate returns indices
+Apr 22 15:59:09 <goncalopp>	zip returns only the values inside each one
+Apr 22 15:59:21 <goncalopp>	but the return is similar
+Apr 22 15:59:21 <Rivalo>	ok.
+Apr 22 15:59:35 <goncalopp>	obviously, you could do this instead:
+Apr 22 15:59:53 <goncalopp>	there
+Apr 22 16:00:08 <goncalopp>	now, why am I teaching zip()?
+Apr 22 16:00:31 <goncalopp>	the dict constructor takes a list of two-element tuples :)
+Apr 22 16:01:29 <neetismurder>	that last homework would have been a lot easier with this stuff :P
+Apr 22 16:02:26 <goncalopp>	I can't see how NiM, but we'll see
+Apr 22 16:03:16 <goncalopp>	(sorry everyone, my pc is drowning himself)
+Apr 22 16:03:40 <Zeta_Labda>	Nah it´s okay
+Apr 22 16:04:41 <goncalopp>	ok, everyone following so far?
+Apr 22 16:04:49 <Anonymous968574>	aye
+Apr 22 16:04:58 <neetismurder>	/
+Apr 22 16:05:02 <Rivalo>	yeah
+Apr 22 16:05:23 <goncalopp>	NiM: /?
+Apr 22 16:05:29 <goncalopp>	that's a so-so?:P
+Apr 22 16:05:38 <neetismurder>	no, it means I'm ready
+Apr 22 16:05:42 <goncalopp>	ok :)
+Apr 22 16:05:57 <goncalopp>	let's jump straight ahead to file I/O then
+Apr 22 16:06:05 <Rivalo>	And it became a dictionary ;P
+Apr 22 16:06:22 <goncalopp>	I want you guys to write this to a text file, using your editor
+Apr 22 16:06:24 <Zeta_Labda>	yea
+Apr 22 16:06:46 <Rivalo>	I was already doing this all the time but /care
+Apr 22 16:06:49 <Zeta_Labda>	Oh I read this in LPTHW
+Apr 22 16:06:55 <goncalopp>	you get the idea
+Apr 22 16:06:57 <Zeta_Labda>	oh well
+Apr 22 16:07:09 <goncalopp>	I'll be fast then
+Apr 22 16:07:21 <goncalopp>	here's how you read files:
+Apr 22 16:07:56 <Zeta_Labda>	what the difference between read() and open() then?
+Apr 22 16:08:10 <goncalopp>	in 'rb', r stands for read, b stands for binary
+Apr 22 16:08:16 <Zeta_Labda>	rb is an extra parameter like w right
+Apr 22 16:08:17 *	Josip (~chatzilla@cable-188-246-58-157.dynamic.kdsinter.net) has joined ##programming-classes
+Apr 22 16:08:18 <Zeta_Labda>	ah yes
+Apr 22 16:08:33 <goncalopp>	zeta, I don't know about the read() method, unless you're talking about a file object
+Apr 22 16:08:51 <neetismurder>	I was getting worried we were jumping to ruby or something ;)
+Apr 22 16:08:59 <goncalopp>	:P
+Apr 22 16:09:20 <Zeta_Labda>	ah nvm
+Apr 22 16:09:29 <Rivalo>	It's giving a syntax error btw
+Apr 22 16:10:08 <goncalopp>	yes, a wrong ")", thanks
+Apr 22 16:11:10 <goncalopp>	btw, filename.txt should be in your CWD
+Apr 22 16:11:23 <goncalopp>	else, you must write the whole file path
+Apr 22 16:11:33 <goncalopp>	ok?
+Apr 22 16:11:43 <Anonymous968574>	CWD?
+Apr 22 16:11:55 <goncalopp>	thought so :) currently working directory
+Apr 22 16:12:01 <Zeta_Labda>	current working dir
+Apr 22 16:12:08 <Zeta_Labda>	bleh too late
+Apr 22 16:12:21 <goncalopp>	the command line has a state called the CWD, the directory you're currently in
+Apr 22 16:12:31 <Anonymous968574>	got it
+Apr 22 16:12:39 <goncalopp>	when you launch a program, it also has the concept of CWD
+Apr 22 16:12:42 <Rivalo>	Couldn't you specify the directory with a string so you don't have to type it everytime?
+Apr 22 16:12:54 <Rivalo>	If its in another dir.
+Apr 22 16:12:58 <goncalopp>	depending on how you launch it (console, editor) it might be different
+Apr 22 16:13:00 <neetismurder>	hey coold, I just wrote cat in python
+Apr 22 16:13:20 <goncalopp>	including multiple arguments, NiM? :P
+Apr 22 16:13:21 <Zeta_Labda>	eh?
+Apr 22 16:13:30 <goncalopp>	cat is a unix command, zeta
+Apr 22 16:13:36 <goncalopp>	nevermind, not important:P
+Apr 22 16:13:37 <neetismurder>	hahaha guess not...
+Apr 22 16:13:50 <goncalopp>	anyway!
+Apr 22 16:14:03 <goncalopp>	this returns a string with the whole file contents
+Apr 22 16:14:04 <Zeta_Labda>	Yea LPTHW mentioned it
+Apr 22 16:14:13 <Zeta_Labda>	but I wasn´t sure
+Apr 22 16:14:37 <goncalopp>	as you may have found out, there's something called a "newline character", which delimits lines in a text file
+Apr 22 16:14:48 <goncalopp>	this is normally represented by "\n"
+Apr 22 16:14:53 <goncalopp>	so, if you do this:
+Apr 22 16:15:06 <goncalopp>	it prints two lines
+Apr 22 16:15:28 <Rivalo>	so its like <br> in html
+Apr 22 16:15:30 <goncalopp>	please note: the newline character is DIFFERENT on windows, unix, and old macs
+Apr 22 16:15:40 <goncalopp>	somewhat, rivalo, yes
+Apr 22 16:15:43 <Rivalo>	ok
+Apr 22 16:15:47 <neetismurder>	oh god what? How is it different?
+Apr 22 16:16:10 <goncalopp>	ok, here is where I feared we must cover ascii...
+Apr 22 16:16:20 <goncalopp>	is everyone comfortable with binary hexadeciamal?
+Apr 22 16:16:26 <Rivalo>	ehh
+Apr 22 16:16:32 <Anonymous968574>	I think so
+Apr 22 16:16:41 <neetismurder>	I wouldn't say comfortable, but I get it okay I guess
+Apr 22 16:16:43 <Rivalo>	not really
+Apr 22 16:16:49 <goncalopp>	ok, better cover that ultra fast then :)
+Apr 22 16:17:00 <goncalopp>	in computers, everything is represented in bits
+Apr 22 16:17:17 <goncalopp>	a bit is a  state with two possible interpretations
+Apr 22 16:17:24 <goncalopp>	normally represented by 1 or 0
+Apr 22 16:17:45 <goncalopp>	if you think of the numbers you use daily...
+Apr 22 16:17:56 <Zeta_Labda>	yea comfortable
+Apr 22 16:18:01 <goncalopp>	you have 10 distinct digits: 0,1,2,3,4,5,6,7,8,9
+Apr 22 16:18:08 <Zeta_Labda>	decimal system
+Apr 22 16:18:33 <goncalopp>	how do you count? as soon as you reach the highest digit(9), you add one more digit to the left
+Apr 22 16:18:39 <goncalopp>	this is called the "carry"
+Apr 22 16:18:45 <goncalopp>	so, counting in binary is like this
+Apr 22 16:18:56 <goncalopp>	0 , 1, 10, 11, 100, 101, 110, 111, etc
+Apr 22 16:19:18 <goncalopp>	now, these are numbers too!
+Apr 22 16:19:36 <goncalopp>	usually represented as 0,1,2,3,4,5,6
+Apr 22 16:19:43 <goncalopp>	ok....?
+Apr 22 16:19:51 <Rivalo>	yeah
+Apr 22 16:19:53 <neetismurder>	gotcha
+Apr 22 16:19:54 <Anonymous968574>	011110010110010101110000
+Apr 22 16:19:56 <goncalopp>	right!
+Apr 22 16:20:06 <goncalopp>	then, bits in computers!
+Apr 22 16:20:13 <goncalopp>	they are generally grouped in 8
+Apr 22 16:20:22 <Zeta_Labda>	2^8 possibilties
+Apr 22 16:20:26 <goncalopp>	which is that word you know already: a byte
+Apr 22 16:20:46 <goncalopp>	1024 bytes (2^10) is a kilobyte 
+Apr 22 16:20:51 <goncalopp>	1024 kb is a mb, etc
+Apr 22 16:21:17 <goncalopp>	GENERALLY, a character, inside a computer, is represented by a byte
+Apr 22 16:21:30 <goncalopp>	that byte, ofc, can also be thought of as a number
+Apr 22 16:21:51 <neetismurder>	like unicode sequences right?
+Apr 22 16:21:58 <goncalopp>	hence, the ascii table, a table that associates each byte-as-number with a byte-as-character
+Apr 22 16:22:16 <goncalopp>	unicode actually has nothing to do with computers, NiM
+Apr 22 16:22:37 <goncalopp>	a unicode character corresponds to a NUMBER, in the mathematical sense 
+Apr 22 16:23:04 <goncalopp>	there are multiple ways of ENCODING that number as bytes inside the computer, of which the most common is UTF-8
+Apr 22 16:23:15 <goncalopp>	ok?
+Apr 22 16:23:20 <neetismurder>	alright
+Apr 22 16:23:31 <Anonymous968574>	01101111 01101011
+Apr 22 16:23:40 <goncalopp>	Rivalo, you got it? kinda?
+Apr 22 16:23:56 <Rivalo>	yeah
+Apr 22 16:24:00 <goncalopp>	great!
+Apr 22 16:24:12 <goncalopp>	then, the ascii table! just google it, you'll find one
+Apr 22 16:24:34 <neetismurder>	ww ddg just popped one up immediately
+Apr 22 16:24:48 <goncalopp>	I'll just use http://www.asciitable.com/ for the class
+Apr 22 16:24:56 <goncalopp>	NiM, ww ddg?
+Apr 22 16:25:11 <Zeta_Labda>	duckduckgo
+Apr 22 16:25:14 <Zeta_Labda>	I use it to
+Apr 22 16:25:19 <neetismurder>	warau - to laugh ddg - duckduckgo
+Apr 22 16:25:19 <goncalopp>	oh, ok
+Apr 22 16:25:23 <Zeta_Labda>	and ww is something like ´lol´
+Apr 22 16:25:46 <goncalopp>	as you can see, you have 4 collumns
+Apr 22 16:25:59 <Rivalo>	Oh this is that what you were saying in the mail!
+Apr 22 16:26:00 <goncalopp>	the first is decimal representations ("numbers", as we represent them usually)
+Apr 22 16:26:16 <goncalopp>	then we have hexadecimal, octal, and character representatinos
+Apr 22 16:26:43 <goncalopp>	note character 10 (decimal), "new line"
+Apr 22 16:26:51 <goncalopp>	that's unix's newline
+Apr 22 16:27:03 <goncalopp>	windows newline is actually two characters: 13 and 10
+Apr 22 16:27:20 <goncalopp>	old macs used 10 and 13. new ones are just unix
+Apr 22 16:27:36 <neetismurder>	what does LF stand for?
+Apr 22 16:27:43 <neetismurder>	CR is carriage return right?
+Apr 22 16:27:54 <goncalopp>	yes
+Apr 22 16:27:59 <goncalopp>	i believe LF is 10
+Apr 22 16:28:36 <Zeta_Labda>	So when porting your program for example from windows to linux, you need to fix up newlines in your code?
+Apr 22 16:28:37 <goncalopp>	line feed, yes
+Apr 22 16:28:51 <goncalopp>	if you write them wrong, yes ;)
+Apr 22 16:28:56 <neetismurder>	python should handle \n agnostically though right?
+Apr 22 16:29:05 <goncalopp>	mostly, I believe
+Apr 22 16:29:06 <neetismurder>	based on the interpreter running it?
+Apr 22 16:29:09 <Rivalo>	so this is why you could use range(97, 122) instead of ('a', 'b', 'c', etc..
+Apr 22 16:29:20 <goncalopp>	print "\n" will give different results depending on the OS it's running
+Apr 22 16:29:27 <goncalopp>	exactly rivalo :)
+Apr 22 16:29:41 <goncalopp>	chr() just converts the number representation to the character representation
+Apr 22 16:29:59 <neetismurder>	the opposite of ord()?
+Apr 22 16:30:04 <goncalopp>	yes nim
+Apr 22 16:30:12 <goncalopp>	ord is character to number
+Apr 22 16:30:54 <goncalopp>	languages other than english will use characters that are NOT in ascii 
+Apr 22 16:31:10 <goncalopp>	so all this information does not aplly
+Apr 22 16:31:12 <goncalopp>	*apply
+Apr 22 16:31:18 <Rivalo>	ßßßßß
+Apr 22 16:31:35 <goncalopp>	yes:P ãẽáóç
+Apr 22 16:31:42 <goncalopp>	etc
+Apr 22 16:32:07 <goncalopp>	ok, that's it for ascii
+Apr 22 16:32:24 <goncalopp>	now, newline, as I said, should port over nicely in python
+Apr 22 16:32:43 <goncalopp>	so, you can do this to get a list of line strings:
+Apr 22 16:33:48 <goncalopp>	also, you can iterate over lines by iterating over the file object:
+Apr 22 16:34:04 <goncalopp>	that's it for reading files
+Apr 22 16:34:20 <goncalopp>	writing is mostly the same, except using, well, write() instead of read, ofc
+Apr 22 16:34:38 <Zeta_Labda>	yesyes
+Apr 22 16:34:46 <goncalopp>	after you read them, you can just use string manipulation to change the strings
+Apr 22 16:34:48 <Rivalo>	the alternative gives a error: 'str' hasno attribute read_lines
+Apr 22 16:34:52 <neetismurder>	it didn't print anything
+Apr 22 16:34:59 <goncalopp>	ofc, changing the strings will NOT change the file, you must write them back
+Apr 22 16:35:20 <neetismurder>	does it need to be line in lines?
+Apr 22 16:35:32 <goncalopp>	no, no
+Apr 22 16:35:43 <goncalopp>	you see, we're reading the file multiple times here
+Apr 22 16:35:46 <goncalopp>	you can't do that
+Apr 22 16:35:52 <goncalopp>	so, only the first reading works
+Apr 22 16:36:00 <goncalopp>	comment those, and it'll work
+Apr 22 16:36:13 <goncalopp>	there
+Apr 22 16:36:37 <neetismurder>	alrighty
+Apr 22 16:37:14 <goncalopp>	notice how iterating over the file object doesn't remove newlines from the file's lines, so print prints two newlines instead of one (print's)
+Apr 22 16:37:29 <goncalopp>	ok, any questions?
+Apr 22 16:37:58 <Anonymous968574>	 lines= string_from_file.read_lines()  doesn't work
+Apr 22 16:38:26 <goncalopp>	well spotted
+Apr 22 16:38:49 <goncalopp>	a method of the file object, not string, ofc
+Apr 22 16:39:12 <goncalopp>	also, without _ :P
+Apr 22 16:39:24 <goncalopp>	sorry guys :P
+Apr 22 16:39:32 <Anonymous968574>	that's better
+Apr 22 16:39:46 <neetismurder>	it worked for me
+Apr 22 16:39:48 <goncalopp>	in doubt, just use dir() :)
+Apr 22 16:40:06 <goncalopp>	or the documentation, ofc
+Apr 22 16:40:33 <goncalopp>	ok, that's it for files, any questions?
+Apr 22 16:40:44 <Zeta_Labda>	perhaps explain argv?
+Apr 22 16:40:54 <Zeta_Labda>	or will that be covered in modules?
+Apr 22 16:40:58 <Zeta_Labda>	with*
+Apr 22 16:41:00 <goncalopp>	kinda off topic, but why not
+Apr 22 16:41:21 <goncalopp>	but yes, maybe we'll use that as a module example :)
+Apr 22 16:41:27 <goncalopp>	here we go:
+Apr 22 16:41:56 <goncalopp>	try this
+Apr 22 16:42:10 <goncalopp>	also, do run it in a console
+Apr 22 16:42:14 <goncalopp>	like this:
+Apr 22 16:42:15 <neetismurder>	empty string as a list element?
+Apr 22 16:42:22 <goncalopp>	python script.py
+Apr 22 16:42:45 <goncalopp>	nim, you're getting sys.argv=="" ??
+Apr 22 16:43:01 <goncalopp>	I mean [""]
+Apr 22 16:43:02 <neetismurder>	from the interpreter yes
+Apr 22 16:43:16 <goncalopp>	oh, the interactive interpreter? yes, of course
+Apr 22 16:43:28 <goncalopp>	since you're not running any file
+Apr 22 16:43:38 <Anonymous968574>	it gives me the whole directory of the file with "\\" instead of "\"
+Apr 22 16:43:43 <Rivalo>	what is the interactive interpreter?
+Apr 22 16:43:43 <goncalopp>	now, as you may have noticed, argv is a list which contains the name of your program
+Apr 22 16:44:00 <Rivalo>	when I run it it shows: the location of the file
+Apr 22 16:44:01 <goncalopp>	anon, "\\" inside a list is the "\" character
+Apr 22 16:44:14 <Rivalo>	*script
+Apr 22 16:44:17 <goncalopp>	think of how we wrote "\n", and that's only one character
+Apr 22 16:44:25 <goncalopp>	it's called "escaping" strings
+Apr 22 16:44:29 <Zeta_Labda>	you could also do import from sys arv right?
+Apr 22 16:44:32 <Zeta_Labda>	argv*
+Apr 22 16:44:47 <Anonymous968574>	I think it's from sys import argv
+Apr 22 16:44:53 <goncalopp>	yes, sure, though that's generally regarded as bad practice
+Apr 22 16:44:59 <neetismurder>	doesn't give me any directory info, just the filename
+Apr 22 16:45:04 <goncalopp>	since it breaks namespaces
+Apr 22 16:45:16 <goncalopp>	NiM, that's because you're running it from the CWD?
+Apr 22 16:45:25 <neetismurder>	yes
+Apr 22 16:45:45 <goncalopp>	ok, now try to run this:
+Apr 22 16:45:50 <goncalopp>	python script.py arg1
+Apr 22 16:46:08 <Rivalo>	wait how?
+Apr 22 16:46:31 <Rivalo>	I'm always running my files in CMD by typing filename.py
+Apr 22 16:46:32 <goncalopp>	this will be unfamiliar for those not comfortable with the command line, but commands, like functions, also take arguments, separated by space
+Apr 22 16:46:56 <goncalopp>	rivalo, you're running it that way and get the whole path in argv?
+Apr 22 16:47:22 <Rivalo>	yeah, it showed the path of the running script
+Apr 22 16:47:35 <Zeta_Labda>	namespaces?
+Apr 22 16:47:54 <goncalopp>	that's odd... I can't say for sure, since I don't use windows, but maybe that's standard behaviour on that OS
+Apr 22 16:48:02 <goncalopp>	it all depends on the OS here
+Apr 22 16:48:25 <goncalopp>	zeta, think about your house
+Apr 22 16:48:28 <Rivalo>	but when typing filename.py arg1 it shows the path and arg1
+Apr 22 16:48:48 <goncalopp>	if I say "table", you may not know which one it is, but "kitchen.table" is more clear
+Apr 22 16:48:55 <goncalopp>	kitchen is table's namespace
+Apr 22 16:49:36 <goncalopp>	yes rivalo. argv is a list, of which the first is the program path, and the arguments from then on
+Apr 22 16:50:04 <Rivalo>	ok
+Apr 22 16:50:04 <goncalopp>	Any more questions about argv?
+Apr 22 16:50:20 <Zeta_Labda>	but how´s that relevent to sys? If you put it that way isn´t from sys import argv more specific?
+Apr 22 16:50:23 <Anonymous968574>	if you use "from sys import argv" you will have to use "argv" instead of "sys.argv"
+Apr 22 16:50:35 <goncalopp>	exactly
+Apr 22 16:51:09 <Zeta_Labda>	ah
+Apr 22 16:51:11 <Zeta_Labda>	I see
+Apr 22 16:51:15 <goncalopp>	:)
+Apr 22 16:51:22 <Zeta_Labda>	alright all clear no
+Apr 22 16:51:27 <Zeta_Labda>	now*
+Apr 22 16:51:58 <goncalopp>	ok! Now, you've been using modules already (argv, string)... but what IS a module?
+Apr 22 16:52:11 <goncalopp>	a module is just a program like those you've been writing
+Apr 22 16:52:13 <goncalopp>	try this:
+Apr 22 16:53:17 <Zeta_Labda>	Like headers in C++, no?
+Apr 22 16:53:45 <goncalopp>	hmm. somewhat. modules don't have only (actually, not at all) declarations, though
+Apr 22 16:53:58 <goncalopp>	they can have functions, variables, classes, objects, whatever
+Apr 22 16:54:15 <goncalopp>	ANY program can be a module, really
+Apr 22 16:54:19 <Rivalo>	This is why i don't like php
+Apr 22 16:54:32 <goncalopp>	why?
+Apr 22 16:54:57 <Rivalo>	Php uses very much imports.
+Apr 22 16:55:22 <Rivalo>	Everyfile it imports has imports etc..
+Apr 22 16:55:30 <Rivalo>	If you are working on big projects
+Apr 22 16:55:32 <Zeta_Labda>	like an endless loop of imports?
+Apr 22 16:55:41 <goncalopp>	well, python has a lot of them too. imports are incovenient to use, though some people argue that they make the core language "cleaner"
+Apr 22 16:55:55 <neetismurder>	less cruft
+Apr 22 16:56:07 <goncalopp>	that's subjective, of course, everyone has a different opinion
+Apr 22 16:56:30 <Anonymous968574>	does it run faster if it has less modules?
+Apr 22 16:56:34 <Zeta_Labda>	aren´t they helpful in keeping your program structured?
+Apr 22 16:56:38 <goncalopp>	anyway, as you can see, you can use modules to modularize (lol) your projects
+Apr 22 16:56:48 <Zeta_Labda>	lol
+Apr 22 16:57:08 <Zeta_Labda>	that´s what I ment with structured; modularize
+Apr 22 16:57:25 <Zeta_Labda>	Also have we covered classes already when I was afk last time?
+Apr 22 16:57:31 <Rivalo>	Maybe if you are working on big projects.?
+Apr 22 16:57:52 <goncalopp>	anon, You can say so, a little bit, yes. But any time your computer saves not importing modules is a lot less that the time you have to spend debugging spaghetti code
+Apr 22 16:58:25 <goncalopp>	No zeta, OOP will be probably one whole class, at least
+Apr 22 16:58:26 <Zeta_Labda>	spaghetti code
+Apr 22 16:58:33 <Zeta_Labda>	haha
+Apr 22 16:58:46 <Zeta_Labda>	I´m kinda getting hungry hearing that for some reason :/
+Apr 22 16:58:53 <goncalopp>	http://en.wikipedia.org/wiki/Spaghetti_code  :)
+Apr 22 16:59:10 <Rivalo>	Btw, in your last mail you where talking about that my script was very hard to debug. What's debugging exactly? :D
+Apr 22 16:59:37 <goncalopp>	hoa.. debugging is the "art" (subjective) of correcting malfunctioning programs
+Apr 22 16:59:45 <Anonymous968574>	>3 Other related terms      3.1 Ravioli code     3.2 Lasagna code     3.3 Spaghetti with meatballs
+Apr 22 16:59:46 <Anonymous968574>	wat
+Apr 22 16:59:50 <goncalopp>	succinctly :)
+Apr 22 17:00:00 <goncalopp>	xD
+Apr 22 17:00:04 <Zeta_Labda>	Spaghetti with meatballs...whoa
+Apr 22 17:00:13 <neetismurder>	programmers like pasta I guess
+Apr 22 17:00:16 <Rivalo>	Those pictures :D
+Apr 22 17:00:32 <Anonymous968574>	now I'm getting hungry too...
+Apr 22 17:00:41 <goncalopp>	programmers enjoy trolling with your appetite
+Apr 22 17:01:13 <Rivalo>	We from wikipedia definitely need to make this paragraph understandable with a picture of lasagna.
+Apr 22 17:01:22 <goncalopp>	Well, if there aren't any questions, I'll call this a class
+Apr 22 17:01:25 <neetismurder>	java, cakefiles, syntactic sugar, etc
+Apr 22 17:01:38 <goncalopp>	sure enough :)
+Apr 22 17:01:45 <Anonymous968574>	are we going to review the homework?
+Apr 22 17:02:00 <goncalopp>	yes. though i won't consider it part of the class
+Apr 22 17:02:17 <neetismurder>	alright, I'm going to take a short break
+Apr 22 17:02:19 <neetismurder>	be back in 5
+Apr 22 17:02:20 <Rivalo>	ok
+Apr 22 17:02:22 <Zeta_Labda>	are you assigning homework?
+Apr 22 17:02:33 <goncalopp>	two hours is becomming too little to cover this kind of stuff
+Apr 22 17:02:43 <goncalopp>	yes zeta, later, by email
+Apr 22 17:02:47 <Zeta_Labda>	I kinda have the urge to write something but not sure what exactly
+Apr 22 17:02:49 <Zeta_Labda>	alright
+Apr 22 17:02:56 <Zeta_Labda>	Then I´m gonna grab me some dinner
+Apr 22 17:03:05 <goncalopp>	go ahead :)
+Apr 22 17:03:12 <goncalopp>	now, homework...
+Apr 22 17:04:08 <goncalopp>	it was kind of interesting, since everyone approached the homework from very different angles
+Apr 22 17:04:46 <Anonymous968574>	that's one of the things I love about programming
+Apr 22 17:04:54 <goncalopp>	NiM did some functional programming, which we didn't cover yet
+Apr 22 17:05:02 <goncalopp>	(yes, everyone has it's style :)
+Apr 22 17:07:12 <goncalopp>	anon did some very slim, fast, monolithic code
+Apr 22 17:08:08 <goncalopp>	Jm J did a more iterative approach, one thing at a time
+Apr 22 17:08:55 <goncalopp>	gosh, sorry, I'm having a lot of trouble organizing homework email
+Apr 22 17:09:04 <Rivalo>	:P
+Apr 22 17:09:17 <goncalopp>	do a Jm J -> Rivalo in your heads
+Apr 22 17:09:19 <goncalopp>	sorry, rivalo
+Apr 22 17:09:44 <Rivalo>	ok, hehe
+Apr 22 17:10:29 <goncalopp>	here's rivalo's
+Apr 22 17:10:45 <goncalopp>	first impression: massive! :P
+Apr 22 17:10:57 <goncalopp>	but quite readable!
+Apr 22 17:11:19 <Anonymous968574>	lots of comments, I shold do that
+Apr 22 17:11:29 <goncalopp>	yes, comments are always good
+Apr 22 17:11:40 <goncalopp>	as you can see, he takes a iterative approach
+Apr 22 17:11:57 <goncalopp>	first he cuts the list in chunks
+Apr 22 17:12:21 <goncalopp>	then filters the chunks with characters
+Apr 22 17:12:25 <goncalopp>	(into another list)
+Apr 22 17:12:41 <goncalopp>	then creates another list with the differences to 2012
+Apr 22 17:13:03 <goncalopp>	sorts that, and gets the index in the original list
+Apr 22 17:13:05 <goncalopp>	that's it!
+Apr 22 17:13:37 <Rivalo>	Yeah the last bit was kinda unreadable.
+Apr 22 17:14:03 <Rivalo>	I thought the index has to be from the original list.
+Apr 22 17:14:06 <goncalopp>	a bit :) you could use an auxiliary variable for that
+Apr 22 17:14:35 <Anonymous968574>	hmm
+Apr 22 17:14:44 <goncalopp>	yes, i didn't specify WHAT index should it be , I think, my bad
+Apr 22 17:15:06 <Anonymous968574>	this program would get 2010 from 20h10 and mine wouldn't
+Apr 22 17:15:15 <goncalopp>	any questions, anon?
+Apr 22 17:15:26 <Anonymous968574>	no
+Apr 22 17:15:36 <goncalopp>	ok!
+Apr 22 17:15:48 <goncalopp>	now, compare this with anon's approach:
+Apr 22 17:16:31 <Rivalo>	Ehmm my program wouldn get 2012 from 20h10, my first approach would
+Apr 22 17:16:36 <Rivalo>	wow, very small :D
+Apr 22 17:16:47 <neetismurder>	back
+Apr 22 17:16:54 <goncalopp>	sure rivalo, I'm posting everyone's programs with corrections
+Apr 22 17:17:13 <goncalopp>	and, yes, extremely compact, well done anon :)
+Apr 22 17:17:16 <Anonymous968574>	it was like twice as longfirst , then I started again from scratch and got this
+Apr 22 17:17:18 <goncalopp>	wb nim :)
+Apr 22 17:17:38 <goncalopp>	use the time slider to see rivalo's take on homework
+Apr 22 17:18:08 <goncalopp>	now, as you can see, anon's approach suffers a bit in readability, since it does everything in the same cycle
+Apr 22 17:18:16 <Rivalo>	But i don't really understand what it does, maybe because we didn't had the Try function covered?
+Apr 22 17:18:34 <goncalopp>	the pro here is efficiency, since he doesn't have to iterate multiple times over multiple list
+Apr 22 17:18:50 <goncalopp>	yes, we didn't cover exceptions yet...
+Apr 22 17:19:00 <Anonymous968574>	yeah  I copied the try and except from the guess the number program
+Apr 22 17:19:03 <goncalopp>	but, basically, try... except catch errors
+Apr 22 17:19:12 <Rivalo>	ok
+Apr 22 17:19:25 <goncalopp>	as soon as an error occurrs inside the try block, python jumps to the except block
+Apr 22 17:20:11 <Rivalo>	ok
+Apr 22 17:20:18 <goncalopp>	this is how anon converts the string to numbers: he ignores the 4-character combinations that throw an error when casting (converting) to integer
+Apr 22 17:20:30 <neetismurder>	that's pretty nice
+Apr 22 17:20:39 <Anonymous968574>	thanks :D
+Apr 22 17:20:44 <goncalopp>	:)
+Apr 22 17:20:53 <Rivalo>	nice!
+Apr 22 17:21:03 <goncalopp>	ok then, NiM's now...
+Apr 22 17:21:04 <Rivalo>	that way you haven't to delete the characters from the list.
+Apr 22 17:21:27 <neetismurder>	the updated version would still have a problem on certain strings
+Apr 22 17:21:34 <goncalopp>	oh
+Apr 22 17:21:34 <neetismurder>	do tuples have indexed access?
+Apr 22 17:21:47 <goncalopp>	should I use the previous one then? it worked well
+Apr 22 17:21:50 <goncalopp>	yes, the do
+Apr 22 17:21:54 <goncalopp>	*they
+Apr 22 17:21:56 <neetismurder>	both work on this string
+Apr 22 17:22:04 <goncalopp>	ok...
+Apr 22 17:22:11 <neetismurder>	but if two years were both equally far apart, it would return a tuple
+Apr 22 17:22:22 <neetismurder>	and probably an error later
+Apr 22 17:22:28 <goncalopp>	oh, that's cool, actually
+Apr 22 17:22:29 <Anonymous968574>	mine would only return the second one
+Apr 22 17:22:58 <goncalopp>	now, NiM's version may be pretty difficult for you guys to read, since it incorporates what's called a "recursive function"
+Apr 22 17:23:02 <Rivalo>	I don't know which mine would return.
+Apr 22 17:23:08 <Rivalo>	It would probably give an error
+Apr 22 17:23:11 <goncalopp>	which we'll coven in the functional programming class
+Apr 22 17:23:34 <Anonymous968574>	I think I understand how it works..
+Apr 22 17:23:42 <goncalopp>	It would add them both to the list and return the first, I believe, rivalo
+Apr 22 17:23:53 <goncalopp>	yes, anon?
+Apr 22 17:24:08 <Anonymous968574>	nothing
+Apr 22 17:24:09 <Rivalo>	yeah, probably
+Apr 22 17:24:52 <goncalopp>	basically: closest_in_list starts with the year 2012
+Apr 22 17:24:59 <goncalopp>	checks if there's 2012 in the list
+Apr 22 17:25:20 <goncalopp>	if not, it "forks" itself, and checks 2011 and 2013.
+Apr 22 17:25:33 <goncalopp>	if none of them are there, 2010 and 2014... etc
+Apr 22 17:25:53 <goncalopp>	this works correctly, but has a serious problem
+Apr 22 17:26:02 <neetismurder>	performance
+Apr 22 17:26:09 <goncalopp>	yes :)
+Apr 22 17:26:30 <goncalopp>	let's say you only found a year, your list being [1920]
+Apr 22 17:27:03 <neetismurder>	oh I forgot to account for the range too...
+Apr 22 17:27:10 <goncalopp>	you must go through 93 (!) iterations before finding the closest year to 2012
+Apr 22 17:27:23 <Anonymous968574>	and it would get stuck forever if the list was empty
+Apr 22 17:27:30 <goncalopp>	yes, nim, it also assumes there is ONE closest
+Apr 22 17:27:33 <goncalopp>	exactly
+Apr 22 17:28:04 <goncalopp>	the same thing applies for your year_list_gen
+Apr 22 17:28:31 <goncalopp>	let's say the year interval (2100-1900) is M
+Apr 22 17:28:36 <Rivalo>	But wouldn't my approach also have bad performance because it iterates the lists multiple times?
+Apr 22 17:30:02 <goncalopp>	yes, somewhat. we'd need a whole complexity theory class for this rivalo, but put simply, your code runs in N*M iterations, but M is low, since it's the number of steps you take (filter years, find closest)
+Apr 22 17:30:29 <goncalopp>	while NiM's is also M*N, but M is the year interval and N is the initial string length
+Apr 22 17:30:59 <goncalopp>	any of which could very well be in the order of millions
+Apr 22 17:31:14 <neetismurder>	regex would have been handy here
+Apr 22 17:31:25 <Anonymous968574>	regex?
+Apr 22 17:31:29 <goncalopp>	NiM, take into consideration that "X in string" takes N iterations, N being the string length
+Apr 22 17:31:36 <neetismurder>	regular expressions
+Apr 22 17:31:42 <goncalopp>	somewhat
+Apr 22 17:31:53 <neetismurder>	that was my first instinct, to split the string on latin characters
+Apr 22 17:32:23 <goncalopp>	regex time complexity analysis is very complex. They wouldn't beat rivalo's or anon's code, though, I believe
+Apr 22 17:32:51 <goncalopp>	though....
+Apr 22 17:32:54 <goncalopp>	let's see
+Apr 22 17:33:00 <neetismurder>	I really wanted to actually take all possible number combinations in the string, and make them into years in the range
+Apr 22 17:33:06 <neetismurder>	but that was a little beyond me
+Apr 22 17:33:24 <goncalopp>	at best, a well written regex would go through the string exactly one, so it might
+Apr 22 17:33:56 <Zeta_Labda>	regex?
+Apr 22 17:34:04 <neetismurder>	regular expression
+Apr 22 17:34:08 <goncalopp>	your code is fine NiM, taking into account this is a small year interval. But generally you want to iterate on the list's elements, NOT on integers
+Apr 22 17:34:09 <Zeta_Labda>	OHJ
+Apr 22 17:34:12 <Zeta_Labda>	Oh*
+Apr 22 17:34:28 <Zeta_Labda>	I thought I´d miss some huge thing
+Apr 22 17:34:46 <goncalopp>	zeta, we're not covering regex, if that's what you meant
+Apr 22 17:35:00 <goncalopp>	we're reviewing homework
+Apr 22 17:36:06 <Zeta_Labda>	No no, I´m talking about if you already had covered it in previous lessons, I´ll look  into the logs later
+Apr 22 17:36:21 <neetismurder>	no we probably won't cover them it's okay
+Apr 22 17:36:29 <goncalopp>	oh, also, NiM: recursion, in almost every problem you may encounter, is not the most readable way to do this kind of thing, nor the most efficient. always prefer loops if you can use them
+Apr 22 17:37:06 <neetismurder>	alright ;~;
+Apr 22 17:37:15 <neetismurder>	that was really easy to write though...
+Apr 22 17:37:19 <goncalopp>	yes, regex are kind of off topic in a programming class... I may cover them if there's a lot of interest though. But I'm a complete noob on the subject :)
+Apr 22 17:37:51 <neetismurder>	I guess it's easy to write things the wrong way
+Apr 22 17:38:02 <goncalopp>	oh, sure NiM, think of recursive fibbonacci: it's the easiest to write. Also, in that case, it's the easiest to read :)
+Apr 22 17:38:29 <goncalopp>	terrible on time complexity, though :)
+Apr 22 17:40:00 <neetismurder>	so would this work?
+Apr 22 17:41:01 <neetismurder>	to actually print the tuple?
+Apr 22 17:41:04 <goncalopp>	hoa. let's see
+Apr 22 17:41:54 <neetismurder>	no that would be a problem for the normal case...
+Apr 22 17:42:39 <goncalopp>	you can do index(), no problem...
+Apr 22 17:42:48 <neetismurder>	duct tape bahaha
+Apr 22 17:43:06 <goncalopp>	you see, generally it's a Bad Idea (tm) to mix up element types inside a list :)
+Apr 22 17:43:29 <goncalopp>	other languages won't even allow it
+Apr 22 17:43:47 <neetismurder>	hmm ok
+Apr 22 17:44:33 <goncalopp>	generally, avoid it until you have 10+ years programming experience!
+Apr 22 17:44:36 <goncalopp>	jk, jk :P
+Apr 22 17:44:48 <neetismurder>	tbh I spent the majority of the time working on this trying to come up with some math to truly use all the possible number combinations in the string
+Apr 22 17:45:19 <neetismurder>	where each number could be used only once
+Apr 22 17:45:31 <neetismurder>	and came up with nothing
+Apr 22 17:45:34 <goncalopp>	you're going to like the itertools module
+Apr 22 17:45:42 <goncalopp>	the combinations function in particular :)
+Apr 22 17:45:52 <goncalopp>	(also: don't use it for now :P)
+Apr 22 17:45:58 <neetismurder>	ww ok
+Apr 22 17:46:26 <goncalopp>	ok people, any questions?
+Apr 22 17:46:46 <neetismurder>	what's the homework?
+Apr 22 17:47:17 <goncalopp>	on email in a hour or s, so everyone has a chance to do it (and I can think of something till then :)
+Apr 22 17:48:14 <goncalopp>	ok then, ciao guys :)
+Apr 22 17:48:25 <neetismurder>	laters
+Apr 22 17:48:30 <Rivalo>	ok
+Apr 22 17:48:32 <Rivalo>	bye :)
+Apr 22 17:48:32 <Anonymous968574>	cya

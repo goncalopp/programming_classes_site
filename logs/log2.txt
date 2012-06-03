@@ -1,0 +1,566 @@
+Apr 18 21:59:58 <nicckkk>	Exactly on time
+Apr 18 22:00:11 <goncalopp>	We're about to start, nick :)
+Apr 18 22:00:35 <nicckkk>	pirate pad link?
+Apr 18 22:01:21 <goncalopp>	just a moment, I'll update the channel message
+Apr 18 22:02:04 <nicckkk>	Sounds good
+Apr 18 22:03:33 >ChanServ<	SET ##programming-classes ENTRYMSG Today's pad is http://piratepad.net/http://piratepad.net/1NHE9L0Go9
+Apr 18 22:03:33 -ChanServ-	The entry message for ##programming-classes has been set to Today's pad is http://piratepad.net/http://piratepad.net/1NHE9L0Go9
+Apr 18 22:04:30 <goncalopp>	ok everyone, we're starting, here's today's pad  http://piratepad.net/http://piratepad.net/1NHE9L0Go9
+Apr 18 22:05:06 *	gunther (~gunther@CPE-24-163-139-21.new.res.rr.com) has joined ##programming-classes
+Apr 18 22:05:10 <gunther>	hey guys
+Apr 18 22:06:08 <goncalopp>	Hi gunther. We's just starting
+Apr 18 22:06:11 <Usurper>	4oh4
+Apr 18 22:06:16 <gunther>	great
+Apr 18 22:06:22 *	Fane (Fane@095160200229.wroclaw.vectranet.pl) has joined ##programming-classes
+Apr 18 22:06:31 <Fane>	class over?
+Apr 18 22:06:35 <nicckkk>	Class starting
+Apr 18 22:06:45 <goncalopp>	class just starting, Fane
+Apr 18 22:07:12 <goncalopp>	everyone, please join the pad so we can begin
+Apr 18 22:07:20 <goncalopp>	I'll wait a minute or two
+Apr 18 22:07:31 <gunther>	the pad?
+Apr 18 22:08:02 <Usurper>	That piratepad link is 404 to me.
+Apr 18 22:08:09 >ChanServ<	SET ##programming-classes ENTRYMSG Today's pad is http://piratepad.net/1NHE9L0Go9
+Apr 18 22:08:09 -ChanServ-	The entry message for ##programming-classes has been set to Today's pad is http://piratepad.net/1NHE9L0Go9
+Apr 18 22:08:13 <goncalopp>	yeah, my bad, sorry
+Apr 18 22:08:22 <goncalopp>	http://piratepad.net/1NHE9L0Go9
+Apr 18 22:09:38 <neetismurder>	uh-oh, we freedom here
+Apr 18 22:09:57 <goncalopp>	?
+Apr 18 22:10:41 <gunther>	goncalopp, why you hate freedom?
+Apr 18 22:10:47 <neetismurder>	w
+Apr 18 22:11:10 <goncalopp>	PM please
+Apr 18 22:11:11 <nicckkk>	Goncalopp, I also have to leave in half an hour, so I'll get the first part of the lesson then read the rest. Is that alright?
+Apr 18 22:11:26 <goncalopp>	sure nick
+Apr 18 22:11:36 <goncalopp>	everyone, we're starting
+Apr 18 22:11:42 <gunther>	okay
+Apr 18 22:11:52 <Zeta_Labda>	alright!
+Apr 18 22:12:03 <goncalopp>	I'll cover iterables first
+Apr 18 22:12:26 <goncalopp>	hope everyone got the url, it's http://piratepad.net/1NHE9L0Go9
+Apr 18 22:12:29 <goncalopp>	continuing...
+Apr 18 22:12:57 <goncalopp>	an iterable is something you iterate over, obviously
+Apr 18 22:13:11 <goncalopp>	iterating meaning, roughly, go through, one by one
+Apr 18 22:13:32 <goncalopp>	An list is an example of an iterable, since it is composed o discrete items
+Apr 18 22:13:41 <goncalopp>	I'll exemplify the creation of a list:
+Apr 18 22:13:56 <goncalopp>	you can print lists directly:
+Apr 18 22:14:13 <goncalopp>	try that for a moment, to see tthe output format
+Apr 18 22:14:47 <goncalopp>	Now, a list can have any type inside, including integers, floats, strings, etc.
+Apr 18 22:15:43 <goncalopp>	now, you can append something to a list (that means, adding something on the list's end)
+Apr 18 22:15:47 <Zeta_Labda>	are dictionary´s iterables?
+Apr 18 22:16:39 <goncalopp>	not by themselves, no, but they have methods that iterate over their keys and values
+Apr 18 22:16:47 <goncalopp>	we'll cover dictionaries in another class, probably
+Apr 18 22:17:16 <Zeta_Labda>	alright
+Apr 18 22:17:20 <goncalopp>	now, how can you access an element in a list?
+Apr 18 22:17:49 <goncalopp>	str_list[0] is an example of indexed access
+Apr 18 22:18:25 <goncalopp>	in many programming classes, you can access the elements of a list/array by providing it's index
+Apr 18 22:18:44 <goncalopp>	"str_list[0]" means "the first element of str_list"
+Apr 18 22:18:58 <goncalopp>	"str_list[1]" would mean "the second element of str_list"
+Apr 18 22:19:33 <goncalopp>	you may notice the indices start at 0, not 1. That's an old convention, and may take some time to get used to
+Apr 18 22:19:37 <Zeta_Labda>	ofcourse
+Apr 18 22:20:00 <Zeta_Labda>	well I find it somewhat logicial to begin with 0
+Apr 18 22:20:17 <goncalopp>	it's very useful in practice, yes
+Apr 18 22:20:24 <Usurper>	Do the " [ ] " brackets mean anything other than array?
+Apr 18 22:20:26 <goncalopp>	Also, in python, you can access the last element of a list by using the index "-1"
+Apr 18 22:20:37 <goncalopp>	the element before the last would be "-2"
+Apr 18 22:20:52 <goncalopp>	so, in a list with three elements, l[1]==l[-2]
+Apr 18 22:21:05 <goncalopp>	everyone following?
+Apr 18 22:21:13 <Suhteevah>	mm
+Apr 18 22:21:15 <neetismurder>	yup
+Apr 18 22:21:19 <Usurper>	yes
+Apr 18 22:21:20 <Josip>	ok
+Apr 18 22:21:23 <Zeta_Labda>	ah ok
+Apr 18 22:21:40 <goncalopp>	ok then
+Apr 18 22:21:50 <goncalopp>	next up: slices
+Apr 18 22:22:10 <goncalopp>	slices are a python convenience, don't expect them to appear on other programming languages
+Apr 18 22:22:21 <goncalopp>	except modern interpreted ones, really
+Apr 18 22:22:40 <goncalopp>	a "slice", as it sounds, is a piece of something
+Apr 18 22:22:56 <goncalopp>	let's say you have a list with the numbers 0..10
+Apr 18 22:23:24 *	Fane has quit ()
+Apr 18 22:23:28 <goncalopp>	as you may remember from last class, range(10) will return a list with those
+Apr 18 22:23:42 <neetismurder>	range(11)
+Apr 18 22:23:56 <goncalopp>	thanks :)
+Apr 18 22:24:01 <goncalopp>	I keep missing that
+Apr 18 22:24:01 <neetismurder>	np
+Apr 18 22:24:27 *	Anonymous968574 (80fa05f6@gateway/web/freenode/ip.128.250.5.246) has joined ##programming-classes
+Apr 18 22:24:31 <goncalopp>	now, let's say I want to take only the first five elements of that list:
+Apr 18 22:25:17 <goncalopp>	here. l_ten[0:5] means "the elements from indices 0 to (not including) five
+Apr 18 22:25:22 <Zeta_Labda>	so you basically say, take everything from the first key till the fifth key?
+Apr 18 22:25:36 <goncalopp>	fifth index, yes
+Apr 18 22:25:46 <goncalopp>	don't confuse indices and keys
+Apr 18 22:25:46 <Zeta_Labda>	ah
+Apr 18 22:25:59 <Zeta_Labda>	gotta go, somewhat of an emergency, do you guys mind it?
+Apr 18 22:26:25 <goncalopp>	go ahead Zeta, we're here if you can return later :)
+Apr 18 22:26:43 <Zeta_Labda>	I hope so;)
+Apr 18 22:26:45 *	Zeta_Labda has quit (Quit: Leaving)
+Apr 18 22:26:49 <goncalopp>	ok
+Apr 18 22:27:10 <goncalopp>	also: if you want your slice starting in the beggining of the list, you may ommit it
+Apr 18 22:27:12 <goncalopp>	like this:
+Apr 18 22:27:32 <goncalopp>	l_first_five and l_first_five2 are exactly the same
+Apr 18 22:27:34 <Usurper>	What's the difference there?
+Apr 18 22:27:56 <Usurper>	I see
+Apr 18 22:28:00 <goncalopp>	just one less character to type, really, Usurper :)
+Apr 18 22:28:02 <Usurper>	nvm
+Apr 18 22:28:35 <goncalopp>	also, if you ommit the second number, it'll assume it to be  the end of the list
+Apr 18 22:28:53 <goncalopp>	got it?
+Apr 18 22:29:01 <Usurper>	Y
+Apr 18 22:29:07 <Josip>	yep
+Apr 18 22:29:07 <goncalopp>	ok
+Apr 18 22:29:20 <goncalopp>	let's say you wanted the last three elements:
+Apr 18 22:29:50 <Suhteevah>	could you also do [7:]?
+Apr 18 22:30:06 <Anonymous968574>	could you just do l_ten_copy= l_ten instead of l_ten_copy= l_ten[:]?
+Apr 18 22:30:08 <goncalopp>	sure, but that only works if you know the length of the list
+Apr 18 22:30:24 <goncalopp>	which, btw, can be obtained with len(l_ten)
+Apr 18 22:30:45 <goncalopp>	great question, anonymous
+Apr 18 22:30:56 <Anonymous968574>	thx
+Apr 18 22:31:05 <goncalopp>	I'll show you guys the difference
+Apr 18 22:31:49 <goncalopp>	try this code, everyone
+Apr 18 22:32:09 <goncalopp>	It may prove surprising :)
+Apr 18 22:32:17 <neetismurder>	it's because lists behave differently than variables correct?
+Apr 18 22:32:27 <goncalopp>	somewhat
+Apr 18 22:32:33 <goncalopp>	more guesses?
+Apr 18 22:32:44 <gunther>	it creates a copy?
+Apr 18 22:32:52 <gunther>	for l3
+Apr 18 22:33:10 <goncalopp>	exactly. That's the difference between "being a copy" and "being the same"
+Apr 18 22:33:18 <goncalopp>	l1 and l2 are *the same*
+Apr 18 22:33:37 <goncalopp>	whatever you do to one, happens on the other. because there's no "other", really
+Apr 18 22:33:46 <Anonymous968574>	aah, now it makes sense
+Apr 18 22:33:56 <goncalopp>	now, ofc, this doesn't happen with variables
+Apr 18 22:34:11 <goncalopp>	(such as integers)
+Apr 18 22:34:26 <neetismurder>	mutable vs. immutable right?
+Apr 18 22:35:03 <goncalopp>	No, not really, NiM, though it's a related concept
+Apr 18 22:35:23 <goncalopp>	it's the difference between "pass by value" and "pass by reference"
+Apr 18 22:35:43 <goncalopp>	variables are always passed as values. You can't copy a value, it makes no sense
+Apr 18 22:36:07 <goncalopp>	however, lists, tuples, dictionaries, and other OBJECTS, are passed by reference
+Apr 18 22:36:26 <goncalopp>	You'll understand this better as soon as we cover Object Oriented Programming
+Apr 18 22:36:32 <goncalopp>	which will be another class
+Apr 18 22:37:00 <goncalopp>	any questions? everyone's comfortable?
+Apr 18 22:37:10 <Usurper>	Y
+Apr 18 22:37:11 <neetismurder>	yup
+Apr 18 22:37:14 <Anonymous968574>	yep
+Apr 18 22:37:16 <gunther>	syeah
+Apr 18 22:37:17 <Josip>	ok here
+Apr 18 22:37:25 <goncalopp>	back to lists, then :)
+Apr 18 22:37:50 <goncalopp>	as you can add elements, you can also remove them:
+Apr 18 22:38:10 <goncalopp>	pop(0) removes the element with index 0
+Apr 18 22:38:45 <goncalopp>	also, you can insert an item in a specific place:
+Apr 18 22:39:47 <neetismurder>	is there a way to remove an item without returning its value?
+Apr 18 22:39:55 <goncalopp>	as you can see, indices are omnipresent in every operation with iterables
+Apr 18 22:40:23 <goncalopp>	not that I know of, but you don't need to take the return value into a variable, really
+Apr 18 22:40:48 <goncalopp>	some more methods:
+Apr 18 22:41:22 <goncalopp>	this returns the number of occurences of 1 inside the list (3)
+Apr 18 22:41:32 <Josip>	so pop works with int only?
+Apr 18 22:41:52 <goncalopp>	Each and every of these methods work with any type
+Apr 18 22:42:17 <goncalopp>	inside the list, is that what you mean, Josip?
+Apr 18 22:42:24 <Josip>	yes
+Apr 18 22:42:30 <goncalopp>	ok
+Apr 18 22:42:34 <Anonymous968574>	is there something like .insert for strings?
+Apr 18 22:42:46 <goncalopp>	yes and no
+Apr 18 22:43:06 <goncalopp>	strings in python are what NiM talked about earlier - immutable
+Apr 18 22:43:17 <goncalopp>	that means they can't be changed
+Apr 18 22:43:51 <goncalopp>	(which doesn't mean you can't change the string the variable points to, but that's another story)
+Apr 18 22:44:16 <goncalopp>	we'll be covering strings next, I'll how you how to do that then
+Apr 18 22:44:21 <Anonymous968574>	ok
+Apr 18 22:44:39 <goncalopp>	another useful method is "index"
+Apr 18 22:45:10 <goncalopp>	i==1, since that's 5's index inside the list
+Apr 18 22:45:40 <goncalopp>	also, you can concatenate lists:
+Apr 18 22:46:09 <goncalopp>	like this
+Apr 18 22:46:36 <goncalopp>	you can also sort lists with the sorted() method
+Apr 18 22:47:21 <goncalopp>	sorted(l3) returns a sorted COPY of the list
+Apr 18 22:47:45 <goncalopp>	if you did l3.sort() it would sort the list "in place", which means it would modify l3 to be sorted
+Apr 18 22:47:54 <goncalopp>	all ok?
+Apr 18 22:48:04 <Josip>	ok
+Apr 18 22:48:05 <Anonymous968574>	y
+Apr 18 22:48:10 <gunther>	yep
+Apr 18 22:48:12 <Usurper>	Y
+Apr 18 22:48:17 <neetismurder>	so sorted is a built-in function and .sort is a method?
+Apr 18 22:48:24 <goncalopp>	yes
+Apr 18 22:48:37 <goncalopp>	a method of "list"
+Apr 18 22:48:41 <neetismurder>	also, can you index from the last position?
+Apr 18 22:48:56 <goncalopp>	that would be the minus notation?
+Apr 18 22:49:07 <neetismurder>	with the method, I mean
+Apr 18 22:49:20 <neetismurder>	get a negative return value
+Apr 18 22:49:32 <goncalopp>	from sort=
+Apr 18 22:49:33 <goncalopp>	?
+Apr 18 22:49:42 <neetismurder>	from l.index
+Apr 18 22:49:49 <goncalopp>	oh
+Apr 18 22:49:51 <neetismurder>	is there a way to do that in reverse?
+Apr 18 22:49:55 <goncalopp>	not that I know of
+Apr 18 22:50:08 <Anonymous968574>	maybe something like len(l)-l.index?
+Apr 18 22:50:08 <goncalopp>	but you can always subtract it from the length of the list
+Apr 18 22:50:33 <goncalopp>	almost
+Apr 18 22:50:35 <goncalopp>	let's see
+Apr 18 22:51:30 <goncalopp>	it's be  -(len(l)-l.index)  i believe
+Apr 18 22:51:37 <goncalopp>	*it'd
+Apr 18 22:52:01 <goncalopp>	or -len(l)+l.index    , remember your math people :)
+Apr 18 22:52:30 <goncalopp>	Ok, I think we're done with lists, unless someone has anything to add
+Apr 18 22:52:35 <neetismurder>	but if it was in the list multiple times
+Apr 18 22:52:39 <neetismurder>	that wouldn't work right?
+Apr 18 22:52:59 <goncalopp>	index() return the index of the first occurence, only
+Apr 18 22:53:25 <neetismurder>	so you would have to make a reversed copy of the list to get the last occurence?
+Apr 18 22:53:30 <neetismurder>	and run index on that?
+Apr 18 22:53:37 <goncalopp>	that's one option, yes
+Apr 18 22:53:53 <Anonymous968574>	I think I found a way to do it
+Apr 18 22:53:54 <goncalopp>	don't forget to recalculate the index after that, since you inverted it
+Apr 18 22:54:08 <neetismurder>	okay thanks, sorry for derailing
+Apr 18 22:54:12 <goncalopp>	np
+Apr 18 22:54:15 <goncalopp>	to do what, anon?
+Apr 18 22:54:31 <Anonymous968574>	for example if you wanted to find the index of the third 1 in l
+Apr 18 22:54:40 <Anonymous968574>	you could do l.index(1,3)
+Apr 18 22:54:42 <goncalopp>	oh, fire away :)
+Apr 18 22:54:49 <goncalopp>	yes?
+Apr 18 22:55:17 <goncalopp>	oh, I see what you mean
+Apr 18 22:55:24 <goncalopp>	you're not exactly right, though
+Apr 18 22:55:27 <Anonymous968574>	oh wait, I think it doesn't work
+Apr 18 22:55:40 <goncalopp>	that 3 doesn't mean "the third 1"
+Apr 18 22:55:46 <Anonymous968574>	it seemed worked with the second
+Apr 18 22:55:59 <goncalopp>	it means "the first 1 after index 3"
+Apr 18 22:56:53 <neetismurder>	so you could use that to iterate to the last occurence though
+Apr 18 22:56:59 <neetismurder>	right?
+Apr 18 22:57:07 <goncalopp>	sure, in a loop :)
+Apr 18 22:57:16 <Anonymous968574>	then you can do l.index(1,l.index(1,l.index(1)+1)+1)
+Apr 18 22:57:18 <goncalopp>	I may use that as homework ;)
+Apr 18 22:57:25 <goncalopp>	hoa
+Apr 18 22:57:41 <goncalopp>	yes, anon, well done :D
+Apr 18 22:57:44 <goncalopp>	(I think so)
+Apr 18 22:57:47 <Anonymous968574>	yay!
+Apr 18 22:58:07 <goncalopp>	That begs for a recursive function... another day :)
+Apr 18 22:58:42 <goncalopp>	ok, no more questions?
+Apr 18 22:59:03 <neetismurder>	all set
+Apr 18 22:59:11 <Anonymous968574>	I'm good
+Apr 18 22:59:57 <Josip>	me 2
+Apr 18 23:00:04 <goncalopp>	ok then, I want to show you guys how I answered anon's question about index's second argument
+Apr 18 23:00:24 <goncalopp>	fire up python in a shell (open cmd and type "python" then enter)
+Apr 18 23:00:48 <goncalopp>	you should get a  ">>>" prompt
+Apr 18 23:01:03 <goncalopp>	this is the interactive interpreter
+Apr 18 23:01:18 <goncalopp>	you can do anything here that you type on your editor
+Apr 18 23:01:26 <goncalopp>	declaring variables, printing, etc
+Apr 18 23:01:37 <neetismurder>	I hate functions in idle ; ;
+Apr 18 23:01:42 <goncalopp>	it's great for playing in a sandbox
+Apr 18 23:02:16 <goncalopp>	what about them, nim? I don't know much about idle
+Apr 18 23:02:32 <goncalopp>	also, try declaring a list with "l=[]"
+Apr 18 23:02:44 <goncalopp>	and then call   "help(l.index)"
+Apr 18 23:02:58 <neetismurder>	idle is what you get when you run the interpreter right? You can't go back and fix your mistakes easily or visibly, you have to rewrite the whole thing
+Apr 18 23:03:07 <goncalopp>	press "q" to exit help (on unix, at least)
+Apr 18 23:03:12 <neetismurder>	with functions and procedures
+Apr 18 23:03:33 <goncalopp>	oh, yes, I thought you were talking about the editor
+Apr 18 23:03:54 <goncalopp>	yes, everyone, writing functions inside the interactive interpreter is very messy, error prone, and slow
+Apr 18 23:04:03 <goncalopp>	just use it for quick tests and help
+Apr 18 23:04:11 <goncalopp>	also, another neat trick:
+Apr 18 23:04:22 *	Volens has quit (Ping timeout: 246 seconds)
+Apr 18 23:04:24 <goncalopp>	dir(l) will tell you all the methods you can call on the list l
+Apr 18 23:04:59 <Josip>	wow!
+Apr 18 23:05:05 <goncalopp>	ok, that's about it about the interpreter, for now
+Apr 18 23:05:17 <neetismurder>	that's awesome
+Apr 18 23:05:25 <goncalopp>	oh, ctrl-c to clear a command in progress
+Apr 18 23:05:40 <goncalopp>	Josip, nim, that's the magic of python's introspection
+Apr 18 23:05:45 <neetismurder>	how do I clear the screen again?
+Apr 18 23:05:55 <goncalopp>	We'll have a class about introspection and reflection, eventually
+Apr 18 23:06:18 <goncalopp>	idk, really, never needed to :P
+Apr 18 23:06:58 <goncalopp>	http://stackoverflow.com/questions/517970/how-to-clear-python-interpreter-console
+Apr 18 23:07:07 <goncalopp>	not easy, really
+Apr 18 23:07:20 <goncalopp>	anyway, ctrl-d  to exit
+Apr 18 23:07:32 <goncalopp>	or exit(), i believe
+Apr 18 23:07:43 <neetismurder>	lol lambda
+Apr 18 23:07:48 <goncalopp>	so, let's get into string processing?
+Apr 18 23:08:06 <goncalopp>	(lambda is awesome, let's do a functional programming class sometime)
+Apr 18 23:08:34 <neetismurder>	:)
+Apr 18 23:09:01 <goncalopp>	ok, no one's complaining, I'm moving forward :)
+Apr 18 23:09:04 <goncalopp>	strings!
+Apr 18 23:10:14 <goncalopp>	ok, as you can see, strings act just like lists
+Apr 18 23:10:41 <goncalopp>	however, you can't use some list methods on strings, as anon asked earlier, I believe
+Apr 18 23:10:59 <neetismurder>	s should be s1
+Apr 18 23:11:10 <goncalopp>	thanks
+Apr 18 23:11:14 <goncalopp>	dir("") for those curious, returns this:
+Apr 18 23:11:23 <goncalopp>	['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_
+Apr 18 23:11:23 <goncalopp>	split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfil
+Apr 18 23:11:23 <goncalopp>	l']
+Apr 18 23:11:43 <goncalopp>	always ignore things starting with _
+Apr 18 23:11:49 <goncalopp>	(for now)
+Apr 18 23:12:03 <goncalopp>	as you can see, strings have index()
+Apr 18 23:12:15 <goncalopp>	also, lower:
+Apr 18 23:13:27 <goncalopp>	startswith return a boolean
+Apr 18 23:13:35 <goncalopp>	that's "True" or "False"
+Apr 18 23:13:49 <Josip>	 :)
+Apr 18 23:13:56 <goncalopp>	strip() removes whitespace from the beggining and end of the string
+Apr 18 23:14:18 <goncalopp>	examples of whitespace are the space character, a tab, etc
+Apr 18 23:14:19 <Usurper>	"startswith" is a T/F syntax?
+Apr 18 23:14:33 <goncalopp>	startswith is a method that returns T/F
+Apr 18 23:14:50 <goncalopp>	you can test conditions with it:
+Apr 18 23:14:54 <Josip>	can you remove only whitespace from end?
+Apr 18 23:15:35 <goncalopp>	I'm not sure, but I'll check
+Apr 18 23:15:46 <Josip>	ok
+Apr 18 23:16:13 <goncalopp>	yes, there's the methods lstrp() and rstrip(), meaning left and right
+Apr 18 23:16:25 <Josip>	:) thanks
+Apr 18 23:16:35 <goncalopp>	here, the python documentation is always useful, everyone:
+Apr 18 23:16:36 <goncalopp>	http://docs.python.org/library/string.html
+Apr 18 23:16:59 <goncalopp>	learing to use the docs and google them is homework :)
+Apr 18 23:17:39 <goncalopp>	I won't cover any more string methods, since there's so many of them
+Apr 18 23:17:47 <goncalopp>	Let's do some exercises :)
+Apr 18 23:18:52 <goncalopp>	Gunther, you're up for it?
+Apr 18 23:18:58 <gunther>	sure
+Apr 18 23:19:36 <goncalopp>	can you show us two different ways to get that date (2012-04-18) into another variable?
+Apr 18 23:19:50 <goncalopp>	silly ways are ok :)
+Apr 18 23:20:52 *	Volens (~mintyten@211.108.159.201) has joined ##programming-classes
+Apr 18 23:21:34 <goncalopp>	ok, gunther is afk for a moment, Josip, can you do it?
+Apr 18 23:22:57 <goncalopp>	ok Josip's asleep, am I that boring? lol
+Apr 18 23:23:02 <Anonymous968574>	lol
+Apr 18 23:23:05 <goncalopp>	NiM, can I count on you?
+Apr 18 23:23:11 <neetismurder>	okay
+Apr 18 23:24:33 <goncalopp>	don't forget the quotes
+Apr 18 23:24:37 <goncalopp>	yup
+Apr 18 23:24:39 <gunther>	back
+Apr 18 23:24:52 <goncalopp>	you're next then :)
+Apr 18 23:25:13 <gunther>	what must i do?
+Apr 18 23:25:35 <goncalopp>	let NiM finish, then I'm teaching something for you to use
+Apr 18 23:26:21 <neetismurder>	oops
+Apr 18 23:26:28 <goncalopp>	a 6 there NiM, other than that perfectly done, thanks!
+Apr 18 23:26:36 <Josip>	sorry, had to silece my cat
+Apr 18 23:26:54 <goncalopp>	np Josip, get up to speed then we'll get to you
+Apr 18 23:26:59 <goncalopp>	ok then
+Apr 18 23:27:16 <goncalopp>	There's something I want to show you:
+Apr 18 23:27:27 <goncalopp>	try this code:
+Apr 18 23:27:45 <goncalopp>	"cada" in "abracadabra"
+Apr 18 23:28:04 <goncalopp>	exactly like that (with a print if you're using the editor)
+Apr 18 23:28:27 <goncalopp>	as you can see, "in" tests for a substring inside another
+Apr 18 23:28:35 <goncalopp>	all ok?
+Apr 18 23:28:52 <Josip>	True
+Apr 18 23:28:53 <neetismurder>	yup
+Apr 18 23:28:56 <Usurper>	y
+Apr 18 23:28:59 <Anonymous968574>	yep
+Apr 18 23:29:07 <goncalopp>	ok then
+Apr 18 23:29:45 <goncalopp>	Gunther, using this and NiM's work, can you show us two ways of checking if the year inside the date is "2012"?
+Apr 18 23:30:19 <gunther>	I'll try
+Apr 18 23:31:13 <goncalopp>	you can safely assume that the year is the only 4 digit number in the date, ofc
+Apr 18 23:32:56 <goncalopp>	still thinking?
+Apr 18 23:33:06 <gunther>	yeah
+Apr 18 23:34:23 <goncalopp>	ok. anyone remembers any string method we could use here?
+Apr 18 23:34:32 <Anonymous968574>	I have one
+Apr 18 23:34:36 <Josip>	str()
+Apr 18 23:34:43 <neetismurder>	startswith right?
+Apr 18 23:34:45 <goncalopp>	fire, anon :)
+Apr 18 23:34:55 <goncalopp>	yeah, sure, NiM
+Apr 18 23:35:06 <goncalopp>	Josip, didn't quite get what you meant
+Apr 18 23:35:15 <Josip>	nwm
+Apr 18 23:35:25 <goncalopp>	ok :)
+Apr 18 23:35:48 <goncalopp>	ok, that works, gunther, thanks :)
+Apr 18 23:36:26 <goncalopp>	anon, also
+Apr 18 23:36:42 *	Zeta_Labda (~Zeta_Labd@ip4da58b7a.direct-adsl.nl) has joined ##programming-classes
+Apr 18 23:37:20 <goncalopp>	Ok, next up, the split method!
+Apr 18 23:37:45 <Zeta_Labda>	still talking about lists?
+Apr 18 23:37:54 <gunther>	strings
+Apr 18 23:38:05 <goncalopp>	we did string processing, and we're doing exercises now, zeta
+Apr 18 23:38:23 <goncalopp>	here, "numbers" is now a list of strings:
+Apr 18 23:39:14 <goncalopp>	also, you can do the reverse (for strings, at least)
+Apr 18 23:40:44 <goncalopp>	be careful about the spaces when using split, too
+Apr 18 23:40:57 <goncalopp>	all ok?
+Apr 18 23:41:07 <Josip>	y
+Apr 18 23:41:09 <neetismurder>	can split take multiple arguments?
+Apr 18 23:41:25 <goncalopp>	as in "split if any of these occurr"?
+Apr 18 23:41:29 <neetismurder>	yes
+Apr 18 23:41:41 <goncalopp>	no. you can do that using the re module, though
+Apr 18 23:41:58 <neetismurder>	ok
+Apr 18 23:42:18 <goncalopp>	ok then
+Apr 18 23:42:22 <Usurper>	How much longer?
+Apr 18 23:42:35 <goncalopp>	Pointing to a 2 hour class
+Apr 18 23:42:43 <goncalopp>	so, 18 minutes here
+Apr 18 23:43:19 <Zeta_Labda>	re module?
+Apr 18 23:43:28 <goncalopp>	So, Josip, can you get the year, month and day in three different variables?
+Apr 18 23:44:16 <goncalopp>	regular expressions, zeta. an advanced topic, really
+Apr 18 23:44:37 <goncalopp>	but here you go anyway http://docs.python.org/library/re.html
+Apr 18 23:44:42 <neetismurder>	you have to load a module for regex?
+Apr 18 23:45:01 <goncalopp>	yes. python's not perl :)
+Apr 18 23:45:13 <goncalopp>	it's a general purpose language
+Apr 18 23:46:24 <goncalopp>	Josip, it'd be best if you could use split()
+Apr 18 23:46:50 *	Usurper has quit (Quit: ChatZilla 0.9.88.2 [Firefox 11.0/20120312181643])
+Apr 18 23:47:20 <goncalopp>	sure, now use indexed access
+Apr 18 23:48:47 <goncalopp>	ok, I get where that comes from. The concepts are similar, and prone to confusion
+Apr 18 23:49:10 <goncalopp>	l[0] returns the "first element of the list"
+Apr 18 23:49:26 <goncalopp>	l.index(0) returns "the index of 0 in the list"
+Apr 18 23:50:00 <Anonymous968574>	so they're pretty much the opposite?
+Apr 18 23:50:02 <goncalopp>	Josip, here, you want the *elements* you have splited, not to look inside them
+Apr 18 23:50:17 <goncalopp>	arguably anon, it's pretty much subjective
+Apr 18 23:50:46 <neetismurder>	wouldn't it be easier to split on date1 or date2 too?
+Apr 18 23:50:53 <goncalopp>	there :)
+Apr 18 23:51:04 <goncalopp>	oh, well spotted
+Apr 18 23:51:24 <goncalopp>	can't be done on s, or else the first element would be "Today's date is 2012"
+Apr 18 23:51:31 <Josip>	:)
+Apr 18 23:51:57 <goncalopp>	also, something I neglected to tell you
+Apr 18 23:52:14 <goncalopp>	it's convention that all variables start with a lowercase character
+Apr 18 23:53:03 <Anonymous968574>	lists too?
+Apr 18 23:53:08 <goncalopp>	also, here's some shorthand for Josip's work, courtesy of python's flexible assignment operator:
+Apr 18 23:53:24 <goncalopp>	yes, *all* variable names
+Apr 18 23:53:46 <goncalopp>	there, just one line :)
+Apr 18 23:53:58 <Anonymous968574>	neat!
+Apr 18 23:54:05 <goncalopp>	ofc, you must be sure v has exactly 3 elements
+Apr 18 23:54:09 <Josip>	Yeeaahh!
+Apr 18 23:54:13 <goncalopp>	yes, python's awesome :)
+Apr 18 23:54:33 <goncalopp>	also, in this way, you don't really need a temporary variable:
+Apr 18 23:54:37 <neetismurder>	that's pretty neat
+Apr 18 23:54:45 <goncalopp>	so, 4 lines in 1 :)
+Apr 18 23:55:10 <neetismurder>	you could even stick date1 in there too right?
+Apr 18 23:55:24 <neetismurder>	the value I mean
+Apr 18 23:55:30 <goncalopp>	sure:
+Apr 18 23:56:10 <goncalopp>	ok, one last thing: tuples
+Apr 18 23:56:29 <goncalopp>	tuples are just like lists, but they are *not* modifiable
+Apr 18 23:56:38 <gunther>	I think i've seen these before
+Apr 18 23:57:09 <goncalopp>	probably. they're used, for example, to return several arguments in a function
+Apr 18 23:57:13 <goncalopp>	example
+Apr 18 23:58:27 <goncalopp>	anything fuzzy on that function for anyone?
+Apr 18 23:59:39 <goncalopp>	I may have overdone it :)
+Apr 18 23:59:48 <Josip>	a bit...
+Apr 18 23:59:53 <goncalopp>	xD
+Apr 18 23:59:57 <goncalopp>	ok, ok :)
+Apr 19 00:00:59 <goncalopp>	here you go, expanded version
+Apr 19 00:01:28 <goncalopp>	this accepts two arguments, a character (string of length 1) and a string
+Apr 19 00:01:49 <goncalopp>	then, it returns how many of those characters are in the string, in upper and lowercase variations
+Apr 19 00:02:01 <Zeta_Labda>	.lower and .upper are standard functions of python?
+Apr 19 00:02:06 <Josip>	aha, got it
+Apr 19 00:02:11 <goncalopp>	of strings, zeta
+Apr 19 00:02:31 *	Anonymous968574 has quit (Ping timeout: 245 seconds)
+Apr 19 00:02:31 <goncalopp>	string.lower()
+Apr 19 00:03:03 <goncalopp>	anyone's having trouble understanding the function?
+Apr 19 00:03:05 <Zeta_Labda>	alright, so what´s the use of the first line?
+Apr 19 00:03:31 <goncalopp>	none, if you specify your character as uppercase :)
+Apr 19 00:03:34 <goncalopp>	*lower
+Apr 19 00:03:48 <Zeta_Labda>	ok
+Apr 19 00:05:02 <neetismurder>	can you switch values like this?
+Apr 19 00:05:08 <neetismurder>	like x,y = y,x?
+Apr 19 00:05:14 <goncalopp>	yes :D
+Apr 19 00:05:23 <goncalopp>	no need for a temporary variable, as usual
+Apr 19 00:05:26 <neetismurder>	cool
+Apr 19 00:06:00 <goncalopp>	ok then, I think I'll finish the class here. For those who want to stay a little more, I'd like to show you some things on Josip's homework
+Apr 19 00:06:14 *	gunther has quit (Quit: leaving)
+Apr 19 00:06:48 <neetismurder>	I've still got time, but I'm going to take a restroom break
+Apr 19 00:07:15 *	Volens has quit (Ping timeout: 260 seconds)
+Apr 19 00:07:21 <goncalopp>	ok sure. I think we can all use a 5 minutes break, really
+Apr 19 00:07:35 <goncalopp>	So, brb :)
+Apr 19 00:07:44 <Josip>	:)
+Apr 19 00:13:03 <goncalopp>	Ok, I'm back
+Apr 19 00:13:13 <goncalopp>	I'll post Josip's work so you can study it for a bit
+Apr 19 00:15:33 <neetismurder>	back
+Apr 19 00:15:40 <goncalopp>	:)
+Apr 19 00:16:54 <Zeta_Labda>	oh that´s well done(what´s currently on the pad(
+Apr 19 00:16:57 <Zeta_Labda>	)
+Apr 19 00:17:13 <goncalopp>	ok, everyone's got a good idea of how everything works here?
+Apr 19 00:17:20 <neetismurder>	I would :%s/warning/10/g
+Apr 19 00:17:23 <neetismurder>	and delete line 3
+Apr 19 00:17:32 <goncalopp>	yes zeta, Josip's work is pretty clean
+Apr 19 00:17:51 <goncalopp>	nim, don't talk vim to us :)
+Apr 19 00:18:02 <neetismurder>	sorry :3
+Apr 19 00:18:22 <neetismurder>	I'd not use the variable and just use 10
+Apr 19 00:18:29 <neetismurder>	since it's less typing
+Apr 19 00:18:56 <neetismurder>	but it's a lot cleaner than what I did
+Apr 19 00:18:56 <goncalopp>	it is, NiM, but using a variable instead of repeating a value is considered best practice
+Apr 19 00:19:08 <goncalopp>	don't worry too much about one line more
+Apr 19 00:19:20 <goncalopp>	And, this is actually what I want to talk about
+Apr 19 00:19:41 <goncalopp>	rule 1 of clean programming: never, EVER, repeat anything
+Apr 19 00:20:01 <goncalopp>	it will lead to you changing something later, and forgetting to change it everywhere
+Apr 19 00:20:42 <goncalopp>	sure, it may seem like you won't forget them, or you can use find/replace, but on big projects you'll have HUNDREDS of references in multiple files
+Apr 19 00:20:47 <goncalopp>	so just don't do it!
+Apr 19 00:21:31 <goncalopp>	with this in mind, I want you to take a close look on lines 8,9,10,11
+Apr 19 00:21:42 <goncalopp>	notice how they are very, very similar
+Apr 19 00:21:51 <goncalopp>	9, 11 are actually the same
+Apr 19 00:22:09 <goncalopp>	now, this is a clear cut case to just *use a function*
+Apr 19 00:22:15 <goncalopp>	again: NEVER repeat code
+Apr 19 00:22:38 <neetismurder>	gotcha
+Apr 19 00:22:53 <goncalopp>	As you may point out, lines 8 and 10 are alike, but not the same...
+Apr 19 00:23:05 <goncalopp>	the solution here is to think about what they are doing:
+Apr 19 00:23:32 <goncalopp>	you want to check if the secret_number is in a interval around the user_number
+Apr 19 00:23:41 <goncalopp>	so:
+Apr 19 00:24:41 <goncalopp>	this is a docstring, it's just a special kind of comment
+Apr 19 00:25:15 <goncalopp>	there's two ways of doing this that I can think of:
+Apr 19 00:26:43 <goncalopp>	abs() is the absolute value
+Apr 19 00:26:51 <goncalopp>	abs(2)==abs(-2)==2
+Apr 19 00:26:59 <goncalopp>	abs(-3)==3
+Apr 19 00:26:59 <goncalopp>	etc
+Apr 19 00:27:00 <neetismurder>	you don't need math for absolute value?
+Apr 19 00:27:10 <goncalopp>	no, just use abs()
+Apr 19 00:27:14 <goncalopp>	i think....
+Apr 19 00:27:29 <neetismurder>	oh cool
+Apr 19 00:27:30 <goncalopp>	yes.
+Apr 19 00:27:35 <Josip>	nice
+Apr 19 00:27:44 <goncalopp>	so, finishing our program:
+Apr 19 00:28:43 <neetismurder>	and you can use that for the elif too right?
+Apr 19 00:28:48 <neetismurder>	the false value?
+Apr 19 00:28:51 <goncalopp>	this condition is unnecessary_
+Apr 19 00:29:14 <goncalopp>	if you test for equality first:
+Apr 19 00:29:54 <goncalopp>	testing for equality is cheaper (in computer time)
+Apr 19 00:30:08 <goncalopp>	also, more readable than that long long line :)
+Apr 19 00:30:35 <Josip>	much more readable
+Apr 19 00:30:42 <goncalopp>	NiM, I think this is what you were saying?
+Apr 19 00:30:58 <neetismurder>	yup
+Apr 19 00:31:03 <neetismurder>	that's what I did first
+Apr 19 00:31:06 *	Sativa_ (~Sativa@c-76-105-30-21.hsd1.ca.comcast.net) has joined ##programming-classes
+Apr 19 00:31:12 <neetismurder>	but mine isn't too readable ww
+Apr 19 00:31:36 <goncalopp>	no, it isn't :)
+Apr 19 00:31:40 <goncalopp>	shall we go over it?
+Apr 19 00:31:47 <neetismurder>	sure
+Apr 19 00:32:10 <Josip>	g2g its 1:30am here
+Apr 19 00:32:26 <neetismurder>	take care
+Apr 19 00:32:30 <Josip>	bb
+Apr 19 00:32:33 *	Zeta_Labda has quit (Ping timeout: 245 seconds)
+Apr 19 00:32:44 <goncalopp>	sure, good night :)
+Apr 19 00:32:46 *	Josip (~chatzilla@cable-188-246-58-157.dynamic.kdsinter.net) has left ##programming-classes
+Apr 19 00:33:10 <goncalopp>	now, NiM's program is a mythical beast :)
+Apr 19 00:33:26 <neetismurder>	wah
+Apr 19 00:33:30 <goncalopp>	xP
+Apr 19 00:33:57 <goncalopp>	It works, of course :D
+Apr 19 00:34:10 <goncalopp>	a couple of things, though:
+Apr 19 00:34:11 <neetismurder>	barely... lol
+Apr 19 00:34:48 <neetismurder>	those global variable definitions really bother me
+Apr 19 00:35:02 <goncalopp>	yes, that's what I was gonna say next
+Apr 19 00:35:04 <neetismurder>	but I'm used to js scoping, so I wasn't really sure how to get the same behavior
+Apr 19 00:35:11 <goncalopp>	globals are ALWAYS a bad sign
+Apr 19 00:35:32 <neetismurder>	I know python3 has nonlocal right?
+Apr 19 00:35:38 <goncalopp>	yup
+Apr 19 00:35:44 <goncalopp>	ok, we'll review this...
+Apr 19 00:35:45 <neetismurder>	how do I do that in 2?
+Apr 19 00:35:59 <goncalopp>	you shouldn't, for something this simple
+Apr 19 00:36:04 <goncalopp>	and you can't, anyway
+Apr 19 00:36:11 <neetismurder>	oh alright
+Apr 19 00:36:32 <goncalopp>	the best way to do it in this case, is just to pass the values as arguments:
+Apr 19 00:37:05 <goncalopp>	let's see if I can uderstand this xP
+Apr 19 00:38:10 <goncalopp>	there... what else?...
+Apr 19 00:38:26 <neetismurder>	guesses was global
+Apr 19 00:38:30 <goncalopp>	oh, on line 27, nim:
+Apr 19 00:38:52 <goncalopp>	just a bit more readable
+Apr 19 00:39:08 <neetismurder>	yeah, I changed it after I was getting undefined local variable errors
+Apr 19 00:39:16 <goncalopp>	hoa
+Apr 19 00:39:19 <neetismurder>	it was originally like that, but I never changed it back
+Apr 19 00:39:24 <neetismurder>	after I fixed em
+Apr 19 00:39:46 <goncalopp>	well, when you need a variable, just pass it as an argument, that's about it
+Apr 19 00:39:57 <neetismurder>	okay, I almost did that too
+Apr 19 00:40:16 <neetismurder>	but it felt awkward because I'm too used to lexical scoping
+Apr 19 00:40:17 <goncalopp>	I think these may not be the best choices for the functions, but I may check that better later
+Apr 19 00:40:53 *	Suhteevah has quit (*.net *.split)
+Apr 19 00:41:00 <goncalopp>	javascript can give you a bad case of cold:)
+Apr 19 00:41:16 <neetismurder>	ww yeah
+Apr 19 00:41:25 <neetismurder>	on line 40
+Apr 19 00:41:35 <neetismurder>	I should have combined the and statement right?
+Apr 19 00:42:04 <neetismurder>	and combined 40 and 43 into a single function?
+Apr 19 00:42:16 <goncalopp>	sure, same as Josip's
+Apr 19 00:42:39 <goncalopp>	basically, if you have a 20+ lines function, you're doing something wrong :)
+Apr 19 00:42:59 <goncalopp>	unless for some seriously advanced algorithms
+Apr 19 00:43:08 <goncalopp>	also
+Apr 19 00:43:41 <goncalopp>	"%s" % ("string") is deprecated
+Apr 19 00:43:50 <goncalopp>	use string.format()
+Apr 19 00:43:59 <neetismurder>	ah okay
+Apr 19 00:44:10 <neetismurder>	guess python the hard way needs an update :P
+Apr 19 00:44:13 <goncalopp>	though I'll confess I use it sometimes, since it's more compact :)
+Apr 19 00:44:43 <neetismurder>	has that disappeared in python3?
+Apr 19 00:45:06 <goncalopp>	Anyway, I'll try and rewrite your program entirely and sent it to you later, so you may get an idea of good structure (hopefully :)
+Apr 19 00:45:16 <neetismurder>	alright thanks
+Apr 19 00:45:30 <goncalopp>	np :)
+Apr 19 00:45:46 <goncalopp>	nick, sativa, any questions, anything?
+Apr 19 00:46:41 <goncalopp>	they got dazzled by tour code NiM ;)
+Apr 19 00:46:47 <goncalopp>	*your
+Apr 19 00:46:48 <neetismurder>	bahaha
+Apr 19 00:47:01 <neetismurder>	maybe stunned by the ugliness
+Apr 19 00:47:07 <goncalopp>	:)
+Apr 19 00:48:32 <goncalopp>	ok then people, I must go, it's pretty late here I must get up early in the morning
+Apr 19 00:48:48 <neetismurder>	alright thanks, next class and homework in email?
+Apr 19 00:48:49 <goncalopp>	NiM, I'll send you something late tomorrow
+Apr 19 00:49:09 <goncalopp>	yes, I found something cool for agreeing on class schedule
+Apr 19 00:49:53 <goncalopp>	hope to see you guys next class. I'm pretty happy with how these are going :D
+Apr 19 00:50:06 <neetismurder>	yep, I'm having fun with it
+Apr 19 00:50:09 <neetismurder>	good night
+Apr 19 00:50:15 <goncalopp>	good nigh/morning ;)
+

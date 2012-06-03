@@ -1,0 +1,139 @@
+Apr 25 16:10:52 <goncalopp>	ok then, today's pad is http://piratepad.net/90xJBzvMoa
+Apr 25 16:11:21 >ChanServ<	SET ##programming-classes ENTRYMSG Class started at 15:00 UTC. Today's pad is http://piratepad.net/90xJBzvMoa
+Apr 25 16:11:22 -ChanServ-	The entry message for ##programming-classes has been set to Class started at 15:00 UTC. Today's pad is http://piratepad.net/90xJBzvMoa
+Apr 25 16:13:01 <goncalopp>	Josip, you're afk?
+Apr 25 16:13:13 <goncalopp>	Ah well, join when you're ready
+Apr 25 16:15:41 <goncalopp>	Ok, we're starting! Try to catchup when  you join, Josip
+Apr 25 16:16:18 <goncalopp>	Now, what are exceptions?
+Apr 25 16:16:45 <neetismurder>	an error?
+Apr 25 16:16:59 <goncalopp>	yes
+Apr 25 16:17:10 <goncalopp>	more concretely, In general, an exception is a way of raising and handling *runtime* errors
+Apr 25 16:17:33 <goncalopp>	as opposed to compile-time errors, which python doesn't have, of course, since it's a interpreted language
+Apr 25 16:18:17 <goncalopp>	What are runtime errors? They're errors that cannot be predicted in advance, because they depend on the behaviour of the program as it's running
+Apr 25 16:18:36 <goncalopp>	let's say you ask the user to input a number:
+Apr 25 16:19:20 <goncalopp>	It's obviously impossible to predict what the user will type in advance. s/he might type a number, but also a string, etc
+Apr 25 16:19:34 <goncalopp>	if the user enters a number, our program runs correctly
+Apr 25 16:20:03 <goncalopp>	however, if the user enters something that can't be converted to a number, this programs throws an Exception:
+Apr 25 16:20:15 <goncalopp>	ValueError: invalid literal for int() with base 10: 's'
+Apr 25 16:20:52 <goncalopp>	Which basically means python could not convert the string to an integer (base10)
+Apr 25 16:21:35 <goncalopp>	now, there's no way to prevent the user from entering whenever he wants in a raw_input() call, so how do we force the user to enter a number?
+Apr 25 16:21:57 <neetismurder>	Try: and Except: blocks
+Apr 25 16:22:02 <goncalopp>	sure enough!
+Apr 25 16:22:11 <goncalopp>	here's the basic structure
+Apr 25 16:22:39 <goncalopp>	also, in other languages, it's called a try..except construct, instead
+Apr 25 16:22:51 <goncalopp>	java, mostly
+Apr 25 16:23:22 <goncalopp>	*try..catch
+Apr 25 16:23:30 <goncalopp>	Now, how does this try..except work?
+Apr 25 16:23:45 <goncalopp>	the code inside the try block is run just as any other code
+Apr 25 16:24:27 <goncalopp>	*as soon* as an exception occurs, the try block is immediately stopped on it's tracks, and the except block will execute
+Apr 25 16:24:50 <goncalopp>	the except block *does not* execute if a exception is not thrown inside the try block
+Apr 25 16:25:25 <goncalopp>	also, since the exception is "caught", your program isn't interrupted, as it is if you don't catch a exception
+Apr 25 16:25:58 <goncalopp>	now, exceptions propagate throgh the call stack if you don't catch them:
+Apr 25 16:27:16 <goncalopp>	if you run this code with the wrong input, a exception will be thrown inside ask_number
+Apr 25 16:27:40 <goncalopp>	that same exception will occurr on line 5, and will also be thrown outside example_game
+Apr 25 16:28:03 <goncalopp>	so, the exception is last thrown in line 8, when you called example_game
+Apr 25 16:28:24 <goncalopp>	trying to execute this code with that same wrong input will yield what's called a "stack trace"
+Apr 25 16:28:40 <goncalopp>	which is the state of the stack when the exception occurred
+Apr 25 16:29:09 <goncalopp>	the stack is, basically, the hierarchy of functions that have been called, by each others
+Apr 25 16:29:15 <goncalopp>	the stack here is:
+Apr 25 16:29:41 <goncalopp>	Traceback (most recent call last):
+Apr 25 16:29:42 <goncalopp>	  File "tmp.py", line 6, in <module>
+Apr 25 16:29:42 <goncalopp>	    example_game()
+Apr 25 16:29:42 <goncalopp>	  File "tmp.py", line 4, in example_game
+Apr 25 16:29:42 <goncalopp>	    number= ask_number()
+Apr 25 16:29:42 <goncalopp>	  File "tmp.py", line 2, in ask_number
+Apr 25 16:29:42 <goncalopp>	    return  int ( raw_input() )
+Apr 25 16:30:43 <goncalopp>	if you put a try..except anywhere where the exception "goes through", this behavior stops there, ofc
+Apr 25 16:30:57 <goncalopp>	all ok?
+Apr 25 16:31:04 <neetismurder>	yep
+Apr 25 16:32:19 <goncalopp>	ok. now, this try..except is called a generic try..except block, since it catches *all* exceptions that occur inside the try
+Apr 25 16:32:35 <goncalopp>	generally, this is bad practice. why?
+Apr 25 16:32:55 <neetismurder>	it covers up the type of exception
+Apr 25 16:33:03 <goncalopp>	exactly
+Apr 25 16:33:29 <goncalopp>	in a program of this size, the only error that will occur will be that the user gives something that is not a number
+Apr 25 16:33:41 <goncalopp>	however, as soon as you do some more operations...
+Apr 25 16:34:41 <goncalopp>	this code will always tell the user "not a number!"
+Apr 25 16:35:02 <goncalopp>	why? well, line 3 is wrong! you cannot concatenate a string and a int
+Apr 25 16:35:23 <goncalopp>	the correct form would be    print "the number is "+str(n)
+Apr 25 16:35:31 <goncalopp>	or      print "the number is",n
+Apr 25 16:35:56 <goncalopp>	so, what happens here is that you're *masking* an exception with another
+Apr 25 16:36:31 <goncalopp>	If, however, you catch the correct exception for user input mismatch....
+Apr 25 16:37:06 <goncalopp>	python will be kind enough to tell you what it should: TypeError: cannot concatenate 'str' and 'int' objects
+Apr 25 16:37:34 <goncalopp>	so, *always* put a exception type in the except line
+Apr 25 16:37:58 <goncalopp>	all clear?
+Apr 25 16:38:16 <neetismurder>	yep
+Apr 25 16:38:48 <goncalopp>	ok. now, sometimes you'll want to define your own exception types
+Apr 25 16:38:55 <goncalopp>	this is how you do it;
+Apr 25 16:40:13 <goncalopp>	now, since ValueError may be used for so much more than bad user input, you can catch it on the spot and turn it into a BadUserInput exception
+Apr 25 16:40:35 <goncalopp>	conversely, this shows you how to raise exceptions
+Apr 25 16:41:35 <goncalopp>	also, you can access the message of the original exception if you give it a name using the "as" reserved word:
+Apr 25 16:42:03 <goncalopp>	capisce?
+Apr 25 16:42:17 <neetismurder>	yup
+Apr 25 16:42:31 <goncalopp>	this is old news for you nim, i suppose?
+Apr 25 16:43:03 <neetismurder>	not really, I didn't know how to make throw new exceptions
+Apr 25 16:43:27 <goncalopp>	well then, glad I could tell you something new :)
+Apr 25 16:43:31 <neetismurder>	grammar*
+Apr 25 16:43:45 <goncalopp>	that's ok
+Apr 25 16:44:01 <goncalopp>	any questions about exceptions? otherwise we're done with that
+Apr 25 16:44:21 <neetismurder>	nope, I think I understand it pretty well
+Apr 25 16:44:35 <goncalopp>	great :) onto advanced argument passing, ten
+Apr 25 16:44:36 <goncalopp>	*then
+Apr 25 16:45:26 <goncalopp>	now, something that's very useful about python is that functions are very flexible. Not only they can a single function declaration take a variable number of arguments, you can give arguments default values too!
+Apr 25 16:46:10 <goncalopp>	so, how to do a function that will take one or two arguments, sum the two if there are two, otherwise sum 1 to the one given?
+Apr 25 16:47:07 <goncalopp>	here you go. extremely easy and readable, as you can see. arguments with default values have their values declared in the argument list
+Apr 25 16:47:20 <goncalopp>	as a simple assignment
+Apr 25 16:47:45 <goncalopp>	now, my_sum(3,5)==8, my_sum(11)==12
+Apr 25 16:48:11 <neetismurder>	how could you set b's default value to a?
+Apr 25 16:48:46 <goncalopp>	to a's value? you cannot, directly, access other arguments values there, I belive
+Apr 25 16:48:53 <goncalopp>	several workarounds, though:
+Apr 25 16:49:26 <goncalopp>	ugly, but works
+Apr 25 16:49:44 <goncalopp>	also, if you use None, you could do it like this:
+Apr 25 16:50:05 <goncalopp>	since b is None, (b or a) will return a
+Apr 25 16:50:14 <neetismurder>	that's nifty
+Apr 25 16:50:50 <goncalopp>	a lot. boolean expressions in python are a little different than everywhere else, but they're very well thought
+Apr 25 16:51:31 <goncalopp>	now, let's add one more argument and complicate the function
+Apr 25 16:52:30 <goncalopp>	a sensible default argument for m is, obviously, 1, since it the function would act like no multiplication was done
+Apr 25 16:52:45 <goncalopp>	let's say s2's default value is 0, this time
+Apr 25 16:53:07 <goncalopp>	now we have two default arguments
+Apr 25 16:53:37 <goncalopp>	how do we call the function such that s1=1, s2= [default] and m=2   ?
+Apr 25 16:54:33 <goncalopp>	if you specify two arguments, python will assume they are the first two
+Apr 25 16:54:53 <goncalopp>	this means sum_and_multiply(3,4)==3+4==7
+Apr 25 16:55:13 <goncalopp>	so, how can we "skip" one ahead? well, by specifying it's name!
+Apr 25 16:55:35 <goncalopp>	like this
+Apr 25 16:55:49 <goncalopp>	print sum_and_multiply( 1, m=2) == (1+0)*2==2
+Apr 25 16:55:52 <neetismurder>	that was a lot simpler than I expected
+Apr 25 16:56:06 <goncalopp>	:) python keeps simple things simple, generally
+Apr 25 16:56:35 <goncalopp>	ofc, you can assign all arguments by name, even those that aren't optional. also, you can do that out-of-order
+Apr 25 16:57:08 <neetismurder>	now say two arguments have the same name
+Apr 25 16:57:14 <neetismurder>	can you assign them both at once?
+Apr 25 16:57:34 <goncalopp>	I don't think you can have two arguments with the same name.. they'd be the same argument!
+Apr 25 16:57:49 <goncalopp>	SyntaxError: duplicate argument 'b' in function definition
+Apr 25 16:58:00 <neetismurder>	:P
+Apr 25 16:58:07 <goncalopp>	that'd be strange :P
+Apr 25 16:58:23 <goncalopp>	what you *can* do, whatever...
+Apr 25 16:58:38 <goncalopp>	is create a function that will take an arbitrary number of arguments
+Apr 25 16:58:55 <goncalopp>	how? well, python argument passing is implemented... with dictionaries!
+Apr 25 16:59:13 <goncalopp>	so, you can receive all the function arguments in a dict structure!
+Apr 25 17:00:19 <goncalopp>	here you go :)
+Apr 25 17:00:33 <goncalopp>	*args will be a list of all the arguments whose name was not specified
+Apr 25 17:00:47 <goncalopp>	**kwargs will be a dictionary of all named ones
+Apr 25 17:01:05 <goncalopp>	this technique is very powerful
+Apr 25 17:01:20 <goncalopp>	also, you can specify some arguments you want to single out:
+Apr 25 17:01:53 <goncalopp>	if you specify a1 there, it will be given the value of the first argument in the call, and *args will not include it
+Apr 25 17:02:23 <neetismurder>	so what does the asterisk mean?
+Apr 25 17:02:26 <goncalopp>	also "args" and "kwargs" are arbitrary names, what python considers is the * and **
+Apr 25 17:02:50 <goncalopp>	well, that!:P just to show python they are the arguments list / dictionary
+Apr 25 17:03:11 <goncalopp>	you can also read it as "everything else i didn't specify until now"
+Apr 25 17:03:18 <goncalopp>	in the function declaration
+Apr 25 17:03:40 <goncalopp>	this is how the following code works:
+Apr 25 17:04:19 <goncalopp>	locals returns a dictionary with all local variables
+Apr 25 17:04:37 <goncalopp>	since you use **, python will turn that dictionary into format's call arguments :)
+Apr 25 17:05:36 <neetismurder>	I think I see
+Apr 25 17:06:01 <goncalopp>	this takes some time to get used to, but it's a very powerful technique which saves a *lot* of time in many circumstances
+Apr 25 17:06:25 <goncalopp>	it's ok if things are a little fuzzy right not, as always, practice, practice, practice!
+Apr 25 17:06:32 <goncalopp>	*right now
+Apr 25 17:06:43 <neetismurder>	of course :)
+Apr 25 17:07:09 <goncalopp>	I think we're done for today, I gotta go in a minute or two. any questions? :)
+Apr 25 17:07:27 <neetismurder>	not really
+Apr 25 17:08:05 <goncalopp>	ok then :) I'll think of some homework using this. Probably won't say something till tomorrow, though
+Apr 25 17:08:09 <goncalopp>	happy practicing :)

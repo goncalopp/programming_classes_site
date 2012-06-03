@@ -1,0 +1,319 @@
+Apr 29 22:05:28 <goncalopp>	hello everyone
+Apr 29 22:05:33 <neetismurder>	hi
+Apr 29 22:05:46 <goncalopp>	how are you? :)
+Apr 29 22:06:03 <neetismurder>	I'm okay, and you?
+Apr 29 22:06:10 <Anonymous968574>	I'm fine
+Apr 29 22:06:27 <goncalopp>	pretty fine, weekends rule
+Apr 29 22:06:44 <Anonymous968574>	It's already Monday morning here
+Apr 29 22:06:44 <goncalopp>	good to see you again, anon :)
+Apr 29 22:06:56 <goncalopp>	kal-ei, you're there?
+Apr 29 22:07:07 <kal-ei>	yup
+Apr 29 22:07:18 <kal-ei>	hi all
+Apr 29 22:07:26 <neetismurder>	hey
+Apr 29 22:07:28 <goncalopp>	hoa, you're afar from utc, anon
+Apr 29 22:07:50 <Anonymous968574>	Yep, I'm in Australia
+Apr 29 22:08:12 <goncalopp>	I see
+Apr 29 22:08:26 <goncalopp>	Well then, everybody in the pad! :P
+Apr 29 22:08:41 <kal-ei>	link?
+Apr 29 22:09:00 <neetismurder>	http://piratepad.net/kY4rfOA08c
+Apr 29 22:09:01 <goncalopp>	you should have received it when you joined the channel, but here it is
+Apr 29 22:09:08 <goncalopp>	thanks nim :)
+Apr 29 22:09:58 <goncalopp>	We'll be covering OOP today, which, as you might know, stands for Object Oriented Programming
+Apr 29 22:10:38 <goncalopp>	OOP is a programming paradigm that consists in a strict modularization of your code into separate components
+Apr 29 22:11:29 <goncalopp>	generally speaking, this enables you to enable code that is cleaner, more readable, and, most importantly, *reusable*
+Apr 29 22:12:17 <goncalopp>	reusability is very important in programming projects, since you don't want to do something you've done earlier again, in another project
+Apr 29 22:12:55 <goncalopp>	Now, some important concepts in OOP are: classes, object, interfaces and inheritance
+Apr 29 22:13:33 <goncalopp>	python doesn't support interfaces directly, but I'll cover them, since they are a fundamental aspect of OOP
+Apr 29 22:13:46 <goncalopp>	Now, let's start with classes
+Apr 29 22:14:14 <goncalopp>	classes represent a *concept*. Something you can describe in your mind.
+Apr 29 22:15:15 <goncalopp>	Let's say you write a number in a paper. One thing is the lines you've just drawn on the paper - that is a representation. Another, entirely different, is the *concept* of the number you've just written
+Apr 29 22:15:32 <goncalopp>	So, maybe I'll give a IRL example:
+Apr 29 22:16:01 <goncalopp>	this is the simplest class there is
+Apr 29 22:16:16 <goncalopp>	note class names conventionally start with upper case
+Apr 29 22:16:30 <goncalopp>	also, generaly people use the so called Camel casing
+Apr 29 22:16:38 <goncalopp>	ThisIsAnExampleOfCamelCasing
+Apr 29 22:17:09 <goncalopp>	so, if you see a word with a first uppercase character, you know it's a class.
+Apr 29 22:17:36 <goncalopp>	now, classes can have both attributes and functions
+Apr 29 22:17:54 <goncalopp>	attributes are just variables you declarate inside a class
+Apr 29 22:18:26 <goncalopp>	so, a Car would have, for example, a state, which would tell you if the engine's running:
+Apr 29 22:19:18 <goncalopp>	as you can see, __init__ is a function - a particular one, though. __init__ is called when a class is instantiated
+Apr 29 22:19:26 <goncalopp>	we'll get to instantiation in a minute
+Apr 29 22:19:44 <goncalopp>	now, as you can see, the "self" work is the first argument in the class
+Apr 29 22:20:05 <goncalopp>	generally speaking, all class functions must have self as the first argument
+Apr 29 22:20:25 <goncalopp>	self.engine_running declares that same named variable, ofc
+Apr 29 22:20:47 <goncalopp>	so, the Car starts (after instantiation) with the engine stopped
+Apr 29 22:21:06 <goncalopp>	ok, so, what's instantiation? To understand that, we need to know about objects!
+Apr 29 22:21:28 <goncalopp>	objects are a particular instance (materialization) of the class concept 
+Apr 29 22:21:56 <goncalopp>	so, the "Car" concept is a class, but your_car is an object of the Car Class
+Apr 29 22:22:40 <goncalopp>	it's sometimes tricky to separate the two concepts, but always think which one of them is a concept, that should clear it
+Apr 29 22:22:45 <goncalopp>	all good?
+Apr 29 22:23:03 <neetismurder>	yeah
+Apr 29 22:23:04 <Anonymous968574>	is String a class and for example "banana" and object?
+Apr 29 22:23:11 <Anonymous968574>	an object*
+Apr 29 22:24:05 <goncalopp>	that's a tricky question. Strings are a basetype in python. types, in most languages, are very different from objects. In python, however, *everything* is an object, or can be manipulated as such
+Apr 29 22:24:18 <goncalopp>	so, in python, the answer is yes, mostly
+Apr 29 22:24:34 <Anonymous968574>	ok, then I think I get it
+Apr 29 22:24:38 <neetismurder>	so classes are objects too?
+Apr 29 22:24:48 <goncalopp>	erm...
+Apr 29 22:25:25 <goncalopp>	yes....... but let's not go there now,. For now, they're completely different things :) we'll see more on that on the introspection class
+Apr 29 22:26:12 <goncalopp>	truth is, nim, in python, you can define and redefine classes on runtime, and do all sort of very strange advanced stuff
+Apr 29 22:26:46 <goncalopp>	but the point is: you should *never* need it. If you think you need to change a class on runtime, you're doing something very *very* wrong
+Apr 29 22:27:15 <neetismurder>	haha ok
+Apr 29 22:27:30 <goncalopp>	ok then :) instantiation!
+Apr 29 22:27:47 <goncalopp>	this creates the my_car object
+Apr 29 22:28:26 <goncalopp>	don't think that Car is a function - it is not.  Python just uses the same syntax for function call and instantiation.
+Apr 29 22:28:55 <goncalopp>	now that you have my_car, you can access the attributes inside
+Apr 29 22:29:10 <goncalopp>	here's how you'd do it
+Apr 29 22:29:23 <goncalopp>	generally, though, doing so is a bad practice!
+Apr 29 22:29:38 <goncalopp>	why? because it breaks the "principle of encapsulation"
+Apr 29 22:30:13 <goncalopp>	which says: anything external to a class should know *nothing* about the classe's implementation
+Apr 29 22:30:30 <goncalopp>	so, the correct way of doing this would be:
+Apr 29 22:30:58 <goncalopp>	ok?
+Apr 29 22:31:31 <kal-ei>	jup
+Apr 29 22:32:11 <neetismurder>	so you have to reinstantiate my_car or it won't inhererit the new function?
+Apr 29 22:32:56 <goncalopp>	hmm, let's see if I understood that.. my_car is only instatiated once, that's line 7...
+Apr 29 22:33:09 <goncalopp>	all the objects of the class will have the class function's
+Apr 29 22:33:12 <goncalopp>	*functions
+Apr 29 22:33:37 <goncalopp>	since all Car are alike :)
+Apr 29 22:33:55 <Anonymous968574>	does it run __init__ when it's created?
+Apr 29 22:33:56 <neetismurder>	I instantiated it with the first Car class in the interpreter, changed the Car class, and my_car didn't automatically inherit it
+Apr 29 22:34:08 <neetismurder>	I had to reinstantiate it
+Apr 29 22:34:27 <goncalopp>	oh, you mean changing the class implementation *after* instantiation?
+Apr 29 22:34:32 <neetismurder>	yes
+Apr 29 22:34:51 <goncalopp>	that's a big no-no :) never change a class declaration
+Apr 29 22:35:07 <goncalopp>	a concept should be definitive for the whole duration of your program
+Apr 29 22:35:19 <goncalopp>	which is the interpreter lifetime, in your case
+Apr 29 22:35:57 <goncalopp>	In any case, I believe what's happening is that python will maintain a reference to the previous class. It doesn't look it up by name
+Apr 29 22:36:30 <goncalopp>	you can do my_car.__class__==Car to check that, btw
+Apr 29 22:36:36 <goncalopp>	anyway!
+Apr 29 22:36:37 <goncalopp>	:P
+Apr 29 22:36:52 <goncalopp>	all you gentlemen started your engines without problem?:P
+Apr 29 22:37:06 <Anonymous968574>	it gave me an eror
+Apr 29 22:37:07 <Anonymous968574>	TypeError: start_engine() takes no arguments (1 given)
+Apr 29 22:37:11 <neetismurder>	takes no arguments
+Apr 29 22:37:15 <neetismurder>	no parens needed
+Apr 29 22:37:38 <goncalopp>	actually, they are
+Apr 29 22:37:43 <goncalopp>	I forgot the self argument :)
+Apr 29 22:37:50 <goncalopp>	there
+Apr 29 22:38:17 <Anonymous968574>	all good now
+Apr 29 22:38:23 <goncalopp>	ok
+Apr 29 22:38:40 <goncalopp>	let's add acouple more methods
+Apr 29 22:38:50 <goncalopp>	what else should our car state have?
+Apr 29 22:38:54 <neetismurder>	what is <bound method Car.start_engine of <__main__.Car instance at 0x7f03150ecb00>> mean?
+Apr 29 22:39:19 <goncalopp>	that is a function reference :) an object that represents a function
+Apr 29 22:39:40 <goncalopp>	you can actually save a function reference in a variable and call the function: variable()
+Apr 29 22:40:10 <goncalopp>	anywa, what'll we add? speed?
+Apr 29 22:40:34 <goncalopp>	there
+Apr 29 22:42:29 <goncalopp>	everyone get's the code till now?
+Apr 29 22:43:00 <Anonymous968574>	yep
+Apr 29 22:43:11 <kal-ei>	yup
+Apr 29 22:43:47 <neetismurder>	yeah
+Apr 29 22:43:56 <goncalopp>	ok. please notice this: though our class functions have one argument (self), you call them with none. That's because, when you call a object function, python will automatically add the object reference as the first argument to the call
+Apr 29 22:44:15 <goncalopp>	thus, you can use self.something to modify the object's attributes
+Apr 29 22:44:37 <Anonymous968574>	just like when you use argv the first argument is the directory of the file?
+Apr 29 22:44:45 <goncalopp>	now, I said before Car is not a function. However, instantiation *does* call a function, and that is __init__
+Apr 29 22:45:05 <goncalopp>	so, if you specify arguments on __init__, you must specify them on instatiation:
+Apr 29 22:45:28 <goncalopp>	like so
+Apr 29 22:46:03 <goncalopp>	I think that covers classes and objects. can we proceed to interfaces?
+Apr 29 22:46:44 <kal-ei>	this is the most express programming class I have ever seen
+Apr 29 22:46:52 <neetismurder>	wouldn't start_with_engine_running have to be defined?
+Apr 29 22:46:54 <goncalopp>	express as in fast?
+Apr 29 22:47:37 <goncalopp>	nim, it is refined in the function declaration, just as any function argument. it is *not* a object/class attribute
+Apr 29 22:47:37 <neetismurder>	oh it's passed in instantiation, nevermind
+Apr 29 22:47:38 <kal-ei>	yes, but not like can't follow
+Apr 29 22:48:12 <goncalopp>	ok. Let me know if you don't later, I'll slow down
+Apr 29 22:48:43 <goncalopp>	I only cover the very  basic concepts here. you obviously should practice all this after class :) 
+Apr 29 22:49:28 <goncalopp>	or *through* the class, if you can manage that (I'm looking at your introspection explorations, nim :)
+Apr 29 22:49:39 <goncalopp>	ok then! interfaces...
+Apr 29 22:50:04 <kal-ei>	why is my_car= Car( False )
+Apr 29 22:50:21 <Anonymous968574>	because now __init__ takes two arguments
+Apr 29 22:50:34 <Anonymous968574>	in this case my_car and False
+Apr 29 22:50:42 <kal-ei>	ah
+Apr 29 22:50:43 <goncalopp>	Sure enough. self is ignored, so that False is the value of start_with_engine_running
+Apr 29 22:50:50 <kal-ei>	ok
+Apr 29 22:51:19 <goncalopp>	ok, all clear?
+Apr 29 22:51:46 <kal-ei>	yup
+Apr 29 22:51:52 <neetismurder>	y
+Apr 29 22:51:56 <Anonymous968574>	yep
+Apr 29 22:52:06 <goncalopp>	ok
+Apr 29 22:52:30 <goncalopp>	interfaces are a way to specify functionality without specifying implementation
+Apr 29 22:52:42 <goncalopp>	Think of the concept of a Vehicle
+Apr 29 22:52:57 <goncalopp>	All vehicles are able to travel() 
+Apr 29 22:53:20 <goncalopp>	however, a car will do so by spin_wheels(), while a plane will fly()
+Apr 29 22:53:43 <goncalopp>	a Car and a Plane are both  Vehicle though
+Apr 29 22:54:09 <goncalopp>	So, Vehicle is a interface, since it specifies a common functionality without saying anything about to *how* we implement it
+Apr 29 22:55:14 <goncalopp>	you can think of a interface as a kind of C header file, if you're familiar with that
+Apr 29 22:55:39 <goncalopp>	In java, for example, we say that a class *implements* a interface, when it provides all the interface's declared functions
+Apr 29 22:56:30 <goncalopp>	As I said earlier, python has no *direct* support for interfaces; that doesn't mean you shouldn't use them, though
+Apr 29 22:56:57 <goncalopp>	You can fake a interface by using a class with no function implementations, like this:
+Apr 29 22:58:03 <goncalopp>	there
+Apr 29 22:58:25 <goncalopp>	now, how do you say a car implements a interface?
+Apr 29 22:58:27 <neetismurder>	what's the difference between raise and throw?
+Apr 29 22:58:30 <goncalopp>	through inheritance!
+Apr 29 22:58:50 <goncalopp>	inheritance is the capability of classes to *inherit* functionality from other classes
+Apr 29 22:59:13 <goncalopp>	let's say you have a fancy Limousine
+Apr 29 22:59:35 <goncalopp>	that has the serve_coffee() function, or whatever
+Apr 29 23:00:43 <goncalopp>	obviously a Limousine is a Car ! you don't want to write all the car functionality again, it would be a waste of time
+Apr 29 23:01:10 <goncalopp>	So, you say that Limousine is a descendent of Car, thus inheriting all its capabilities
+Apr 29 23:01:12 <goncalopp>	like so:
+Apr 29 23:01:23 <goncalopp>	there :)
+Apr 29 23:01:39 <goncalopp>	now, you can so this:
+Apr 29 23:02:23 <goncalopp>	and it works :)
+Apr 29 23:03:07 <goncalopp>	any questions?
+Apr 29 23:05:06 <kal-ei>	cen you assign functions to other variables like strings too?
+Apr 29 23:05:41 <goncalopp>	hm, you mean, declare a new function to a single string instance?
+Apr 29 23:06:32 <kal-ei>	I guess
+Apr 29 23:07:17 <goncalopp>	the short answer is no. the long answer is: you should be able to do it, if strings were *really* objects
+Apr 29 23:07:28 <goncalopp>	you could, to my_limo, for example
+Apr 29 23:07:29 <kal-ei>	ok
+Apr 29 23:08:01 <kal-ei>	yes, but that's a class object already, not a string
+Apr 29 23:08:04 <goncalopp>	but just don't. Never change the specification of an object. 99.99% of the time, it's a Very Bad Idea (tm)
+Apr 29 23:08:15 <kal-ei>	ok
+Apr 29 23:08:59 <goncalopp>	most of the time, you'd write a function that'd take a string, kal-ei
+Apr 29 23:09:11 <goncalopp>	it really depends on what you want to achieve, though
+Apr 29 23:09:46 <goncalopp>	oh, btw, you can dir() my_limo
+Apr 29 23:09:52 <goncalopp>	etc
+Apr 29 23:10:34 <goncalopp>	ok, let's do a short exercise
+Apr 29 23:10:49 <goncalopp>	I want you to think of Tetris
+Apr 29 23:11:07 <goncalopp>	how'd you implement a game of tetris using OOP?
+Apr 29 23:11:19 <goncalopp>	first, we think about all the concepts involved
+Apr 29 23:11:34 <goncalopp>	there's a lot of them, even for such a (seemingly) simple game
+Apr 29 23:11:45 <goncalopp>	first, obviously, you have the playing field!
+Apr 29 23:12:21 <goncalopp>	then, you have 4(?) different blocks
+Apr 29 23:12:43 <neetismurder>	tetrominos*
+Apr 29 23:12:57 <goncalopp>	sure, tetrominos :P
+Apr 29 23:12:59 <kal-ei>	actually there are 6
+Apr 29 23:13:18 <neetismurder>	I thought there were 7 :P
+Apr 29 23:13:19 <goncalopp>	yes? the square, L, the line, squiggly..? I think that's the original tetris?
+Apr 29 23:13:20 <Anonymous968574>	line, square, T, L, J, squiggly, reverse squiggly
+Apr 29 23:13:31 <neetismurder>	reverse L
+Apr 29 23:13:40 <kal-ei>	or more
+Apr 29 23:13:45 <goncalopp>	ok, wikipedia for me:P
+Apr 29 23:13:58 <goncalopp>	7, sure enough
+Apr 29 23:14:07 <goncalopp>	that's a lot, I'll just do square and line
+Apr 29 23:15:01 <goncalopp>	Now, obviously, the PlayingField must know which tetrominos are inside
+Apr 29 23:15:24 *	kal-ei slaps kal-ei around a bit with a large trout
+Apr 29 23:15:31 <goncalopp>	further, there's always a falling tetromino
+Apr 29 23:15:35 <goncalopp>	o.o
+Apr 29 23:16:00 <goncalopp>	still following, kal-ei? :P
+Apr 29 23:16:02 <Anonymous968574>	should PlayingField have brackets?
+Apr 29 23:16:06 <kal-ei>	yup
+Apr 29 23:16:15 <goncalopp>	oh, sure, thanks
+Apr 29 23:16:29 <goncalopp>	not sure if it needs to...
+Apr 29 23:16:31 <goncalopp>	I'll check
+Apr 29 23:16:39 <kal-ei>	why is there a pass to every line?
+Apr 29 23:17:25 <goncalopp>	We're just defining the functions, so we don't want to think of the implementation yet. however, we must put *something* inside, else it's not a valid program
+Apr 29 23:17:36 <kal-ei>	oh
+Apr 29 23:17:51 <neetismurder>	so it's like a tetris box with no game inside
+Apr 29 23:18:01 <goncalopp>	anyway, brackets are not necessary unless you're inheriting from something
+Apr 29 23:18:19 <goncalopp>	however, it's good practice to always descend from something!
+Apr 29 23:18:40 <goncalopp>	in python, base classes should descend from "object"
+Apr 29 23:18:48 <goncalopp>	object here IS a class
+Apr 29 23:18:55 <goncalopp>	the mother/father of all classes
+Apr 29 23:19:33 <goncalopp>	it's not "an object"!
+Apr 29 23:20:11 <goncalopp>	now, as I was saying, the playing field must know what is the current tetromino falling!
+Apr 29 23:20:42 <goncalopp>	None is a type. It represents "nothing"
+Apr 29 23:21:05 <goncalopp>	it's used as a placeholder until you have a instantiated object to put there
+Apr 29 23:21:38 <goncalopp>	now, what else? tetrominos must have a position...
+Apr 29 23:22:20 <goncalopp>	etc, I don't want to get into implementation details, really
+Apr 29 23:22:37 <goncalopp>	it's just an example of how you'd structure tetris using OOP
+Apr 29 23:23:02 <goncalopp>	now, of course, tetrominos should have turn_left() and turn_right() functions...
+Apr 29 23:23:30 <goncalopp>	there
+Apr 29 23:23:52 <goncalopp>	now, as you can see, Square and Line have no functions and no attributes
+Apr 29 23:23:56 <goncalopp>	so, why are they there?
+Apr 29 23:24:06 <goncalopp>	(give me a moment, I have a call, sorry)
+Apr 29 23:29:41 <goncalopp>	back, sorry about that
+Apr 29 23:30:03 <goncalopp>	anyway, they are there, for now, because we may need to tell them apart
+Apr 29 23:30:09 <goncalopp>	how do we do that?
+Apr 29 23:30:43 <goncalopp>	like so
+Apr 29 23:31:38 <goncalopp>	isinstance( l1, Tetromino) is also True
+Apr 29 23:32:12 <goncalopp>	it might be worthwhile to try   type( l1 ) too :)
+Apr 29 23:32:51 <goncalopp>	experiment with that later with other datatypes to get a sense of the inheritance in python types
+Apr 29 23:33:29 <goncalopp>	str, for example, descends from BaseString, or something like that
+Apr 29 23:33:39 <goncalopp>	as does Unicode
+Apr 29 23:34:00 <goncalopp>	so, you can test if something is text by doing isinstance( something, BaseString)
+Apr 29 23:34:20 <goncalopp>	everything clear?
+Apr 29 23:34:28 <neetismurder>	y
+Apr 29 23:34:30 <Anonymous968574>	yes
+Apr 29 23:34:45 <kal-ei>	y
+Apr 29 23:34:52 <goncalopp>	great!
+Apr 29 23:35:59 <goncalopp>	i think that's it for OOP. Obviously, you need a lot of time and practice to use it proficiently, but these basics should get you going
+Apr 29 23:36:23 <kal-ei>	great!
+Apr 29 23:36:42 <goncalopp>	Homework will be structuring something with OOP :)
+Apr 29 23:36:49 <goncalopp>	Now, I wanted to talk to you guys about the class project
+Apr 29 23:37:03 <kal-ei>	tetris!
+Apr 29 23:37:12 <neetismurder>	rapelay 2!
+Apr 29 23:37:13 <goncalopp>	I wish more people were here, but well
+Apr 29 23:37:21 <Anonymous968574>	is tetris possible in Python?
+Apr 29 23:37:27 *	kal-ei slaps kal-ei around a bit with a large trout
+Apr 29 23:37:38 <goncalopp>	I don't even want to know what that is :P
+Apr 29 23:38:08 <goncalopp>	anything is possible in any turing complete language, which python is. What you want to know is: will it run smoothly?
+Apr 29 23:38:58 <goncalopp>	to which the answer is: absolutely. Many complex games were developed using python. I play Frets On Fire, personally, which is pure python, I believe
+Apr 29 23:39:10 <goncalopp>	tetris, comparatively, is very very simple
+Apr 29 23:39:35 <neetismurder>	renpy is a good example of what python can do graphically as well
+Apr 29 23:39:40 <goncalopp>	however, developing a game requires quite a lot of knowledge about physics and math
+Apr 29 23:40:30 <goncalopp>	didn't know about renpy, looks cool... you feet it strings and images and it does everything else?
+Apr 29 23:40:46 <neetismurder>	well, not exactly
+Apr 29 23:40:56 <neetismurder>	but I guess you could do that if you are an underachiever ;)
+Apr 29 23:41:12 <goncalopp>	:P
+Apr 29 23:42:09 <goncalopp>	now, tetris *should* be feasible without too much fancy equations
+Apr 29 23:42:32 <goncalopp>	rotation should be done using matrix multiplication, really, but one can always do it by hand...
+Apr 29 23:42:53 <goncalopp>	it'll lead to lots of time lost on things that don't really matter, though
+Apr 29 23:43:42 <goncalopp>	nim, I remember you mentioning something about searching and indexing torrents?
+Apr 29 23:43:52 <neetismurder>	yes, I'm going to start that soon
+Apr 29 23:44:31 <goncalopp>	would that be too boring as class project for you guys?
+Apr 29 23:44:32 <kal-ei>	world torrent archive?
+Apr 29 23:44:35 <kal-ei>	neat
+Apr 29 23:44:36 <neetismurder>	a script that autmotically checks and downloads torrent files
+Apr 29 23:45:20 <goncalopp>	we may add some more features on top of that, like auto searching by movie/music discography/music cd/tv series
+Apr 29 23:45:57 <neetismurder>	I think you can pipe it right into rtorrent too
+Apr 29 23:46:03 <neetismurder>	not sure about transmission though
+Apr 29 23:46:16 <goncalopp>	transmission has an http api, i believe
+Apr 29 23:46:48 <goncalopp>	this will be hard on those using windows, though...
+Apr 29 23:46:57 <goncalopp>	I think utorrent also had a web interface?
+Apr 29 23:47:20 <Anonymous968574>	well, I've been planning to get linux for a while...
+Apr 29 23:48:01 <goncalopp>	well, if everyone's on unix, we may be able to pull it off
+Apr 29 23:48:08 <goncalopp>	more ideas?
+Apr 29 23:48:22 <goncalopp>	anything you might want to automate?
+Apr 29 23:48:29 <goncalopp>	maybe a bot to a web game?
+Apr 29 23:48:30 <neetismurder>	how would you do something like a cron job on Windows?
+Apr 29 23:49:07 <goncalopp>	that's very simple, no? you just need a loop that sleeps every second and a couple of ifs
+Apr 29 23:49:14 <goncalopp>	of, sure, a parser for crontab...
+Apr 29 23:49:16 <Anonymous968574>	a bot sounds fun
+Apr 29 23:49:18 <kal-ei>	with windows scheduler?
+Apr 29 23:49:36 <goncalopp>	I'd avoid the windows API like the plague :P
+Apr 29 23:49:46 <neetismurder>	oh so instead of the script exiting you just leave it open and have it sleep?
+Apr 29 23:49:46 <kal-ei>	lol
+Apr 29 23:50:04 <goncalopp>	sure nim, remember cron is a daemon
+Apr 29 23:50:27 <goncalopp>	it runs other scripts as instances, but cron itself is always running
+Apr 29 23:50:35 <neetismurder>	yeah
+Apr 29 23:51:25 <goncalopp>	anyway, i think something with a web api would be great, since they are increasingly important nowadays
+Apr 29 23:51:38 <goncalopp>	maybe we can integrate twitter, or something?
+Apr 29 23:51:56 <neetismurder>	or maybe identi.ca?
+Apr 29 23:52:05 <goncalopp>	fine by me :)
+Apr 29 23:52:17 <goncalopp>	they're apis are the same :)
+Apr 29 23:52:21 <goncalopp>	*their
+Apr 29 23:52:31 <goncalopp>	my english keeps getting better :P
+Apr 29 23:52:56 <neetismurder>	w anything is fine by me
+Apr 29 23:53:28 <neetismurder>	if we all ran *nix I think the torrent snatcher would be pretty small though, maybe not even big enough
+Apr 29 23:54:00 <neetismurder>	and if we didn't, it would probably be too hard, so something else might be better
+Apr 29 23:54:17 <goncalopp>	ok then, I thing torrent are a good start. It is vast enough so everyone can focus on something s/he wants to do, it requires accessing the web, parsing html, some nice abstraction layers with OOP...
+Apr 29 23:54:45 <goncalopp>	I'm not sure about utorrent on windows, but I'll check it
+Apr 29 23:55:11 <goncalopp>	It needn't be too complicated, but we need a exceptionally clean OOP model
+Apr 29 23:55:18 <goncalopp>	so we don't run into each other's toes
+Apr 29 23:55:30 <goncalopp>	since the idea is to have everyone do a part of the project! :)
+Apr 29 23:56:20 <kal-ei>	great!
+Apr 29 23:56:25 <kal-ei>	in that case, good night
+Apr 29 23:56:32 <kal-ei>	(or morning..)
+Apr 29 23:56:36 <goncalopp>	unless you prefer individual work:P but doing it as a group will ensure you develop communication skills, as well as reading each others code :)
+Apr 29 23:56:52 <goncalopp>	also, I'll give a class on revision control
+Apr 29 23:57:10 <neetismurder>	so we will be able to do it on github maybe?
+Apr 29 23:57:23 <neetismurder>	take care kal-ei
+Apr 29 23:57:45 <kal-ei>	bye
+Apr 29 23:57:48 <Anonymous968574>	cya
+Apr 29 23:57:48 <goncalopp>	good nigth kal-ei :)
+Apr 29 23:57:52 *	kal-ei has quit ()
+Apr 29 23:58:13 <goncalopp>	I was thinking of github, yes, since it allows everyone to have a fork and contribute back cleanly and openly
+Apr 29 23:58:59 <goncalopp>	we could also go with mercurial, but then I'd need to learn it first :P
+Apr 29 23:59:20 <Anonymous968574>	bye everyone
+Apr 29 23:59:26 <goncalopp>	I think git will do very well though

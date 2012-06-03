@@ -1,0 +1,536 @@
+Apr 15 16:00:48 *	nick (~androirc@184.151.114.159) has joined ##programming-classes
+Apr 15 16:01:05 <goncalopp>	So, lot's of people still missing
+Apr 15 16:01:14 *	nick is now known as Guest11183
+Apr 15 16:01:28 <nicck>	6 is pretty good
+Apr 15 16:01:58 <goncalopp>	yes, but I wonder if I scheduled this in a hurry
+Apr 15 16:02:01 <Zeta_Labda>	all from /g/
+Apr 15 16:02:03 <Zeta_Labda>	?
+Apr 15 16:02:04 <goncalopp>	let's see
+Apr 15 16:02:09 <goncalopp>	so far, yes
+Apr 15 16:02:27 <Suhteevah>	brb
+Apr 15 16:02:46 <goncalopp>	ok
+Apr 15 16:02:59 <goncalopp>	Guest11183, you may want to get a username :)
+Apr 15 16:03:24 <goncalopp>	kal-ei, you're kali great?
+Apr 15 16:05:34 *	Guest11183 has quit (Ping timeout: 245 seconds)
+Apr 15 16:07:10 <nicck>	I'll admit, it was a little fast
+Apr 15 16:07:22 <nicck>	I like a bit of notice, but it worked out okay
+Apr 15 16:07:35 <nicck>	NiM should be around though, hes just a neet
+Apr 15 16:08:11 <goncalopp>	:dunno, didn't hear from him today. This is just the very basics anyway
+Apr 15 16:08:19 <nicck>	guess so
+Apr 15 16:08:26 <nicck>	Are we starting?
+Apr 15 16:08:47 <goncalopp>	yes, doesn't seem like anyones late
+Apr 15 16:09:11 <goncalopp>	anyone here who doesn't have python 2.X installed or an editor?
+Apr 15 16:09:37 <goncalopp>	by editor I mean something like Notepad++, if you're on windows
+Apr 15 16:10:39 <goncalopp>	I'll assume not by the silence
+Apr 15 16:10:55 <goncalopp>	so, everyone, fire up your editor and your command line
+Apr 15 16:11:05 <goncalopp>	and join the pad here http://piratepad.net/0H0xCzlO3w
+Apr 15 16:11:29 <goncalopp>	please do NOT use the pad for chatting, since I'm logging the class for the students who couldn't be here at this time
+Apr 15 16:11:54 <goncalopp>	make sure you have screen space to see both the pad and irc
+Apr 15 16:12:12 <Zeta_Labda>	wait gotta download an editor
+Apr 15 16:12:28 <goncalopp>	Go ahead, Zeta
+Apr 15 16:13:00 <goncalopp>	Meanwhile, I want everyone to type this in their editor (see pad)
+Apr 15 16:13:24 <goncalopp>	and try to run it
+Apr 15 16:13:42 <goncalopp>	any questions, ask. report the results, so I know we can proceed safely
+Apr 15 16:14:14 <nicck>	ofc it works
+Apr 15 16:14:20 <Josip>	:)
+Apr 15 16:15:00 <goncalopp>	:) unless anyone has something seriously wrong with their python installation - seems not
+Apr 15 16:15:35 <goncalopp>	kali, sativa, everything's running?
+Apr 15 16:15:45 <Suhteevah>	for sure
+Apr 15 16:16:13 <nicck>	Are they afk?
+Apr 15 16:16:20 <goncalopp>	Kali seems so
+Apr 15 16:16:37 <kal-ei>	yup
+Apr 15 16:16:38 <Suhteevah>	I'll speak up if I run afoul lol
+Apr 15 16:16:46 <goncalopp>	ok, then :)
+Apr 15 16:16:52 <goncalopp>	second program
+Apr 15 16:17:06 <goncalopp>	try it
+Apr 15 16:17:20 <goncalopp>	as you can see, instructions are executed in order, up to down
+Apr 15 16:17:44 <goncalopp>	if you wanted to print something in the same line, you could use this:
+Apr 15 16:18:07 <goncalopp>	that way, python separates the words by spaces
+Apr 15 16:18:25 <goncalopp>	anything between quotes ("") is called a string
+Apr 15 16:18:42 <Zeta_Labda>	bleh Ninja-IDE downloads are offline, IDLE is fine for the moment right?
+Apr 15 16:18:47 <goncalopp>	you can think of a string as an ordered sequence of characters
+Apr 15 16:19:03 <goncalopp>	IDLE is more than enough, Zeta
+Apr 15 16:19:10 <goncalopp>	Actually, overkill, IMHO
+Apr 15 16:19:16 <Zeta_Labda>	eh?
+Apr 15 16:19:44 <goncalopp>	nvm, python's idle is ok
+Apr 15 16:19:58 <goncalopp>	you managed to run the examples?
+Apr 15 16:20:28 *	Guest11183 (~androirc@184.151.114.80) has joined ##programming-classes
+Apr 15 16:20:46 <goncalopp>	anyway, zeta, any problem PM me
+Apr 15 16:21:02 <Zeta_Labda>	yea, example runs fine
+Apr 15 16:21:10 <goncalopp>	As I was saying, a string is a sequence of characters
+Apr 15 16:21:25 <goncalopp>	A string is what a programmer call a "type"
+Apr 15 16:21:42 <goncalopp>	another types are: integer, float, list
+Apr 15 16:21:57 <goncalopp>	for example, the number 1 is a integer
+Apr 15 16:22:08 <goncalopp>	3.14 would be a float
+Apr 15 16:22:11 <Zeta_Labda>	data types, right?
+Apr 15 16:22:24 <goncalopp>	and a list is just as you think, a list of other types
+Apr 15 16:22:27 <goncalopp>	data types, yes
+Apr 15 16:22:58 <goncalopp>	Another useful concept in programming is a "variable"
+Apr 15 16:23:04 <Zeta_Labda>	is a list an data type, or actually a list that holds data types?
+Apr 15 16:23:18 <goncalopp>	A list is a data type by itself
+Apr 15 16:23:25 <goncalopp>	also, it holds other data types
+Apr 15 16:23:26 <Zeta_Labda>	okay
+Apr 15 16:23:30 <goncalopp>	it'll become clear in a moment
+Apr 15 16:23:46 <goncalopp>	a variable is something that holds a *value*
+Apr 15 16:24:18 <goncalopp>	you may be used to the term (variable) from high school math
+Apr 15 16:24:24 <goncalopp>	even before, maybe
+Apr 15 16:24:34 <goncalopp>	it's more or less the same thing in programming
+Apr 15 16:24:37 <Zeta_Labda>	yea
+Apr 15 16:25:01 <goncalopp>	this statement (see pad) assigns the value 1 to the variable x
+Apr 15 16:25:07 <Suhteevah>	are we logging the irc btw?
+Apr 15 16:25:17 <goncalopp>	the variable is "created" as soon as you assign a value to it
+Apr 15 16:25:28 <goncalopp>	Yes Zeta, I am, as stated
+Apr 15 16:25:41 <goncalopp>	*sativa, sorry
+Apr 15 16:25:43 <Zeta_Labda>	err..what?
+Apr 15 16:25:46 <Zeta_Labda>	oh alright
+Apr 15 16:25:50 <Suhteevah>	k lol
+Apr 15 16:25:54 <Suhteevah>	just checkin ;)
+Apr 15 16:26:03 <goncalopp>	anyway, I'll show you how to print a variable
+Apr 15 16:26:13 <goncalopp>	try the program as is
+Apr 15 16:26:13 <Zeta_Labda>	the value is stored in the computers memory?
+Apr 15 16:26:14 <nicck>	Just curious, by why for "x=1" is it that and not "x==1"?
+Apr 15 16:26:45 <goncalopp>	x=1 is an assignment, an operation. x==1 is a condition, an evaluation.
+Apr 15 16:26:53 <goncalopp>	x==1 DOES nothing
+Apr 15 16:27:20 <goncalopp>	yes Zeta, it's stored in RAM
+Apr 15 16:27:24 <nicck>	gotcha, x==1 is for evaluating, = is for assigning
+Apr 15 16:27:43 <goncalopp>	anything that you declare takes up space in RAM
+Apr 15 16:28:00 <goncalopp>	if you need to declare a zillion numbers, you may run out of it
+Apr 15 16:28:11 <goncalopp>	but let's worry about that later
+Apr 15 16:28:23 <goncalopp>	anyone dare to show how to print 2? :P
+Apr 15 16:28:38 <Suhteevah>	the number 2 or two different variables?
+Apr 15 16:28:56 <goncalopp>	2, in a vriable like x
+Apr 15 16:29:10 <goncalopp>	sure thing
+Apr 15 16:29:16 <goncalopp>	what if I wanted to reuse x?
+Apr 15 16:29:54 <Suhteevah>	descriptive variables, if i do say so myself
+Apr 15 16:29:56 <goncalopp>	no niggers please, nick, you might offend someone, even /g/ :P
+Apr 15 16:30:11 <Zeta_Labda>	hehe
+Apr 15 16:30:30 <goncalopp>	all's good
+Apr 15 16:30:54 <goncalopp>	so, any further assignement to x, makes the previous value go away
+Apr 15 16:31:13 <goncalopp>	also, you can do simple arithmetic
+Apr 15 16:31:23 <goncalopp>	as nick showed
+Apr 15 16:31:39 <kal-ei>	how do I run this from a text file, like in notepad++?
+Apr 15 16:31:48 <goncalopp>	further, you can use your variable as part of that arithmetic
+Apr 15 16:31:51 <goncalopp>	like this
+Apr 15 16:32:00 <nicck>	open up CMD and type 'python' kalei
+Apr 15 16:32:04 <Zeta_Labda>	ah
+Apr 15 16:32:07 <nicck>	see if anything happens
+Apr 15 16:32:28 <goncalopp>	nicck, kal-ei, mind to PM?
+Apr 15 16:32:33 <kal-ei>	command not reckognized
+Apr 15 16:32:47 <nicck>	Sure. Would line 14 use x from line 10?
+Apr 15 16:32:57 <Suhteevah>	yeh pretty sure
+Apr 15 16:33:30 <goncalopp>	yup
+Apr 15 16:33:49 <goncalopp>	atm, let's consider that a variable is the same anywhere it's declared
+Apr 15 16:34:48 <goncalopp>	are we done playing? :)
+Apr 15 16:35:21 <goncalopp>	I want to show you guys something that may seems strange
+Apr 15 16:35:47 <Zeta_Labda>	yes
+Apr 15 16:35:55 <goncalopp>	what do you think this does?
+Apr 15 16:36:10 <goncalopp>	"/" is division, btw
+Apr 15 16:36:15 <Zeta_Labda>	print 1.5
+Apr 15 16:36:19 <Zeta_Labda>	basically
+Apr 15 16:36:21 <Suhteevah>	divides 3 by 2, but you get one because you didnt give floating points
+Apr 15 16:36:27 <Zeta_Labda>	ah
+Apr 15 16:36:30 <goncalopp>	exactly
+Apr 15 16:36:41 <goncalopp>	python sees this as such
+Apr 15 16:36:48 <goncalopp>	3 is a integer, 2 is a integer
+Apr 15 16:37:00 <goncalopp>	the result of a  division of 2 integers is another integer
+Apr 15 16:37:10 <goncalopp>	so, 3/2==1, not 1.5
+Apr 15 16:37:33 <goncalopp>	ways around it:
+Apr 15 16:38:14 <Suhteevah>	damn, i only knew about the third example lol...
+Apr 15 16:38:21 <goncalopp>	this last one doesn't work, anyone can explain why?
+Apr 15 16:38:40 <goncalopp>	that's why it's called a class :D
+Apr 15 16:38:51 <Suhteevah>	lol, and i have no clue
+Apr 15 16:39:04 <goncalopp>	ok then
+Apr 15 16:39:15 <goncalopp>	python, as any language, has something called operator precedence
+Apr 15 16:40:02 <goncalopp>	that means 1+1*2 is 3, not 4, since multiplication has precedence 
+Apr 15 16:40:12 <goncalopp>	same here
+Apr 15 16:40:32 <goncalopp>	evaluating "float( 3/2 )" will evaluate 3/2 first
+Apr 15 16:41:11 <Josip>	can we change that order somehow?
+Apr 15 16:41:14 <Zeta_Labda>	so float(3)/2 will evaluate 3 first
+Apr 15 16:41:19 <nicck>	hold up, 1+1*2 would be 4
+Apr 15 16:41:24 <nicck>	nvm
+Apr 15 16:41:26 <nicck>	my bad
+Apr 15 16:41:27 <Zeta_Labda>	and evaluate it as 3.0?
+Apr 15 16:41:38 <goncalopp>	that's ok nicck
+Apr 15 16:41:42 <goncalopp>	yes zeta
+Apr 15 16:41:58 <goncalopp>	float( 3/2) == float( 1 ) == 1.0
+Apr 15 16:42:01 <goncalopp>	not 3.0
+Apr 15 16:42:17 <Zeta_Labda>	so it´s based on basic math, everything in parenthesis should be looked at first
+Apr 15 16:42:31 <goncalopp>	yes
+Apr 15 16:42:42 <Zeta_Labda>	I ment that float(3) will return 3.0
+Apr 15 16:42:44 <goncalopp>	you can do (1+1)*2, and that's == 4
+Apr 15 16:42:55 <goncalopp>	oh, sure
+Apr 15 16:43:19 <goncalopp>	but there, this is getting pretty technical
+Apr 15 16:43:24 <goncalopp>	let's do something practical
+Apr 15 16:43:36 <goncalopp>	anyone up to doing an EUR USD converted?
+Apr 15 16:43:39 <goncalopp>	*converter
+Apr 15 16:43:49 <Zeta_Labda>	what´s the exchange rate?
+Apr 15 16:43:58 <goncalopp>	today's, let's see..
+Apr 15 16:43:58 <nicck>	How about a time zone converter...
+Apr 15 16:44:09 <Zeta_Labda>	damn I´m so bad with timezones
+Apr 15 16:44:14 <Zeta_Labda>	GMT should be everywhere imo
+Apr 15 16:44:17 <Suhteevah>	lol
+Apr 15 16:44:28 <goncalopp>	lol nicck, it'd be interesting, but dealing with time is really some lessons ahead
+Apr 15 16:45:05 <Suhteevah>	1 euro = 1.3076 US dollars
+Apr 15 16:45:08 <Zeta_Labda>	does raw_input still exists?
+Apr 15 16:45:28 <goncalopp>	yes, but don't worry about I/O now, just hardcode everything
+Apr 15 16:45:55 <Zeta_Labda>	err let´s see
+Apr 15 16:47:29 <nicck>	how do you ask a user to define a variable again?
+Apr 15 16:47:50 <goncalopp>	that's I/O (input / output) business, we'll get to that
+Apr 15 16:48:05 <Zeta_Labda>	input() or raw_input() from the top of my head
+Apr 15 16:48:48 <goncalopp>	raw_input() in 2.X, yes
+Apr 15 16:48:52 <goncalopp>	input() in 3
+Apr 15 16:49:06 <goncalopp>	don't worry too much about it though
+Apr 15 16:49:16 <goncalopp>	ok, everyone understands  the program so far?
+Apr 15 16:49:34 <Josip>	sure
+Apr 15 16:49:50 <goncalopp>	ok then, we're ready for... functions :D
+Apr 15 16:49:54 <Zeta_Labda>	ah yes
+Apr 15 16:49:59 <Zeta_Labda>	not I/O?
+Apr 15 16:50:19 <goncalopp>	well. we can do I/O, really, if everyone prefers
+Apr 15 16:50:35 <goncalopp>	ok, sure, I/O's useful
+Apr 15 16:50:41 <goncalopp>	and easy enough
+Apr 15 16:51:24 <goncalopp>	here you go
+Apr 15 16:51:39 <goncalopp>	notice the comma in the end of the first print
+Apr 15 16:52:02 <goncalopp>	that stops python from changing lines
+Apr 15 16:52:33 <Zeta_Labda>	what types of arguments does raw_input accept?
+Apr 15 16:52:48 <goncalopp>	none that I know of...
+Apr 15 16:53:05 <goncalopp>	raw_input just returns whatever the user types
+Apr 15 16:53:14 <goncalopp>	as a string! this is important
+Apr 15 16:53:23 <goncalopp>	the program, as is, probably fails
+Apr 15 16:53:25 <goncalopp>	right?
+Apr 15 16:53:29 *	Guest11183 has quit (Ping timeout: 245 seconds)
+Apr 15 16:53:31 <Josip>	yup
+Apr 15 16:53:48 <Suhteevah>	yeh
+Apr 15 16:53:56 <Josip>	input is string
+Apr 15 16:54:08 <goncalopp>	that's because you cannot multiply a string. you can only multiply numbers
+Apr 15 16:54:19 <goncalopp>	that is, integers, floats
+Apr 15 16:54:36 <goncalopp>	so, you need to convert the string you received from the user into a float
+Apr 15 16:54:52 <goncalopp>	btw, this is how you make comments in code:
+Apr 15 16:54:56 <Zeta_Labda>	#
+Apr 15 16:55:43 <goncalopp>	and sure enough, it works now:P
+Apr 15 16:56:12 <goncalopp>	btw, do try to input something other than a number
+Apr 15 16:56:33 <Suhteevah>	could not convert string to float
+Apr 15 16:57:16 <goncalopp>	yup
+Apr 15 16:57:16 <nicck>	problem
+Apr 15 16:57:33 <nicck>	our conversion factor is for eur to usd
+Apr 15 16:57:41 <goncalopp>	that's the kind of thing you need to take into consideration when you deal with I/O
+Apr 15 16:57:53 <goncalopp>	yes, nicck, what about it?
+Apr 15 16:58:14 <goncalopp>	if you put the inverse there, you need to change the operation to be multiplication instead
+Apr 15 16:58:14 <nicck>	if we want to convert USD->EUR
+Apr 15 16:58:18 <goncalopp>	oh
+Apr 15 16:58:21 <goncalopp>	you see
+Apr 15 16:58:37 <goncalopp>	eur_usd_rate= 1 / usd_eur_rate
+Apr 15 16:58:40 <goncalopp>	that's basic math
+Apr 15 16:58:49 <goncalopp>	also the reverse is true
+Apr 15 16:59:25 <nicck>	yea
+Apr 15 16:59:27 <goncalopp>	so, by switching from division to multiplication in line 10, it works in reverse
+Apr 15 16:59:40 <nicck>	or just switching line 1
+Apr 15 16:59:56 <goncalopp>	sure
+Apr 15 17:00:15 <goncalopp>	though I think 0.76 is the amount of eur in a usd?
+Apr 15 17:00:38 <goncalopp>	I mean, amount of usd in a eur
+Apr 15 17:00:45 <goncalopp>	this gets confusing
+Apr 15 17:00:50 <Suhteevah>	lol
+Apr 15 17:00:58 <nicck>	if you have 100usd, you'll have about 130eur
+Apr 15 17:01:08 <goncalopp>	yes, 1 eur = 1.3 usd
+Apr 15 17:01:15 <Zeta_Labda>	0.076 -> from usd to eur
+Apr 15 17:01:28 <Suhteevah>	o.o, you mean .76!
+Apr 15 17:01:48 <Zeta_Labda>	haha, yes small mistake
+Apr 15 17:01:56 <Zeta_Labda>	´small´
+Apr 15 17:01:59 <Suhteevah>	:P, only get 7 pennys per $
+Apr 15 17:02:00 <Suhteevah>	hahaha
+Apr 15 17:02:13 <goncalopp>	I wouldn't go to that bank
+Apr 15 17:02:18 <Suhteevah>	lol
+Apr 15 17:02:37 <goncalopp>	anyway, don't worry too much about that people
+Apr 15 17:03:02 <nicck>	I took us off track, sorry
+Apr 15 17:03:04 <goncalopp>	one thing: are you guys comfortable with doing may one more hour of this?
+Apr 15 17:03:25 <goncalopp>	*maybe
+Apr 15 17:03:25 <Suhteevah>	im fine
+Apr 15 17:03:25 <nicck>	Erm, I haev to go to work in 2 hours
+Apr 15 17:03:32 <nicck>	So I can fit in another
+Apr 15 17:03:44 <Josip>	fine
+Apr 15 17:04:31 <goncalopp>	ok then
+Apr 15 17:04:39 <goncalopp>	let's introduce functions!
+Apr 15 17:04:50 <goncalopp>	functions are, again, just like highschool math
+Apr 15 17:04:59 <goncalopp>	in goes something, out goes another
+Apr 15 17:05:20 <goncalopp>	anyone not comfortable with high school math?
+Apr 15 17:05:35 <goncalopp>	if I say something like f(x)= x+1  , is that ok?
+Apr 15 17:05:48 <Josip>	ok
+Apr 15 17:05:49 <Suhteevah>	im ok
+Apr 15 17:05:56 <nicck>	ytea
+Apr 15 17:06:01 <goncalopp>	great
+Apr 15 17:06:05 <Zeta_Labda>	yes
+Apr 15 17:06:15 <goncalopp>	so, taking that f(x)= x+1 function and writing it in python:
+Apr 15 17:06:33 <goncalopp>	that's it
+Apr 15 17:06:57 <goncalopp>	"print f(1)" would evaluate to "print 2"
+Apr 15 17:07:15 <nicck>	gotcha
+Apr 15 17:07:23 <Zeta_Labda>	so far so good
+Apr 15 17:07:27 <goncalopp>	the x in f(x) is called a function  "argument"
+Apr 15 17:07:48 <goncalopp>	and the value that the function gives you is the "return value"
+Apr 15 17:08:02 <goncalopp>	or, colloquially, the "output of the function"
+Apr 15 17:08:16 <goncalopp>	a function can have more than one argument:
+Apr 15 17:08:37 <goncalopp>	like this
+Apr 15 17:08:41 <goncalopp>	oh, one detail
+Apr 15 17:09:02 <goncalopp>	whatever name of the arguments, they DO NOT conflict with other existing variables
+Apr 15 17:09:36 <nicck>	Thats what I was wondering, if we defined x earlier, it wouldn't use that definition in the function, would it?
+Apr 15 17:09:38 <goncalopp>	so, inside the "f" function there, the "x" has NOTHING to do with all the other x in the program
+Apr 15 17:09:44 <goncalopp>	it takes the value of the argument
+Apr 15 17:09:48 <nicck>	gotcha
+Apr 15 17:09:49 <goncalopp>	nope
+Apr 15 17:10:01 <goncalopp>	that's because a function is evaluated in "a different scope"
+Apr 15 17:10:27 <goncalopp>	let's practice a bit
+Apr 15 17:10:51 <goncalopp>	this one is tricky :) anyone dare predict it?
+Apr 15 17:10:58 <Zeta_Labda>	global scope and local scope right?>
+Apr 15 17:11:15 <nicck>	2?
+Apr 15 17:11:17 <goncalopp>	yes. local scope is, generally, the smaller one, such as in a function.
+Apr 15 17:11:17 <Zeta_Labda>	2
+Apr 15 17:11:29 <goncalopp>	yes, 2. everyone understands why?
+Apr 15 17:11:31 <Zeta_Labda>	you showed that function
+Apr 15 17:11:39 <Zeta_Labda>	you said it earlier
+Apr 15 17:11:57 <Zeta_Labda>	<goncalopp> "print f(1)" would evaluate to "print 2"
+Apr 15 17:12:12 <goncalopp>	sure thing
+Apr 15 17:12:22 <goncalopp>	what's to note here is the flow:
+Apr 15 17:12:32 <goncalopp>	first, x is defined as being 1
+Apr 15 17:12:54 <goncalopp>	second, a function called f is defined. Whatever happens inside, we do not care, for now
+Apr 15 17:13:03 <goncalopp>	then, we print f(x)
+Apr 15 17:13:09 <goncalopp>	which evaluates f(x)
+Apr 15 17:13:23 <goncalopp>	so we take the known value for x, which is 1
+Apr 15 17:13:29 <goncalopp>	and evaluate f(1)
+Apr 15 17:13:37 <goncalopp>	so far so good?
+Apr 15 17:13:41 <Suhteevah>	mm
+Apr 15 17:13:49 <Zeta_Labda>	yea
+Apr 15 17:14:04 <nicck>	mmhmm
+Apr 15 17:14:08 <goncalopp>	suhteevah, not too sure?
+Apr 15 17:14:19 <Suhteevah>	nah im fine lol
+Apr 15 17:14:25 <goncalopp>	ok
+Apr 15 17:14:31 <goncalopp>	this is something you get with practice, too
+Apr 15 17:14:50 <Suhteevah>	like i said i'll speak up if i don't understand something, I have been writing these down in geany and running them too btw
+Apr 15 17:15:03 <goncalopp>	that's great
+Apr 15 17:15:11 <goncalopp>	(geany is awesome, btw :D)
+Apr 15 17:15:15 <Suhteevah>	ikr :D
+Apr 15 17:15:21 <goncalopp>	(sorry the offtopic:P )
+Apr 15 17:15:29 <Zeta_Labda>	nah
+Apr 15 17:15:29 <goncalopp>	so, let's rewrite our conversion program using a function
+Apr 15 17:15:34 <nicck>	Could you give us a sample problem and a few minutes to solve it using everything we did so far?
+Apr 15 17:15:40 <nicck>	or that, bet me too it
+Apr 15 17:16:11 <goncalopp>	sure thing :) I was thinking of showing it to you guys, but that's a much better idea
+Apr 15 17:16:34 <nicck>	colaberate or individual?
+Apr 15 17:16:36 <goncalopp>	everyone try to get the converter with a function
+Apr 15 17:16:45 <goncalopp>	individual at this point is probably better
+Apr 15 17:16:50 <nicck>	kk
+Apr 15 17:17:04 <goncalopp>	you can email me the solutions, if that's easier
+Apr 15 17:20:07 <Zeta_Labda>	I´ll try the conversion program
+Apr 15 17:20:47 <Zeta_Labda>	err
+Apr 15 17:20:51 <nicck>	almost done mine
+Apr 15 17:21:08 <Zeta_Labda>	I think you skipped program flow, (if and or operators etc.
+Apr 15 17:21:23 <Zeta_Labda>	it would come handy with the conversion program I think
+Apr 15 17:21:27 <goncalopp>	yea, I did
+Apr 15 17:21:45 <goncalopp>	you can do basic flow with functions, but we won't go there really, too complicated
+Apr 15 17:21:58 <goncalopp>	I'll introduce flow and cycles next
+Apr 15 17:22:07 <nicck>	could you show me the f(x) notation one more time
+Apr 15 17:23:01 <goncalopp>	there
+Apr 15 17:23:09 <nicck>	thanks
+Apr 15 17:23:13 <nicck>	just spicing it up now
+Apr 15 17:25:00 <goncalopp>	anyone having specific trouble, just PM me
+Apr 15 17:25:10 <nicck>	Want me to paste my code?
+Apr 15 17:25:50 <Suhteevah>	mines fucked up, maybe we could go through mine first and point out all the shit i did wrong lol?
+Apr 15 17:26:05 <goncalopp>	that's ok, we'll go through everyone's code
+Apr 15 17:26:09 <nicck>	There is what I got
+Apr 15 17:26:14 <goncalopp>	starting with nick >.<
+Apr 15 17:26:23 <goncalopp>	ok, let's see
+Apr 15 17:26:28 <Suhteevah>	i like the prints
+Apr 15 17:26:30 <Suhteevah>	just saiyan
+Apr 15 17:26:49 <goncalopp>	yeah, you have an esoteric style, nick :P
+Apr 15 17:27:24 <nicck>	Think you'll want me helping you still? :P
+Apr 15 17:27:33 <goncalopp>	seems to be spot on
+Apr 15 17:28:00 <goncalopp>	you can condense the last three prints into one
+Apr 15 17:28:25 <goncalopp>	like this
+Apr 15 17:28:34 <nicck>	I see I see
+Apr 15 17:28:46 <goncalopp>	not that it makes a difference, really :P
+Apr 15 17:28:48 <goncalopp>	well done
+Apr 15 17:29:13 <goncalopp>	ok kali, here we go
+Apr 15 17:29:48 <goncalopp>	you inverted USD/EUR, but who cares really:P
+Apr 15 17:30:05 <goncalopp>	whatever way is fine
+Apr 15 17:30:06 <Suhteevah>	just need to swap the .76 to 1.3 right?
+Apr 15 17:30:09 <goncalopp>	as long as it's correct
+Apr 15 17:30:20 <nicck>	I dont get line 5
+Apr 15 17:30:21 <goncalopp>	no, I meant the order, only
+Apr 15 17:30:26 <Suhteevah>	oh
+Apr 15 17:30:47 <goncalopp>	the clculation is correct, i think
+Apr 15 17:30:48 <Suhteevah>	its making the string an int right?
+Apr 15 17:30:57 <Suhteevah>	line 5 that is
+Apr 15 17:30:59 <goncalopp>	line 5 is indeed redundant
+Apr 15 17:31:04 <Suhteevah>	oh ok
+Apr 15 17:31:17 <goncalopp>	does nothing except declare "dollars"
+Apr 15 17:31:32 <goncalopp>	which is useless at this point, but doesn't hurt
+Apr 15 17:31:45 <nicck>	Thats what I thought, because that variable wasn't called into play yet, wondering if I missed something
+Apr 15 17:31:46 <goncalopp>	what I want everyone to focus on is kali's function
+Apr 15 17:31:59 <goncalopp>	which is pretty much correct, functionality wise
+Apr 15 17:32:18 <goncalopp>	however, it's  a big no-no in programming
+Apr 15 17:32:30 <goncalopp>	Which i forgot to tell you about, my fault, really:P
+Apr 15 17:32:51 <goncalopp>	NEVER, EVER, use ANYTHING inside a function that is not an argument
+Apr 15 17:33:03 <goncalopp>	you can declare new things, sure, but don't use existing ones
+Apr 15 17:33:08 <Zeta_Labda>	alright done
+Apr 15 17:33:16 <kal-ei>	why?
+Apr 15 17:33:42 <Zeta_Labda>	originally I had done an eur/usd and an usd/eur converter but I kinda got stuck with the if statements
+Apr 15 17:33:44 <goncalopp>	it's complicated to explain at this level, but it makes your programs absolutely impossible to debug
+Apr 15 17:33:59 <goncalopp>	debug means "correct if they're wrong", something like that
+Apr 15 17:34:16 <goncalopp>	so, kali
+Apr 15 17:34:23 <goncalopp>	if the function is f(x)
+Apr 15 17:34:33 <goncalopp>	you should only use x inside
+Apr 15 17:34:54 <goncalopp>	everything else, the function should not know about
+Apr 15 17:35:03 <goncalopp>	that's called the principle of containment
+Apr 15 17:35:22 <goncalopp>	i believe, sorry, i'm not native english, if you didn't notice:P
+Apr 15 17:35:40 <Zeta_Labda>	Wasn´t it about scope?
+Apr 15 17:35:45 <kal-ei>	ok
+Apr 15 17:35:48 <kal-ei>	np
+Apr 15 17:36:01 <Zeta_Labda>	also goncalopp; is mine okay?
+Apr 15 17:36:13 <goncalopp>	somewhat zeta. truth is, "euros" is in f(x) scope, f can use it, but shouldn't
+Apr 15 17:36:24 <goncalopp>	since it's outside *local* scope
+Apr 15 17:36:35 <Zeta_Labda>	but it needs an argument ?
+Apr 15 17:36:54 <goncalopp>	kal-ei, try to redo your version with this in mind, if you want I'll check it later
+Apr 15 17:37:22 <goncalopp>	you're asking if a function needs an argument?
+Apr 15 17:37:36 <goncalopp>	in general?
+Apr 15 17:37:48 <Zeta_Labda>	well yeah, but eur_to_usd needs an argument too right?
+Apr 15 17:38:09 <goncalopp>	yes, eur_to_usd needs the eur argument
+Apr 15 17:38:22 <goncalopp>	usd_to_eur would have usd as it's argument
+Apr 15 17:38:25 <goncalopp>	*its
+Apr 15 17:38:46 <Zeta_Labda>	yes I had both of them in one of my drafts
+Apr 15 17:38:59 <goncalopp>	i see
+Apr 15 17:39:13 <goncalopp>	ok, i'm trying to wrap my head around those float()..
+Apr 15 17:39:29 <goncalopp>	float(exchange_rate) in the function is redundant
+Apr 15 17:39:44 <Zeta_Labda>	without it, I´ll get an error
+Apr 15 17:39:44 <goncalopp>	as you declare it as 1.3076, it's already a float
+Apr 15 17:39:49 <goncalopp>	really?
+Apr 15 17:39:53 <Zeta_Labda>	yea
+Apr 15 17:39:54 <goncalopp>	let's see
+Apr 15 17:40:15 <goncalopp>	hoa, something seriously wrong here
+Apr 15 17:40:16 <Zeta_Labda>	ah no
+Apr 15 17:40:18 <Zeta_Labda>	seems not
+Apr 15 17:40:39 <goncalopp>	it's giving "None" s a result here
+Apr 15 17:40:47 <goncalopp>	because you failed to return a value
+Apr 15 17:40:49 <goncalopp>	line 3
+Apr 15 17:40:50 <goncalopp>	*4
+Apr 15 17:40:56 <goncalopp>	you must return something
+Apr 15 17:41:03 <goncalopp>	return usd
+Apr 15 17:41:07 <Zeta_Labda>	just a second ago I got an error, but that´s probably because i had not ¨float(eur)¨
+Apr 15 17:41:15 <Zeta_Labda>	the program works fine
+Apr 15 17:41:16 <Zeta_Labda>	now
+Apr 15 17:41:20 <goncalopp>	yeah, you need that one
+Apr 15 17:41:30 <goncalopp>	though it's probably best to do it outside the function
+Apr 15 17:41:37 <goncalopp>	for clarity
+Apr 15 17:41:54 <goncalopp>	other than that, well done
+Apr 15 17:42:06 <Zeta_Labda>	next modules!?
+Apr 15 17:42:24 <goncalopp>	hoa, hoa, not yet ;)
+Apr 15 17:42:30 <Zeta_Labda>	hehehe
+Apr 15 17:42:35 <goncalopp>	kali, that's it, well done :)
+Apr 15 17:42:50 <nicck>	We only have 15 more min
+Apr 15 17:42:53 <goncalopp>	as zeta, best to convert to float outside the function
+Apr 15 17:43:21 <Zeta_Labda>	because?
+Apr 15 17:44:01 <goncalopp>	clarity. It makes no difference at this scale, but when you start to have 1000+ lines programs, you want everything to be very clear cut
+Apr 15 17:44:10 <Zeta_Labda>	alright sounds good
+Apr 15 17:44:18 <goncalopp>	the function takes a float as an argument, returns another float
+Apr 15 17:44:23 <Zeta_Labda>	more excercises?
+Apr 15 17:44:34 <goncalopp>	not yet, I want to introduce flow, finally
+Apr 15 17:44:58 <goncalopp>	I'll exemplify with a program that congratulates a user if he guesses a number
+Apr 15 17:45:15 <goncalopp>	ofc, let's assume the user can't read the program code :)
+Apr 15 17:45:47 <Suhteevah>	its 3!
+Apr 15 17:45:52 <goncalopp>	xD
+Apr 15 17:46:02 <kal-ei>	lol
+Apr 15 17:46:16 <Zeta_Labda>	so you´ll use flow to let the user guess and everytime you drop a hint?
+Apr 15 17:46:29 <goncalopp>	you win ten million dollars (on zeta's 0.07 bank)
+Apr 15 17:46:40 <Zeta_Labda>	hehe
+Apr 15 17:46:46 <goncalopp>	for now, just tell if it found it at first
+Apr 15 17:47:31 <goncalopp>	here you go
+Apr 15 17:47:53 <goncalopp>	ah, one detail
+Apr 15 17:48:34 <goncalopp>	there
+Apr 15 17:49:37 <goncalopp>	to clarify: every line that is indented (starts with 4 spaces or a tab) is inside another "block"
+Apr 15 17:49:49 <goncalopp>	    print "you win!"   is an block
+Apr 15 17:49:52 <Zeta_Labda>	what about ´<´, ´>´ ´!=´ etc.
+Apr 15 17:49:55 <goncalopp>	    print "no, it's not", user_number     is another
+Apr 15 17:50:04 <goncalopp>	sure
+Apr 15 17:50:11 <Zeta_Labda>	you let the user guess a number between 0 and 10
+Apr 15 17:50:41 <goncalopp>	as zeta is saying, you can substitute the  == in line 4 for any of those, to mean "less than", "more than", "different"
+Apr 15 17:51:20 <nicck>	how would you get it to loop so the user can guess until they get it correct?
+Apr 15 17:51:43 <Zeta_Labda>	probably define a function
+Apr 15 17:51:48 <Zeta_Labda>	or use a while loop
+Apr 15 17:51:50 <goncalopp>	using for and while. we're going there next
+Apr 15 17:52:00 <goncalopp>	everyone's comfortable with this?
+Apr 15 17:52:05 <Zeta_Labda>	yup
+Apr 15 17:52:27 <goncalopp>	going further then, to what nicck was describing
+Apr 15 17:52:29 <Suhteevah>	yeh
+Apr 15 17:52:33 <nicck>	yeah, but I'll need to leave soonish just a heads up
+Apr 15 17:52:41 <goncalopp>	ok
+Apr 15 17:53:17 <goncalopp>	there
+Apr 15 17:54:36 <Zeta_Labda>	yup works flawless
+Apr 15 17:55:01 <goncalopp>	notice the alternative
+Apr 15 17:55:14 <goncalopp>	"break" immediatelly exits a loop
+Apr 15 17:55:22 <goncalopp>	(while is a loop)
+Apr 15 17:55:33 <Zeta_Labda>	duh?
+Apr 15 17:55:38 <goncalopp>	:P just in case
+Apr 15 17:56:05 <goncalopp>	I know you're all a bit more advanced, but  wanted to cover the very basics
+Apr 15 17:56:21 <goncalopp>	also, the for loop:
+Apr 15 17:56:52 <goncalopp>	range is just another function
+Apr 15 17:57:01 <goncalopp>	it returns a sequence of integers
+Apr 15 17:57:30 <goncalopp>	the for loop assigns each of those values to x, and executes the code inside the for, once for each
+Apr 15 17:57:32 <goncalopp>	ok?
+Apr 15 17:57:52 <Suhteevah>	mhm
+Apr 15 17:58:39 <goncalopp>	so, I think we'll stop here today
+Apr 15 17:58:47 <goncalopp>	we did all the basics
+Apr 15 17:59:04 <Zeta_Labda>	so when´s the next meeting?
+Apr 15 17:59:15 <goncalopp>	any questions, feel free to ask, I'l hang around for the next half an hour
+Apr 15 17:59:26 <goncalopp>	yes, that one
+Apr 15 17:59:27 <nicck>	any homework?
+Apr 15 17:59:37 <Zeta_Labda>	^
+Apr 15 18:00:32 <goncalopp>	we had a previously appointed meeting wednesday, at 9 PM UTC
+Apr 15 18:00:41 <Zeta_Labda>	in GMT?
+Apr 15 18:00:45 <goncalopp>	with a more advanced student
+Apr 15 18:00:50 <goncalopp>	GMT==UTC, yes
+Apr 15 18:00:58 <goncalopp>	~=, relly
+Apr 15 18:01:17 <goncalopp>	is that hour ok for everyone?
+Apr 15 18:01:25 <nicck>	Where we are today and with NiM is pretty much the same, I think we could combine it all
+Apr 15 18:02:05 <goncalopp>	we still need some work on string manipulation, modules to get to NiM's level, but I think he won't mind
+Apr 15 18:02:24 <Zeta_Labda>	9 PM is okay
+Apr 15 18:02:33 <Zeta_Labda>	actually pretty much a perfect time
+Apr 15 18:02:42 <nicck>	He'll be the most advanced, but not by a lot. Think I want to stay with this group too
+Apr 15 18:03:00 <Josip>	ok for me
+Apr 15 18:03:03 <goncalopp>	always good to get back to the basics, eh? ;)
+Apr 15 18:03:09 <nicck>	oh yea
+Apr 15 18:03:10 <Suhteevah>	im NEET so.... yeh
+Apr 15 18:03:30 <goncalopp>	you and NiM can group :)
+Apr 15 18:03:36 <Suhteevah>	lol k
+Apr 15 18:03:44 <goncalopp>	NeetIsMurder, aka
+Apr 15 18:04:01 <Zeta_Labda>	It´s that I need to pay insurance or else I´d be a NEET too
+Apr 15 18:04:05 <Suhteevah>	im gonna prlly run through lpthw get familiar again
+Apr 15 18:04:08 <Zeta_Labda>	damn social security
+Apr 15 18:04:32 <Suhteevah>	car or healthcare?
+Apr 15 18:05:03 <nicck>	anyhow
+Apr 15 18:05:10 <nicck>	That time, I'll be there. Homework?
+Apr 15 18:05:13 <Zeta_Labda>	healthcare
+Apr 15 18:05:33 <Suhteevah>	my county has a healthcare program for poor ppl aka neet pretty legit
+Apr 15 18:05:56 <goncalopp>	For homework you can try the same program, with a number in 1..100, and warning the user if he is close, like, with 10 difference
+Apr 15 18:06:04 <Zeta_Labda>	cool
+Apr 15 18:06:25 <goncalopp>	That's nice, Suhteevah
+Apr 15 18:06:40 <kal-ei>	so wednesday at 9 UTC?
+Apr 15 18:06:49 <Zeta_Labda>	well about the homework, the healthcare program for poor people sounds almost the same as in mine country
+Apr 15 18:06:50 <goncalopp>	that's it :)
+Apr 15 18:07:04 <Zeta_Labda>	except they give it to people with work experience
+Apr 15 18:07:20 <Suhteevah>	it was really nice when i broke my arm lol, and i want you to rip my function thing too still goncalopp
+Apr 15 18:07:39 <Suhteevah>	they encourage you to look for work, but you dont need to be employed
+Apr 15 18:07:59 <Suhteevah>	rip my function apart***
+Apr 15 18:08:11 <goncalopp>	sure
+Apr 15 18:08:13 <nicck>	cya freindos!
+Apr 15 18:08:32 <nicck>	email out the recording too please
+Apr 15 18:08:42 <goncalopp>	I'll do, for everyone
+Apr 15 18:08:53 <goncalopp>	also, you can get the pad's history on "time slider"
+Apr 15 18:09:08 *	nicck has quit ()
+Apr 15 18:09:16 <Suhteevah>	thats pretty cool (the time slider)
+Apr 15 18:09:32 <goncalopp>	yeah, useful
+Apr 15 18:10:27 <Zeta_Labda>	shall I bookmark the pad; or is there a new one generated every lesson?
+Apr 15 18:10:30 <goncalopp>	Suhteeva, (you prefer that or sativa?) some problems with your function
+Apr 15 18:10:37 <goncalopp>	I'll PM you
+Apr 15 18:10:55 <Suhteevah>	sativa==suhteevah :p, dont really care
+Apr 15 18:11:02 <Suhteevah>	sativa was just already registered
+Apr 15 18:11:02 *	gjk (~androirc@184.151.114.51) has joined ##programming-classes
+Apr 15 18:12:00 <Zeta_Labda>	also Suhteevah thanks for mentioning lpthw; I totally forgot about that one!
+Apr 15 18:12:08 <Suhteevah>	np ;)
+Apr 15 18:13:09 *	kal-ei has quit ()
+Apr 15 18:16:38 *	gjk has quit (Ping timeout: 272 seconds)
