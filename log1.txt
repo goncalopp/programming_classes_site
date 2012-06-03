@@ -1,4 +1,5 @@
-Apr 15 16:00:48 *	nick (~androirc@184.151.114.159) has joined ##programming-classes
+﻿Apr 15 16:00:48 *	nick (~androirc@184.151.114.159) has joined ##programming-classes
+hello
 Apr 15 16:01:05 <goncalopp>	So, lot's of people still missing
 Apr 15 16:01:14 *	nick is now known as Guest11183
 Apr 15 16:01:28 <nicck>	6 is pretty good
