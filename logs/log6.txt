@@ -1,0 +1,334 @@
+Jun 03 19:07:36 <goncalopp>	you have git and github set up?
+Jun 03 19:07:56 <Anonymous968574>	I think so
+Jun 03 19:08:01 <goncalopp>	windows?
+Jun 03 19:08:05 <Anonymous968574>	yep
+Jun 03 19:08:18 <goncalopp>	can't help you much, then, I'm afraid, but let's see
+Jun 03 19:08:22 <goncalopp>	can you launch git gui?
+Jun 03 19:08:39 <Anonymous968574>	done
+Jun 03 19:08:47 <goncalopp>	ok, great
+Jun 03 19:09:29 <goncalopp>	git is actually a command line tool, but i think the gui will be an easier  introduction to the tool 
+Jun 03 19:09:43 <goncalopp>	so, let's cover some revision control basics first
+Jun 03 19:11:22 <goncalopp>	revision control is a way to keep your projects (coding, text, etc) organized, and also to facilitate collaboration between different project contributors
+Jun 03 19:11:53 <goncalopp>	it's basic idea is that of a "revision" - that is, a "version" of something, as it was at a given time
+Jun 03 19:12:20 <goncalopp>	you can think of the project as an evolution of content over time; a revision is some kind of "snapshot" of that content
+Jun 03 19:13:11 <goncalopp>	now, the easiest way of using revision control is, ofc, by yourself, and on simple projects
+Jun 03 19:13:24 <goncalopp>	most projects follow what's called a "linear history"
+Jun 03 19:14:03 <goncalopp>	that means they are done incrementally, in steps, with each step following the one before
+Jun 03 19:14:15 <goncalopp>	let's see an example on the pad, with a simple text file
+Jun 03 19:14:47 <goncalopp>	Here we have the first sentence. We'll call that the first version of the file
+Jun 03 19:14:56 <goncalopp>	Next we add two more sentences
+Jun 03 19:15:44 <goncalopp>	There. This could be "version 2"
+Jun 03 19:15:57 <goncalopp>	One last sentence:
+Jun 03 19:16:30 <goncalopp>	There we go. Now, this was a documented that was created incrementally
+Jun 03 19:16:36 <goncalopp>	one sentence after another
+Jun 03 19:17:12 <goncalopp>	so, it suffices to, say, create a backup of the file at a given time. That's a way of revision control - to save several files!
+Jun 03 19:18:00 <goncalopp>	However, as soon as you get to collaborate with several other people, and to big projects, it quickly becomes very difficult to just send the newest copies of the documents to everyone!
+Jun 03 19:18:18 <goncalopp>	Also, what happens if two people make changes on the same document version?
+Jun 03 19:18:29 <goncalopp>	These are the problems revision control software seeks to solve
+Jun 03 19:18:45 <goncalopp>	Now, there are a lot of such programs out there
+Jun 03 19:19:15 <goncalopp>	one of the first was knows as CVS, "concurrent versions system"
+Jun 03 19:19:37 <goncalopp>	it's very rudimentary though, by today's standards
+Jun 03 19:20:41 <goncalopp>	Nowadays, open source projects usually use one of the following: SVN (subversion), git or mercurial
+Jun 03 19:20:52 <goncalopp>	are you familiar with any of those?
+Jun 03 19:21:02 <Anonymous968574>	haven't used any of them
+Jun 03 19:21:12 <goncalopp>	ok, no prob
+Jun 03 19:21:42 <goncalopp>	generally, there's two main classes of such software: centralized and distributed.
+Jun 03 19:22:06 <goncalopp>	On centralized revision control, you generally have a server, and every developer pushes their changes to the server
+Jun 03 19:22:25 <goncalopp>	on distributed systems, each developer has it's own "repository"
+Jun 03 19:23:06 <goncalopp>	though distributed systems may also use a central server, which is many times desirable
+Jun 03 19:23:29 <goncalopp>	git is an example of a distributed VCS
+Jun 03 19:24:09 <goncalopp>	It's also, in my opinion, one of the best VCS in use today... so, let's get started!
+Jun 03 19:24:39 <goncalopp>	let's create a very basic repository with the text in the pad
+Jun 03 19:24:57 <goncalopp>	so, firstly, we create a directory for our project
+Jun 03 19:25:09 <goncalopp>	let's call it "example_repository"
+Jun 03 19:25:43 <goncalopp>	then, we initiate a git repository in that folder
+Jun 03 19:26:02 <goncalopp>	so, using git gui, chose "create new repository"
+Jun 03 19:26:25 <goncalopp>	and select the folder you just created
+Jun 03 19:26:33 <goncalopp>	done?
+Jun 03 19:26:36 <Anonymous968574>	done
+Jun 03 19:26:46 <goncalopp>	ok, so you should now be at the main git gui screen
+Jun 03 19:27:04 <goncalopp>	you should notice git created a ".git" directory inside your project
+Jun 03 19:27:04 <Anonymous968574>	I think I am
+Jun 03 19:27:29 <goncalopp>	this directory contains git database data, and should never be touched by hand!
+Jun 03 19:28:11 <goncalopp>	Let's now create a simple text file inside
+Jun 03 19:28:37 <goncalopp>	this must be a "plain text" file, so use notepad if you're on windows, or your favorite editor
+Jun 03 19:28:48 <goncalopp>	not ms word, though :P
+Jun 03 19:29:19 <Anonymous968574>	Notepad++
+Jun 03 19:29:41 <goncalopp>	sure, notepad++ creates plain text files
+Jun 03 19:30:31 <Anonymous968574>	done
+Jun 03 19:30:32 <goncalopp>	try and insert some text into the file. you can paste the first sentence in the pad if you'd like
+Jun 03 19:30:37 <goncalopp>	then save it
+Jun 03 19:30:44 <goncalopp>	and click "rescan" on git gui
+Jun 03 19:30:55 <Anonymous968574>	there it is!
+Jun 03 19:31:02 <Anonymous968574>	text.txt
+Jun 03 19:31:18 <goncalopp>	yeah
+Jun 03 19:31:25 <goncalopp>	new files appear in white
+Jun 03 19:31:29 <Anonymous968574>	not a very creative name
+Jun 03 19:31:35 <goncalopp>	on the top area
+Jun 03 19:31:36 <goncalopp>	lol:P
+Jun 03 19:32:02 <goncalopp>	try and click the file icon. it should move to the bottom area
+Jun 03 19:32:25 <Anonymous968574>	it did
+Jun 03 19:32:28 <goncalopp>	ok
+Jun 03 19:32:33 <Anonymous968574>	and now the text is green
+Jun 03 19:32:42 <goncalopp>	sure enough
+Jun 03 19:32:54 <goncalopp>	this bottom area represents the changes you are about to "commit"
+Jun 03 19:33:03 <goncalopp>	"commiting" is the act of creating a revision
+Jun 03 19:33:15 <goncalopp>	so, try and click "commit" now
+Jun 03 19:33:30 <goncalopp>	it will remind you about a "commit message"!
+Jun 03 19:33:35 <Anonymous968574>	yep
+Jun 03 19:34:26 <goncalopp>	ANY change you make to a repository should have a description, so everyone else (and you, 2+ years from now) will know exactly what was changed without checking the code
+Jun 03 19:34:52 <goncalopp>	so, just put something descriptive there, like "added text.txt with one sentence"
+Jun 03 19:34:59 <goncalopp>	and try to commit again
+Jun 03 19:35:11 <Anonymous968574>	done
+Jun 03 19:35:14 <goncalopp>	ok!
+Jun 03 19:35:21 <Anonymous968574>	and now it doesn't show text.txt
+Jun 03 19:35:26 <goncalopp>	then add some more content and try that again
+Jun 03 19:35:37 <goncalopp>	sure, git gui only shows *changes*
+Jun 03 19:36:10 <goncalopp>	also, git tracks only the files which you commit
+Jun 03 19:36:34 <goncalopp>	right now, you just commited the file. This next time, you'll commit changes to it
+Jun 03 19:37:05 <goncalopp>	also, the icon of the file should change to blue
+Jun 03 19:37:13 <goncalopp>	meaning it's a changed file, not a new one
+Jun 03 19:37:21 <Anonymous968574>	yep
+Jun 03 19:37:29 <goncalopp>	ok! done with the second commit?
+Jun 03 19:37:57 <Anonymous968574>	done
+Jun 03 19:38:33 <goncalopp>	great! now, go to the "repository" on the menu, and click "visualize all branch history"
+Jun 03 19:38:43 <goncalopp>	it should launch "gitk"
+Jun 03 19:38:55 <goncalopp>	gitk is a program that shows a repository evolution over time
+Jun 03 19:39:13 <goncalopp>	it shows every commit, including it's author and date
+Jun 03 19:39:52 <goncalopp>	also, the commit's descriptions are on bottom
+Jun 03 19:40:10 <goncalopp>	it also shows the "sha1 id" of the commit
+Jun 03 19:40:23 <goncalopp>	that is a way to uniquely identify each commit
+Jun 03 19:40:45 <goncalopp>	so, even if your project has millions of versions, you can also refer to a particular one
+Jun 03 19:40:59 <goncalopp>	any questions before we proceed?
+Jun 03 19:41:03 <Anonymous968574>	nope
+Jun 03 19:41:17 <goncalopp>	ok then
+Jun 03 19:41:33 <goncalopp>	moving on to some more useful concepts
+Jun 03 19:41:51 <goncalopp>	namely, "tag"s :)
+Jun 03 19:42:04 <goncalopp>	tags are just another way to identify a commit
+Jun 03 19:42:27 <goncalopp>	it get's really boring having to copy-paste the looong sha1 ids, so we can identify a commit by a given name
+Jun 03 19:43:01 <goncalopp>	so, when you launch version 1.0 of your program to the public, you put a tag on that commit with the "version1.0" descriptor", for example
+Jun 03 19:43:25 <goncalopp>	making a tag is really easy on gitk
+Jun 03 19:43:42 <goncalopp>	just right click the commit message
+Jun 03 19:43:54 <goncalopp>	and choose "create tag"
+Jun 03 19:43:56 <goncalopp>	that's it
+Jun 03 19:44:31 <Anonymous968574>	done
+Jun 03 19:44:35 <goncalopp>	now, revisions are only useful if we can use them, so let's try to roll our project back to the first commit!
+Jun 03 19:45:29 <goncalopp>	there's a lot of ways of doing that
+Jun 03 19:45:37 <goncalopp>	i'll show some
+Jun 03 19:45:46 <goncalopp>	first, on gitk, click on the first commit
+Jun 03 19:45:54 <goncalopp>	and copy it's sha1 id
+Jun 03 19:46:24 <Anonymous968574>	fe52d767fdf2f105fde2693acc0b024f2eb1547d
+Jun 03 19:46:27 <goncalopp>	then, on git gui, go to the "branch" menu
+Jun 03 19:46:33 <goncalopp>	and click "checkout"
+Jun 03 19:46:51 <goncalopp>	a new window should popup
+Jun 03 19:47:07 <goncalopp>	in it, you have a field named "revision expression"
+Jun 03 19:47:13 <goncalopp>	put the id there, and click "checkout"
+Jun 03 19:47:35 <Anonymous968574>	You are no longer on a local branch
+Jun 03 19:47:41 <goncalopp>	sure, i'll explain that in a moment
+Jun 03 19:47:52 <goncalopp>	on gitk, press F5 to refresh
+Jun 03 19:48:06 <goncalopp>	you should notice that the first commit becomes yellow
+Jun 03 19:48:14 <goncalopp>	so, you're on that version right now
+Jun 03 19:48:40 <goncalopp>	if your editor has auto-refresh, it should warn you the file has changed
+Jun 03 19:48:51 <goncalopp>	if not, you need to close it (not saving changes) and reopen it
+Jun 03 19:49:56 <goncalopp>	did it work?
+Jun 03 19:51:24 *	Anonymous968574_ (78946281@gateway/web/freenode/ip.120.148.98.129) has joined ##programming-classes
+Jun 03 19:51:41 *	Anonymous968574 has quit (Ping timeout: 245 seconds)
+Jun 03 19:51:48 <Anonymous968574_>	hello?
+Jun 03 19:51:57 <goncalopp>	yeah. connection trouble, anon?
+Jun 03 19:52:05 <Anonymous968574_>	I think it's good now
+Jun 03 19:52:22 <goncalopp>	ok. did you manage to revert to the first commit on the editor?
+Jun 03 19:52:31 <Anonymous968574_>	yep
+Jun 03 19:52:36 <goncalopp>	great!
+Jun 03 19:52:52 <goncalopp>	so, that's how you check an earlier version :)
+Jun 03 19:52:55 <Anonymous968574_>	where are the different versions of the files saved?
+Jun 03 19:53:09 <goncalopp>	under the .git folder
+Jun 03 19:53:32 <goncalopp>	git may not store the entire file multiple times, though, for space efficiency
+Jun 03 19:54:01 <goncalopp>	so, you can have 100 versions of a 1gb project without having a 100gb .git directory
+Jun 03 19:54:28 <goncalopp>	it tries to save only the changes, as soon as it thinks it should
+Jun 03 19:55:38 <goncalopp>	oh, remember not to introduce new changes to previous versions this way
+Jun 03 19:55:56 <goncalopp>	for that, a branch is used, which I'll proceed to explain next
+Jun 03 19:56:16 <goncalopp>	for now, just go to git gui, branch, checkout, and click master
+Jun 03 19:56:32 <goncalopp>	oh, you may need to select "local branch" on the checkout dialog
+Jun 03 19:56:39 <Anonymous968574_>	done
+Jun 03 19:56:47 <goncalopp>	ok
+Jun 03 19:56:57 <goncalopp>	gitk should tell you you are on the latest commit again
+Jun 03 19:57:05 <Anonymous968574_>	the yellow dot changed back
+Jun 03 19:57:07 <goncalopp>	and the file should have more sentences too now
+Jun 03 19:57:09 <goncalopp>	great
+Jun 03 19:57:17 <goncalopp>	now, about branches:
+Jun 03 19:57:41 <goncalopp>	branches are typically used when you need to have several "lines of development"
+Jun 03 19:58:03 <goncalopp>	let's say you're handling a game project which has windows and mac ports
+Jun 03 19:58:32 <goncalopp>	bot ports should have it's own branch - although most of the code is the same, there are little differences between them
+Jun 03 19:58:53 <goncalopp>	the same applies, for example, if someone wants to work on a project of yours
+Jun 03 19:59:09 <goncalopp>	they'll have their own branch, and do commits on it
+Jun 03 19:59:16 <goncalopp>	got it?
+Jun 03 19:59:20 <Anonymous968574_>	yep
+Jun 03 19:59:28 <goncalopp>	ok, so let's try to create a new branch
+Jun 03 19:59:36 <goncalopp>	branch->create
+Jun 03 19:59:59 <goncalopp>	then put the branch name and ok it
+Jun 03 20:00:11 <goncalopp>	nevermind the millions of options:P
+Jun 03 20:00:21 <Anonymous968574_>	ok
+Jun 03 20:00:29 <goncalopp>	f5 your gitk
+Jun 03 20:00:42 <goncalopp>	now, it should have two branches attached to your last commit
+Jun 03 20:00:51 <Anonymous968574_>	branchname and master
+Jun 03 20:00:58 <goncalopp>	sure enough
+Jun 03 20:01:21 <goncalopp>	at any moment, you can switch branches by doing branch->checkout, as before
+Jun 03 20:01:41 <goncalopp>	also, git gui always tells you which branch you're working on on top
+Jun 03 20:01:54 <goncalopp>	try and introduce some changes to this new branch
+Jun 03 20:02:04 <goncalopp>	(change file, rescan, commit)
+Jun 03 20:02:49 <Anonymous968574_>	done
+Jun 03 20:02:52 <goncalopp>	then f5 again to see your commit
+Jun 03 20:03:10 <goncalopp>	and see that the new branch is now "one commit ahead" your master branch
+Jun 03 20:03:15 <goncalopp>	right?
+Jun 03 20:03:22 <Anonymous968574_>	yep
+Jun 03 20:03:26 <goncalopp>	then, checkout to master, introduce some changes too
+Jun 03 20:04:13 <goncalopp>	f5 again
+Jun 03 20:04:29 <goncalopp>	you should now see that there are two independent lines of development, right?
+Jun 03 20:04:33 <Anonymous968574_>	yep
+Jun 03 20:04:51 <Anonymous968574_>	both coming from the second one
+Jun 03 20:04:55 <goncalopp>	these two lines could be handled by different developers, maybe even different teams, or companies...
+Jun 03 20:05:01 <goncalopp>	sure, that's the "splitting point"
+Jun 03 20:05:31 <goncalopp>	also, it's ok to create branches to yourself, when you work on "experimental" features that you're not sure you want to keep, for example
+Jun 03 20:06:27 <goncalopp>	ok then! as you can see, the work has diverged. If action is not taken, these two branches will evolve on their own to two completely different versions of the project
+Jun 03 20:07:09 <goncalopp>	usually, you want to take the changes someone made to the project, and integrate them into the master branch, so they become part of the "official" version of the project
+Jun 03 20:07:19 <goncalopp>	this is called a "merge"
+Jun 03 20:07:43 <goncalopp>	so, let's try to merge our new branch into the master branch
+Jun 03 20:07:48 <goncalopp>	checkout master
+Jun 03 20:08:02 <goncalopp>	then go to the menu merge->local merge
+Jun 03 20:08:14 <goncalopp>	select the branch you'd like to merge into master
+Jun 03 20:08:24 <goncalopp>	now, two things can happen
+Jun 03 20:09:11 <goncalopp>	if you're lucky, everything goes well. This is generally the case when projects are big, commits are small, and the branches have not diverged too much
+Jun 03 20:09:37 <goncalopp>	in those circunstances, git automatically detects what it needs to do to merge the two versions
+Jun 03 20:10:06 <goncalopp>	however, if a particular section (text line) of the project was changed in both branches, a "conflict" happens!
+Jun 03 20:10:12 <goncalopp>	how did you do?
+Jun 03 20:10:30 <Anonymous968574_>	conflict
+Jun 03 20:10:41 <goncalopp>	great:P I'll explain how to solve that
+Jun 03 20:10:46 <goncalopp>	click "close"
+Jun 03 20:11:01 <goncalopp>	right now, you are at no particular point in (project) time
+Jun 03 20:11:30 <goncalopp>	your project folder (and files) should contain git's attempt to merge the branches
+Jun 03 20:11:34 <goncalopp>	so, check your editor
+Jun 03 20:11:50 <goncalopp>	git introduces some markup where it detected conflicts
+Jun 03 20:12:18 <goncalopp>	so, now it's up to you to decide how you want the result of the integration of your new branch into master to look like!
+Jun 03 20:12:50 <goncalopp>	edit the file to your liking... then rescan on git gui and commit as usual
+Jun 03 20:13:18 <Anonymous968574_>	done
+Jun 03 20:13:42 <goncalopp>	and thats it :) gitk should now show the merge, right?
+Jun 03 20:14:06 <Anonymous968574_>	yep, and it shows the changes from each branch in a different colour
+Jun 03 20:14:14 <goncalopp>	sure
+Jun 03 20:14:37 <goncalopp>	now, you may dispose of your new branch, if you'd like, since it's changes are merged into master!
+Jun 03 20:15:25 <goncalopp>	or you may leave it there, no problem in that
+Jun 03 20:15:52 <goncalopp>	any questions?
+Jun 03 20:16:04 <Anonymous968574_>	how do I dispose of it?
+Jun 03 20:16:16 <goncalopp>	branch->delete on git gui
+Jun 03 20:16:21 <Anonymous968574_>	oh I see
+Jun 03 20:16:27 <goncalopp>	it will only let you delete a branch if it's merged into something
+Jun 03 20:16:31 <goncalopp>	it's pretty intuitive
+Jun 03 20:16:38 <Anonymous968574_>	got it
+Jun 03 20:17:16 <goncalopp>	or, if you really don't want to keep the results, check "always (do not perform merge checks)". This will completely discard any changes you may have done on that branch!
+Jun 03 20:17:36 <goncalopp>	ok then
+Jun 03 20:17:41 <goncalopp>	onto resetting!
+Jun 03 20:17:57 <goncalopp>	first, make sure you're on the latest commit (after the merge)
+Jun 03 20:18:29 <goncalopp>	then, make some random changes to your file
+Jun 03 20:19:03 <goncalopp>	let's say you've now decided you don't want to keep these changes, but you've already saved the file (in the editor). What to do?
+Jun 03 20:19:18 <goncalopp>	well, you could checkout the master branch...
+Jun 03 20:20:24 <goncalopp>	however, git may not let you, because you have unsaved (from the project perspective) changes, and you'd lose them
+Jun 03 20:20:40 <goncalopp>	so, you must do a "hard reset", to signal that you really want to discard them
+Jun 03 20:20:51 <goncalopp>	branch->reset
+Jun 03 20:21:04 <goncalopp>	that resets the project to the last commited state :)
+Jun 03 20:21:18 <Anonymous968574_>	that was easy
+Jun 03 20:21:22 <goncalopp>	yeah:P
+Jun 03 20:21:32 <goncalopp>	git's basic usage is basic:P
+Jun 03 20:21:41 <goncalopp>	git advanced usage is... a nightmare :P
+Jun 03 20:22:09 <goncalopp>	we've covered the basics, really
+Jun 03 20:22:46 <goncalopp>	I want to introduce collaboration and remote branches though
+Jun 03 20:22:57 <goncalopp>	we'll use github for that
+Jun 03 20:23:11 <goncalopp>	github is a site which hosts git repositories for you
+Jun 03 20:23:59 <goncalopp>	it also has a lot of neat features, like allowing you to read the code online, watch projects, etc
+Jun 03 20:24:15 <goncalopp>	so, try and login
+Jun 03 20:24:26 <Anonymous968574_>	already done
+Jun 03 20:24:35 <goncalopp>	great!
+Jun 03 20:24:42 <goncalopp>	so, here's my page: https://github.com/goncalopp
+Jun 03 20:24:52 <goncalopp>	this lists my projects on github
+Jun 03 20:25:03 <goncalopp>	right on top, you have the "programming_classes_site"
+Jun 03 20:25:21 <goncalopp>	which you may guess what it is:P
+Jun 03 20:25:26 <Anonymous968574_>	in JavaScript
+Jun 03 20:25:46 <goncalopp>	javascript and css I didn't write myself :)
+Jun 03 20:25:48 <Anonymous968574_>	is that the whole website?
+Jun 03 20:25:56 <goncalopp>	sure enough, really small one
+Jun 03 20:26:21 <goncalopp>	you can browse the project, get the log files through here, etc
+Jun 03 20:26:58 <goncalopp>	now, I'll add you as a collaborator to the project, so you can introduce changes!
+Jun 03 20:27:05 <goncalopp>	what's your username?
+Jun 03 20:27:11 <Anonymous968574_>	Anonymous968574
+Jun 03 20:28:04 <goncalopp>	there you go
+Jun 03 20:28:49 <goncalopp>	you should watch the project, so you have an easy entry point, since it will not appear on your homepage
+Jun 03 20:29:37 <goncalopp>	now, when you visit the project page, you should notice that you have a "Read+Write access" on the right of the link, right?
+Jun 03 20:29:44 <Anonymous968574_>	yep
+Jun 03 20:29:49 <goncalopp>	great
+Jun 03 20:30:14 <goncalopp>	close your current git gui and fire it up again
+Jun 03 20:30:19 <goncalopp>	then choose clone
+Jun 03 20:30:28 <goncalopp>	and enter the link on the project pages
+Jun 03 20:30:37 <goncalopp>	should be this one: git@github.com:goncalopp/programming_classes_site.git
+Jun 03 20:31:17 <Anonymous968574_>	done
+Jun 03 20:31:35 <goncalopp>	ok! you now have a complete copy of the site on your computer!
+Jun 03 20:31:44 <goncalopp>	including all comiits (just one, really:P)
+Jun 03 20:32:10 <Anonymous968574_>	I noticed it was made yesterday
+Jun 03 20:32:21 <Anonymous968574_>	or today
+Jun 03 20:32:39 <goncalopp>	the project? I did it an hour ago
+Jun 03 20:33:07 <Anonymous968574_>	I see
+Jun 03 20:33:22 <Anonymous968574_>	it says June 03 which was yesterday for me
+Jun 03 20:33:38 <goncalopp>	oh, sure, timezone fun:P
+Jun 03 20:33:53 <goncalopp>	git keeps local times, i believe
+Jun 03 20:34:33 <goncalopp>	now, when you cloned this project, it automatically added a "remote"
+Jun 03 20:34:45 <goncalopp>	a "remote" is, well, a remote location
+Jun 03 20:35:10 <goncalopp>	in this case, github, but it could be your work partner's computer!
+Jun 03 20:35:55 <goncalopp>	now, when you commit, you do so to your "local repository" - that is, the repository on your computer (.git directory)
+Jun 03 20:36:06 <goncalopp>	other people will do the same
+Jun 03 20:36:25 <goncalopp>	meanwhile, the "remote" may have changed
+Jun 03 20:36:42 <goncalopp>	so, to "refresh" your local copy, you go to remote->fetch
+Jun 03 20:37:04 <goncalopp>	git names the remote "origin"
+Jun 03 20:37:17 <goncalopp>	which is an arbitrary name, afaik
+Jun 03 20:37:38 <goncalopp>	by "fetching", you get remote changes into your local repository
+Jun 03 20:38:01 <goncalopp>	however, that does NOT change your file!
+Jun 03 20:38:20 <goncalopp>	you must merge the remote branch with the local master to do so
+Jun 03 20:38:25 <goncalopp>	just as any other branch merge
+Jun 03 20:38:48 <goncalopp>	merge->local merge
+Jun 03 20:38:51 <goncalopp>	got it?
+Jun 03 20:38:56 <Anonymous968574_>	yep
+Jun 03 20:39:01 <goncalopp>	great
+Jun 03 20:39:14 <goncalopp>	try and make a change to the site, something meaningless
+Jun 03 20:39:22 <goncalopp>	a empty line, or whatever
+Jun 03 20:40:12 <Anonymous968574_>	commit?
+Jun 03 20:40:18 <goncalopp>	sure
+Jun 03 20:40:24 <goncalopp>	commit does so locally
+Jun 03 20:40:27 <goncalopp>	so go ahead
+Jun 03 20:40:48 <goncalopp>	now, you want to publish those changes remotelly on github, so everyone can see them!
+Jun 03 20:41:10 <goncalopp>	in the meanwhile, I've made a change too, and I've already put it on github too :)
+Jun 03 20:41:19 <goncalopp>	so, try to "push" your changes
+Jun 03 20:41:26 <goncalopp>	remote->push
+Jun 03 20:42:44 <Anonymous968574_>	Pushing to https://github.com/goncalopp/programming_classes_site To https://github.com/goncalopp/programming_classes_site  ! [rejected]        master -> master (non-fast-forward) error: failed to push some refs to 'https://github.com/goncalopp/programming_classes_site' hint: Updates were rejected because the tip of your current branch is behind hint: its remote counterpart. Merge the remote changes (e.g. 'git
+Jun 03 20:44:00 <goncalopp>	sure enough! I changed the master on github, so your git complains - if you pushed right now, my changes would be lost, since you got your repository copy before them. Git will NEVER do anything that causes you to lose that, unless you explicitly tell it to
+Jun 03 20:44:22 <goncalopp>	so, it prevents you from pushing to a diferent branch than the one you cloned
+Jun 03 20:44:43 <goncalopp>	thus, you need to integrate my changes into  your local repository, and THEN you can push
+Jun 03 20:44:51 <goncalopp>	so, go ahead and do a fetch
+Jun 03 20:45:02 <goncalopp>	and check it on gitk after that
+Jun 03 20:45:29 <goncalopp>	it should show you my commit on origin/master, which is github's master branch
+Jun 03 20:45:42 <Anonymous968574_>	Success
+Jun 03 20:45:59 <goncalopp>	at this points, these are two different branches, so you just need to merge the origin/master into your own master :)
+Jun 03 20:46:04 <goncalopp>	try that, then push
+Jun 03 20:46:30 <goncalopp>	ah, you did it! well done :)
+Jun 03 20:46:50 <Anonymous968574_>	:)
+Jun 03 20:46:57 <goncalopp>	I can see both your commit and the merge you did :)
+Jun 03 20:47:10 <goncalopp>	and that's it for basic collaboration :D
+Jun 03 20:47:13 <goncalopp>	any questions?
+Jun 03 20:47:18 <Anonymous968574_>	nope
+Jun 03 20:47:41 <goncalopp>	ok then, I think we're done for today :)
+Jun 03 20:47:53 <goncalopp>	We'll discuss a project on a more.. lively.. class :P
+Jun 03 20:47:58 <Anonymous968574_>	alright
+Jun 03 20:48:26 <goncalopp>	check out some projects on github if you want there's some interesting stuff out there
+Jun 03 20:48:31 <goncalopp>	google's nice too
+Jun 03 20:48:41 <goncalopp>	you can clone any repository you like
+Jun 03 20:48:53 <goncalopp>	just not push back :)
+Jun 03 20:49:00 <Anonymous968574_>	I was hoping there would be more people
+Jun 03 20:49:17 <goncalopp>	yeah, this'd be fun if we could get some shared repos going on
+Jun 03 20:49:35 <goncalopp>	hopefuly people will read the log and we'll have some fun next class :)
+Jun 03 20:49:57 <Anonymous968574_>	I hope so
+Jun 03 20:50:11 <goncalopp>	so, class over :)
