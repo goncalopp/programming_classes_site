@@ -1,0 +1,499 @@
+23:05 <@goncalopp> http://piratepad.net/THixzj8wDx   here you go
+23:05 <@goncalopp> this is today's
+23:05 <@goncalopp> please use the same names
+23:06 <@goncalopp> Ok
+23:06 <@goncalopp> we'll be covering basic algorithm development and data structures today
+23:07 <@goncalopp> both of those are really big topics
+23:07 < PuppetMaster_> Damn, algorithm dev was what I wanted to be here for
+23:07 <@goncalopp> today we'll cover "divide and conquer" and merge sort as an example
+23:08 <@goncalopp> puppetmaster, there'll be more classes of this, undoubtly, it's a pretty big area
+23:08 <@goncalopp> anyway, before going ahead, I want to talk a bit around recursion
+23:08 <@goncalopp> is everyone familiar with it?
+23:09 -!- Irssi: ##programming-classes: Total of 7 nicks [1 ops, 0 halfops, 0 voices, 6 normal]
+23:09 < PuppetMaster_> goncalopp: Great. Sorry I can't be here in full for this. (Also, no, I'm not...or at least, I don't know it by that name "recursion")
+23:09 < dorako> Basically "repetition", right
+23:09 < dorako> Or loops with loops with loops
+23:09 <@goncalopp> I don't know any other name for it
+23:09 < Pecto>  "Recursion is the process of repeating items in a self-similar way" -wikipedia.
+23:09 <@goncalopp> dorako, no, not exactly
+23:09 < PuppetMaster_> Pecto: Thankyou
+23:10 <@goncalopp> it's more about *avoiding* loops :)
+23:10 <@goncalopp> so, I'll do a quick demo
+23:10 <@goncalopp> everyone comfortable with python
+23:10 <@goncalopp> ?
+23:10 < PuppetMaster_> Yup, I don't know anything else!
+23:11 < dorako> Damn, google removed the "recursion" joke
+23:11 -!- Irssi: ##programming-classes: Total of 7 nicks [1 ops, 0 halfops, 0 voices, 6 normal]
+23:11 -!- Irssi: ##programming-classes: Total of 7 nicks [1 ops, 0 halfops, 0 voices, 6 normal]
+23:11 < horus__> i remember that
+23:11 < horus__> did you mean, "recursion"?
+23:11 < Pecto> Lmao
+23:11 < dorako> You used to be able to search "recursion" and it'd say "did you mean "recursion"?
+23:11 < Anonymous968574> it still works for me
+23:11 < PuppetMaster_> Haha
+23:12 < PuppetMaster_> Ditto
+23:12 <@goncalopp> yes, that's the basic idea :)
+23:12 < dorako> Ah
+23:12 < dorako> Damn you google.dk
+23:12 < horus__> lol
+23:12 < dorako> haven't gotten around to replace all google links with google.com/ncr
+23:12 < Pecto> uhm, google.com/ncr wont do it either with me.
+23:12 <@goncalopp> here you go, printing the number 1-10: (see pad)
+23:14 <@goncalopp> go ahead and play with it, try and understand the concept
+23:14 < PuppetMaster_> Wow, I actually understand up to so far!
+23:14 < PuppetMaster_> \o/
+23:14  * PuppetMaster_ sighs, and goes back to work
+23:14 < dorako> for i in range(1,11):print i
+23:14 < dorako> Fantastic syntax
+23:15 < horus__> python for :|
+23:15 <@goncalopp> sure dorako, that's one way
+23:15 < dorako> So would recursion be "A function that calls itself"?
+23:15 < Anonymous968574> should the last line be "print_ten_numbers(1)"?
+23:15 <@goncalopp> typically, yes
+23:15 < dorako> Any integer would work, wouldn't it?
+23:15 <@goncalopp> it can involve more functions, if the algorithm is complex
+23:15 <@goncalopp> yes
+23:15 < dorako> It doesn't specify which numbers to print
+23:16 < dorako> Just that it's 10 numbers
+23:16 <@goncalopp> actually, it prints all numbers between the argument and ten
+23:16 <@goncalopp> bad fgunction name, clearly
+23:17 <@goncalopp> now, recursion used this way is pretty useless
+23:17 < dorako> Especially when the range function exists
+23:17 <@goncalopp> however, some algorithms are very easily expressed using recursion
+23:17 < dotText> >inb4fibonacci
+23:17 < horus__> lol
+23:18 <@goncalopp> does anyone remember the fibonacci sequence?
+23:18 <@goncalopp> yep!:P
+23:18 < dorako> 1 2 3 5 8 13
+23:18 < Pecto> Of course i do
+23:18 < Pecto> I have google
+23:18 < dotText> 1 1 2
+23:18 < dotText> actually
+23:18 < dotText> or 0 1 1
+23:18 < dorako> Makes sense
+23:18 < dorako> null+1 doesn't equal 2
+23:18 <@goncalopp> every number is the sum of the last two. knowing that much is enough for you to implement it, and using recursion, it's surprisingly easy
+23:19 <@goncalopp> i think it starts with 11
+23:19 <@goncalopp> 1 1
+23:19 < dorako> >indenting with spaces
+23:19 < dorako> Is indenting with tabs even an issue nowadays?
+23:20 <@goncalopp> convention is python identation is 4 spaces
+23:21 <@goncalopp> you can use tabs with cpython, but you are not guaranteed it will work on all implementations, or even in future cpython
+23:21 <@goncalopp> that being said, it probably will, ofc
+23:21 <@goncalopp> My advice, anyway, is to have your editor make tab output 4 spaces for python
+23:23 <@goncalopp> anyway, as you can see, recursion follows a typical pattern
+23:23 <@goncalopp> you always have a base recursion rule
+23:23 <@goncalopp> (lines 4 and 12)
+23:24 <@goncalopp> and stop conditions (lines 3 and 10)
+23:24 <@goncalopp> always take care shaping those. A bad stop condition means an infinite loop
+23:24 < PuppetMaster_> yay infinity
+23:24 <@goncalopp> :)
+23:24  * PuppetMaster_ has almost finished work
+23:24 <@goncalopp> that's it for recursion
+23:25 <@goncalopp> any questions so far?
+23:25 < Anonymous968574> try  print_ten_numbers(-1000)
+23:25 <@goncalopp> should print -1000..10, right?
+23:26 <@goncalopp> calling it with 11, though, is an infinite loop
+23:26 < PuppetMaster_> Hm, if I code on this mac I'll have to use Nano
+23:26 <@goncalopp> cross that
+23:26 <@goncalopp> it would be, if we checked with an ==, not <
+23:26 < dorako> Off topic: Why doesn't Python have i++ or i--? I thought it was an easy way to iterate
+23:27 <@goncalopp> i+=1 is the best you have
+23:27 <@goncalopp> about why.. "one way to do things", I think
+23:28 < dorako> I'm finding the 500th number in the fibonacci sequence
+23:28 < dorako> Wish me luck
+23:28 < dorako> Using an old core 2 duo
+23:28 <@goncalopp> "import this" for details
+23:29 <@goncalopp> good luck :) it's an exponential algorithm
+23:29 < dorako> Fans spinning loudly now
+23:29 < dorako> We'll see if it's done when class is over
+23:29 < dorako> Taking bets
+23:29 < Pecto> so.. in half a minute when Dorako suddenly leaves it's because his computer burnt out.
+23:30 <@goncalopp> you can rewrite fib to use loops trivially, and it'll be linear, so 500 is a piece of cake
+23:30 < dorako> Who guesses "yes", who guesses "no"?
+23:30 < dorako> I'm on no
+23:30 <@goncalopp> 2^500? lol, I'm on "no"
+23:30 < dorako> What was the name of that fibonacci thingie
+23:30 < dorako> Newton something something
+23:30 <@goncalopp> he wont achieve it, but I hope he doesn't burn out :P
+23:30 < dorako> That was very very fast at cutting out bullshit numbers
+23:31 <@goncalopp> ? newton thingie? newton's method?
+23:31 < dorako> Probably
+23:31  * PuppetMaster_ quickly reads the log
+23:31 <@goncalopp> are you usre you're not thinking of prime numbers?
+23:31 < dorako> Newton's method doesn't look right
+23:32 < dorako> And I very well might
+23:32 <@goncalopp> if you are, you mean the sieve of eratostenes
+23:32 <@goncalopp> which cuts bullshit non-prime numbers
+23:32 < dorako> Sieve of Eratosthenes
+23:32 < dorako> That's the one
+23:32 <@goncalopp> thought so
+23:32 < dorako> I don't know why I assosiated it with Newton
+23:33 <@goncalopp> well, it's got a persone name on it :)
+23:33 < dorako> That's atleast 1 point then
+23:33 <@goncalopp> :)
+23:33 <@goncalopp> divide and conquer!
+23:33 <@goncalopp> "when a problem is hard, break it into small easy parts"
+23:33 <@goncalopp> a very simple rule with very powerful results
+23:34 <@goncalopp> I don't know if you guys are familiar with sorting algorithms
+23:35 <@goncalopp> which are, basically, algorithms that sort numbers in a list, basically
+23:35 <@goncalopp> basically! :P
+23:35 <@goncalopp> now, think about a deck of cards
+23:36 <@goncalopp> what if you wanted to sort the cards by number/figure?
+23:36 < Anonymous968574> play solitaire!
+23:36 <@goncalopp> how would you do it?
+23:36 < Pecto> Well depends on why i'd sort it.
+23:36 < dotText>  bubble sort
+23:36 < dorako> I'd compare the number with the smallest number yet
+23:36 <@goncalopp> bubble sort is good, but very stupid in this precise situation. I'll explain why later :)
+23:36 < PuppetMaster_> Right, I've got to go. I'll try to read the log over the weekend...you should keep IRC logs too, goncalopp. So, is the next lesson next Friday? You should do one on Saturdays...
+23:37 <@goncalopp> IRC logs are on the logs page...
+23:37 < dorako> In the link
+23:37 <@goncalopp> next class will be scheduled with everyone voting
+23:38 <@goncalopp> as is usual
+23:38 < PuppetMaster_> What, huh...didn't see the IRC logs. Haha. Oh well, will read through them all tomorrow!
+23:38 <@goncalopp> "logs folder" :)
+23:38 < PuppetMaster_> Great, okay. Sorry, being new I've not quite grasped the hang of this :P
+23:38 < dorako> You really should make that <h1>LOGS IN THE LINK</h1>
+23:38 < Pecto> Lmao
+23:38 <@goncalopp> no problem. I think I said so on the mail, though
+23:38 < PuppetMaster_> >.< I just feel stupid now
+23:39 <@goncalopp> you got the big newcomer email?
+23:39 < PuppetMaster_> Yeah of course
+23:39 <@goncalopp> too big then, probably :)
+23:39 < PuppetMaster_> Nope, was a good amount of info, but I had little time to read it; been very busy with work, especially since I blew up my mb and had to re-do a tonne of it *sigh*
+23:40 < PuppetMaster_> Right, cya guys!
+23:40 <@goncalopp> that sucks
+23:40 < Anonymous968574> cya!
+23:40 <@goncalopp> alrigth, see you :)
+23:40 < PuppetMaster_> Yeah it does goncalopp :(
+23:40 < PuppetMaster_> Bye :)
+23:40 -!- PuppetMaster_ [~chatzilla@unaffiliated/mang0] has quit [Quit: ChatZilla 0.9.88.2 [Firefox 3.6.23/20110920075126]]
+23:40 < dorako> See ya in two weeks or so
+23:41 < dorako> Uh
+23:41 < dorako> Always too late
+23:41 <@goncalopp> :)
+23:41 < dorako> It matters not, he'll see the logs
+23:41 < dorako> His spirit is with us
+23:41 < dorako> from the future
+23:42 <@goncalopp> now, a deck of cards, everyone, concentrate:)
+23:42 <@goncalopp> you probably won't have a straigh sorting method in your heads
+23:42 < Anonymous968574> play solitaire!
+23:42 < dorako> Ubuntu ships with 2 solitaire programs
+23:42 <@goncalopp> however, there are tons of ways to do it, some of which are more eficient (thus faster)
+23:42 < dorako> Get on my level
+23:44 <@goncalopp> merge sort is a classic example of divide and conquer philosophy
+23:44 <@goncalopp> you may not know how to sort 52 cards...
+23:44 <@goncalopp> but, what about 2 cards? how'd you sort them?
+23:45 < Pecto> lower to higher i suppose
+23:45 <@goncalopp> a bit more specific :)
+23:45 < dorako> Depends on how you want to sort them
+23:45 < Anonymous968574> I can't remember the order for hearts, diamonds, etc
+23:45 < dorako> If you want lowest first
+23:45 <@goncalopp> if ... then ...
+23:45 < dorako> can't you just compare x>y?
+23:46 <@goncalopp> surê!
+23:46 < dorako> And if True, do something, if False, do other
+23:46 <@goncalopp> here we go
+23:47 <@goncalopp> my pirate pad is keen on loosing the connection, sorry
+23:47 < dorako> I was just about to say "If you're typing anything, it's not showing up"
+23:48 <@goncalopp> what about now?
+23:48 < dorako> "numbers" is a list of integers?
+23:49 <@goncalopp> a tuple of two
+23:49 < dorako> What does line 15 mean?
+23:49 <@goncalopp> oh
+23:49 <@goncalopp> it's simple assignement. numbers is a tuple of two integers, a and b are assigned with them
+23:50 < dotText> 7lastlog goncalopp
+23:50 <@goncalopp> :P
+23:50 < dorako> But what does it /do/
+23:50 < dotText> woops :3
+23:50 < dorako> You aren't using numbers any more
+23:50 < dorako> Not yet, anyway
+23:50 < Anonymous968574> if numbers is (2,3) it will make a=2 and b=3
+23:51 < dorako> Oh
+23:51 < dorako> Ah, I see
+23:51 <@goncalopp> yeah, it can be strings, booleans, whatever
+23:51 < dorako> a=numbers[0]
+23:51 < dorako> b=numbers[1]
+23:51 < dorako> like so, right?
+23:51 <@goncalopp> exactly
+23:51 <@goncalopp> also, it implicitly forces len(numbers)==2
+23:52 <@goncalopp> otherwise, your code would run with 2 or more
+23:52 <@goncalopp> anyway, is everything good so far?
+23:52 < Pecto> what would i do if i were to use 500 cards and not two?
+23:52 < dorako> Is there any speed hit doing "elif" instead of "else"?
+23:52 < dorako> Recursion
+23:53 <@goncalopp> in fib?
+23:53 < Pecto> well, in the case of a,b=numbers
+23:53 < Pecto> I'd need 500 variables
+23:53 <@goncalopp> Pecto, that's where we're going
+23:53 <@goncalopp> slowly :)
+23:53 < dorako> You'd need to use recursion
+23:53 < Pecto> But i can't!
+23:53 < Anonymous968574> or loops
+23:54 <@goncalopp> dorako, recursion is still not enough, we need something more
+23:54 <@goncalopp> you can now sort two cards
+23:55 <@goncalopp> what about three?
+23:55 < Anonymous968574> run it three times!
+23:55 < dorako> Check if a>b<x
+23:55 <@goncalopp> that's a way, anon!
+23:55 < Pecto> well either we'd change the code or change the list and run it several times.
+23:55 <@goncalopp> slow, though
+23:55 <@goncalopp> sure, but what should we change in the code?
+23:56 < dorako> replace the else: with elif condition
+23:56 < dorako> and a,b=numbers with 3 variables, in this case
+23:57 <@goncalopp> oh, sure... but after sorting 3, we're gonna sort 4... 2 conditions for sorting 3 will be 4 for sorting 4, 8 for sorting 5... etc
+23:57 < dorako> That's a lotta work
+23:57 <@goncalopp> I dare you sort 52 cards with ifs :)
+23:57 < Pecto> But that's where we'd change the list instead and make a loop that would run these lines over and over with the numbers list, only +2 in every time.
+23:58 <@goncalopp> No, the general idea is: we know how to sort two. What about sorting two pairs of two?
+23:58 < dorako> and two pairs of two pairs of two
+23:58 <@goncalopp> Pecto, show us :)
+23:58 <@goncalopp> on the pad, if you want
+23:59 < Pecto> Well, the idea would be to get the numbers from 1-2 first time and from 2-3 next time so you'd need to run it in a loop where it would increase every run.
+23:59 <@goncalopp> you mean sort 1-2, 2-3, 3-4?
+--- Day changed Sat Jun 16 2012
+00:00 < Pecto> Yeah, i'm just black on writing the code atm because it's been so long xD
+00:00 < Pecto> trying to explain my way out. lol.
+00:00 <@goncalopp> that's ok, if you can explain it clearly
+00:00 <@goncalopp> still, that doesn't work
+00:00 <@goncalopp> let's say you have these numbers: 3 2 1
+00:01 < dorako> Divide them into the smallest pieces possible, Divide and Conquer
+00:01 <@goncalopp> sorting it once with your method will yield 2 1 3
+00:01 < dorako> And then sort, and add to list?
+00:01 <@goncalopp> somewhat, dorako
+00:01 <@goncalopp> The idea is first splitting, then merging
+00:02 < dorako> Merge sort, huh..
+00:02 <@goncalopp> :)
+00:02 <@goncalopp> so, how do you merge two pairs of *already sorted* numbers?
+00:02 <@goncalopp> pretty easy
+00:02 < dorako> append()?
+00:03 <@goncalopp> sure, you can append them to a list, the question here is everything else :)
+00:03 <@goncalopp> here:
+00:03 < dorako> With l1 and l2 being lists, I presume
+00:04 <@goncalopp> yup
+00:04 < dorako> I'll be right back
+00:06 <@goncalopp> ok
+00:06 <@goncalopp> everyone understands the code so far?
+00:07 <@goncalopp> the basic idea is that we keep a "current position" on each list (i1,i2)
+00:07 < Anonymous968574> should "i1+=1" be after "newlist.append( l1[i1] )"
+00:08 <@goncalopp> then, we check the elements in those position, and see which is smaller, remove it from the list, and append it to newlist, since it's the next sorted number
+00:08 <@goncalopp> sure anon, that or i1,i2=-1,-1 at start
+00:08 <@goncalopp> thanks
+00:08 < Anonymous968574> np
+00:09 <@goncalopp> also, this should have a try..catch, for empty lists, and some other details
+00:09 < dorako> Does this count as "OOP"?
+00:09 <@goncalopp> I just want you guys to grasp the idea
+00:09 <@goncalopp> definitely not, dorako. OOP means using classes and objects
+00:10 < dorako> Then I've understood correctly
+00:10 < dorako> Just checking
+00:10 <@goncalopp> ok, always good to ground check
+00:11 <@goncalopp> ok, I assume you all grasp the merging method
+00:13 <@goncalopp> there, I think it works now
+00:13 < dorako> Better or worse?
+00:13 < Pecto> Not sure
+00:13 <@goncalopp> correcly, instead of losing elements
+00:13 < dorako> We'll leave it at normal
+00:14 <@goncalopp> :)
+00:14 <@goncalopp> oh, return, ofc
+00:15 <@goncalopp> oh, one more detail...
+00:16 <@goncalopp> seems to run well here, now
+00:16 < Anonymous968574> that's better
+00:17 <@goncalopp> :) we we're appending the whole lists instead of only what's left
+00:17 <@goncalopp> *were
+00:17 <@goncalopp> so, now we can merge the damned pairs!
+00:17 <@goncalopp> so, is merge sort just spliting and joining pais?
+00:17 <@goncalopp> no, not really. doing so is inelegant
+00:18 <@goncalopp> instead, we split in halfs!
+00:18 <@goncalopp> so, take up the unsorted list, and split it in half sucessively UNTIL you have a pair (len(l)==2)
+00:19 <@goncalopp> then, you can sort_two()
+00:19 <@goncalopp> and work your way up
+00:19 <@goncalopp> the easiest way to do this is using recursion!
+00:20 < dorako> extend is basically append, but for lists, right?
+00:20 <@goncalopp> exactly
+00:20 < dorako> Where you extend the contents instead of the list itself
+00:25 < Pecto> What if middle of the list is odd?
+00:25 < dorako> Yeah, I though about that as well
+00:25 < dorako> Have we made sure that that is impossible?
+00:25 <@goncalopp> nope, it needn't be
+00:26 <@goncalopp> if the list is odd, one partition will be even, and that runs ok
+00:26 <@goncalopp> the odd partitions recurse
+00:26 <@goncalopp> until you hit 3
+00:26 < dorako> Ah, okay
+00:26 <@goncalopp> splitting 3, you get 1,2
+00:26 <@goncalopp> both of which are handled
+00:26 < dorako> But even if that is more complicated, it'll only happen once, and only if it's an uneven number
+00:27 <@goncalopp> yes
+00:27 <@goncalopp> I have a bug somewhere, though :)
+00:28 <@goncalopp> well, i won't waste more time
+00:29 <@goncalopp> you all got the idea?
+00:29 < dorako> Yup
+00:29 < Anonymous968574> yep
+00:29 < dorako> And that was "Merge Sort - An example of a Divide and Conquer algorithm"?
+00:30 <@goncalopp> yup, that's about it
+00:30 < dorako> Able to sort any given list of integers
+00:30 <@goncalopp> most divide and conquer algorithms are similar
+00:30 <@goncalopp> yup
+00:30 <@goncalopp> sorting integers by themselves is pretty useless, tough
+00:31 <@goncalopp> you generally want to sort something associated with the numbers
+00:31 <@goncalopp> aka a record :)
+00:31 < dorako> ile "Fibonacci.py", line 45, in <module>
+00:31 < dorako>     mergesort(list)
+00:31 < dorako>   File "Fibonacci.py", line 38, in mergesort
+00:31 < dorako>     l1= l[:pivot]        #first half
+00:31 < dorako> This is the bug you mentioned, right?
+00:32 <@goncalopp> hm, no. strange, I didn't get runtime errors here
+00:32 <@goncalopp> I got a sigle element out of order
+00:32 <@goncalopp> anyway, you can find a properly tested mergesort of the web
+00:33 <@goncalopp> here you go http://en.literateprograms.org/Merge_sort_%28Python%29
+00:33 -!- horus__ [~horus@95.211.13.35] has quit [Quit: Lost terminal]
+00:33 <@goncalopp> it's probably much better written anyway :)
+00:33 <@goncalopp> now, I want to introduce you to the concept of data structures
+00:33 <@goncalopp> Data structures are a way of organizing data
+00:33 < dorako> <<mergesort>>=
+00:33 < dorako> def mergesort(list):
+00:33 < dorako>     if len(list) < 2:
+00:33 < dorako>         return list
+00:33 < dorako>     middle = len(list) / 2
+00:34 < dorako>     left = mergesort(list[:middle])
+00:34 < dorako>     right = mergesort(list[middle:])
+00:34 < dorako>     return merge(left, right)This seems nice
+00:34 <@goncalopp> using different datastructures can yield vastly different algorithmic performace
+00:35 <@goncalopp> dorako, don't get too hang up on mergesort, I'm sure I made some mistakes there, that's what testing is for. it's a lengthy processs though, and we won't go through it here, since it's pretty useless for you guys
+00:35 < dorako> goncalopp: Actually, this one gives the same error
+00:35 < dorako> It's probably a mistake on my part
+00:35 <@goncalopp> runtime?
+00:35 < dorako> Yup
+00:35 < dorako> Same error, different names now
+00:36 < dorako> Don't mind me
+00:36 <@goncalopp> seems strange enough
+00:36 < dorako> I'll just fiddle around with it while you talk
+00:36 < dorako> well, type
+00:36 <@goncalopp> I'll check on it with you at the end of the class, ok?
+00:36 <@goncalopp> anyway, datastructures
+00:37 <@goncalopp> a kind of datastructure you are already familiar with is the dictionary, which associates a key with a value
+00:38 <@goncalopp> more importantly, it allows very fast lookups. If you have a list with 1 million elements, checking if a particular element is there means you need to look into the list, one element at a time, comparing them with yours
+00:38 <@goncalopp> with a dictionary, it happens very very fast
+00:38 <@goncalopp> O(1), in complexity theory (more on that later=)
+00:39 <@goncalopp> two useful basic datastructures you are probably not familiar with yet are the stack and the queue
+00:40 <@goncalopp> aka LIFO (last in, first out) and FIFO (first in, first out) disciplines
+00:40 <@goncalopp> think of a stack of books
+00:40 <@goncalopp> the last you put (on top), is the first you get, when you remove one
+00:41 <@goncalopp> what about a supermarket queue? the first to arrive is the first to leave
+00:41 <@goncalopp> it's as simple as that
+00:41 <@goncalopp> now, how to implement them (code) ?
+00:41 <@goncalopp> well, a stack is easy enough
+00:42 <@goncalopp> just have a array, and append or remove to/from the end
+00:42 <@goncalopp> having the array grow dynamically, ofc
+00:42 <@goncalopp> in python:
+00:43 <@goncalopp> a queue, however, is harder to implement efficiently
+00:44 <@goncalopp> ofc, you can argue it's easy, this way:
+00:44 <@goncalopp> see? easy!
+00:45 <@goncalopp> however, python just hides the problem!
+00:45 < Pecto> Dont mint me, it's just so it doesn't blue text it.
+00:46 <@goncalopp> removing the first element of an array means that you need to move all the other elements one to the left, one by one!
+00:46 <@goncalopp> for big arrays, this is unecessarily  inefficient
+00:47 <@goncalopp> you guys understand the difference between lists and arrays, right?
+00:47 <@goncalopp> I don't know if you did ever work on arrays
+00:47 < dorako> I don't think I have
+00:47 < Pecto> slightly during warcraft 3 map making xD
+00:48 < Pecto> I know you have too.
+00:48 < Pecto> :p
+00:48 < dorako> Well, that's true
+00:48 <@goncalopp> well, basically, an array is a chunk of memory
+00:48 <@goncalopp> it's fixed size, and doesn't move around
+00:48 < dorako> Uh-oh, please don't tell me we'll have to do memory management
+00:49 <@goncalopp> hence the need to move every element one position to the left, if we "delete" the first
+00:49 <@goncalopp> we won't have memory management here, dorako. however, understanding it is crucial to be able to predict the performance of a algorithm implementation
+00:50 < dorako> Yeah, we don't want to do one thousand calculations when we could do two
+00:51 <@goncalopp> exactly. I don't want you guys to ever go around writing monstrosities:P
+00:51 <@goncalopp> also, wasting user's time and electricity :P
+00:51 < dorako> I'LL "GO TO" WHEN I WANT TO!
+00:51 < Pecto> lmao
+00:52 <@goncalopp> sure, sure :)
+00:53 <@goncalopp> anyway, a good way of implementing a queue is using a "linked list"
+00:53 <@goncalopp> which we'll cover next class, since we don't have the time today
+00:53 <@goncalopp> Is the guy who wanted to talk about git's cli here?
+00:54 < dorako> Oh yeah, that's me
+00:54 <@goncalopp> great
+00:54 < dorako> Also, if you have any recommendations for a GUI on Linux, i'll take it
+00:54 < dorako> I've been recommended git-cola and gitk
+00:55 < dorako> each being excellent at one thing
+00:55 <@goncalopp> so, everyone, we'll be covering git's command line for a bit. Class is over, other than that, so if you are not interested in the command line interface, feel free to leave
+00:55 <@goncalopp> I wouldn't call gitk a "gui"...
+00:56 <@goncalopp> It's more of a project browser
+00:56 <@goncalopp> it comes with git, too, I believe
+00:56 <@goncalopp> cola is great at some things, but I actually prefer git's official gui for the majority of operations
+00:57 <@goncalopp> if you're on debian or ubuntu, it's the git-gui package
+00:57 <@goncalopp> don't know about other distros, though
+00:57 -!- Irssi: ##programming-classes: Total of 5 nicks [1 ops, 0 halfops, 0 voices, 4 normal]
+00:57 < dorako> I'm on Ubuntu, so that's fine
+00:58 <@goncalopp> that's it then. git gui is the same on windows and linux, so just follow the git class
+00:58 <@goncalopp> some basic cli commands
+00:58 <@goncalopp> git add [file]
+00:58 <@goncalopp> to add a file to the commit's list
+00:58 <@goncalopp> git commit
+00:58 <@goncalopp> to commit :P
+00:58 < dorako> It wants me to enter a comment
+00:58 <@goncalopp> git checkout [branch name]
+00:59 <@goncalopp> sure. all commits must have a comment
+00:59 < dorako> And I don't know how to "exit"
+00:59 <@goncalopp> you should be using the distro's default cli text editor now, dorako
+00:59 <@goncalopp> either nano or vi, probably
+00:59 < dorako> It's using nano
+00:59 < dorako> I've vim installed too, but it defaults to nano
+00:59 <@goncalopp> ctrl-x then
+01:00 < dorako> There
+01:00 <@goncalopp> git fetch     fetches the latest changes on the remote
+01:00 < dorako> So now I should be able to $ git clone git://github.com/Dorako/ProgrammingClass/ right?
+01:01 <@goncalopp> git pull     does a fetch and merges it with your current repository
+01:01 <@goncalopp> sure, git clone [url]
+01:01 < dorako> Neat
+01:02 <@goncalopp> pretty easy :)
+01:02 < dorako> Hmn
+01:02 < dorako> I've installed git-gui through apt-get
+01:02 < dorako> But it adds no icon to the dash
+01:03 < dorako> and git-gui doesn't launch it
+01:03 <@goncalopp> I don't think it has an icon
+01:03 <@goncalopp> "git gui" :)
+01:03 < dorako> Ah
+01:03 <@goncalopp> everything is mashed on the git command
+01:03 < dorako> Yeah, that's the same on windows
+01:03 < dorako> Windows has a "metro" version too
+01:04 < dorako> With more advanced features
+01:04 <@goncalopp> really?
+01:04 < dorako> Yup
+01:04 <@goncalopp> never tried it
+01:04 <@goncalopp> mostly, I miss rebase on the GUI
+01:05 < dorako> http://windows.github.com/
+01:05 < dorako> Looks pretty sweet, and allows for easy creation too
+01:05 <@goncalopp> oh, but that's a github program?
+01:06 < dorako> Aaah, yes
+01:06 < dorako> So you would only be able to acess github
+01:06 < dorako> It matters not to me, as I only use github
+01:06 < dorako> for now, anyway
+01:06 <@goncalopp> I personally wouldn't get too attached to a single-service software :)
+01:07 <@goncalopp> one day the service disapears, and you need to change your entire workflow
+01:07 < dorako> Nah, I'd prefer to be eloquent at using the CLI too
+01:07 -!- Irssi: ##programming-classes: Total of 5 nicks [1 ops, 0 halfops, 0 voices, 4 normal]
+01:07 < dorako> Though adding each file might seem a bit cumbersome
+01:07 < dorako> I'd prefer drag and drop if I had to add 10 files
+01:08 <@goncalopp> it's easier, yes
+01:08 <@goncalopp> imho, at least
+01:08 < dorako> Well, at least this way you'll be absolutely sure you're only committing stuff you want
+01:09 <@goncalopp> yeah. and most usefully, you can only commit the LINES you want
+01:09 <@goncalopp> so you don't get useless formatting in diffs
+01:09 < dorako> As in, comitting only new content, or what?
+01:10 <@goncalopp> no, it always commits new content only
+01:10 <@goncalopp> but say you enter a blank line somewhere accidentaly
+01:10 <@goncalopp> you shouldn't commit it. It adds nothing, and dificults legibility
+01:10 <@goncalopp> when comparing changes, that is
+01:11 <@goncalopp> to commit a single line, just right click it
+01:11 <@goncalopp> same for *not* commiting a line, after the whole file is commited
+01:11 <@goncalopp> *in the staging area, I meant
+01:12 < dorako> Where exactly would I right click?
+01:12 < dorako> I suppose this is in git gui?
+01:12 <@goncalopp> git gui, on the changed lines
+01:12 < dorako> I have yet to commit something using git gui
+01:12 < dorako> I'll check it out after the conclusion of next lesson
+01:13 <@goncalopp> sure
