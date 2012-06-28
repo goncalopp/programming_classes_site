@@ -1,0 +1,171 @@
+Jun 23 19:05:49 <goncalopp>	hi everyone
+Jun 23 19:05:54 <goncalopp>	sorry for the connection problems
+Jun 23 19:06:06 <Anonymous968574>	hello
+Jun 23 19:06:09 <Pecto>	Hello.
+Jun 23 19:07:12 <goncalopp>	So, hopefully my wireless won't crash again, so we can start :)
+Jun 23 19:07:26 >ChanServ<	SET ##programming-classes ENTRYMSG Linked list class starts at 18:00 UTC. Pad: http://piratepad.net/jlCA5YE9He
+Jun 23 19:07:27 -ChanServ-	The entry message for ##programming-classes has been set to Linked list class starts at 18:00 UTC. Pad: http://piratepad.net/jlCA5YE9He
+Jun 23 19:07:30 <Pecto>	Lmao, hopefully :)
+Jun 23 19:07:43 <goncalopp>	Here's today's pad: http://piratepad.net/jlCA5YE9He
+Jun 23 19:08:18 <goncalopp>	As I said earlier, we'll be covering linked lists today
+Jun 23 19:08:43 <goncalopp>	I hope you guys remember the queue and stack data structures from last class?
+Jun 23 19:09:18 <Pecto>	Mostly, if all goes wrong i got it here on my dekstop ^^
+Jun 23 19:09:35 <Anonymous968574>	 yep
+Jun 23 19:09:39 <goncalopp>	ok, great
+Jun 23 19:09:55 <goncalopp>	what about "passing by value" and "passing by reference"?
+Jun 23 19:10:08 <goncalopp>	I think it was covered on one of the first classes
+Jun 23 19:10:53 <Anonymous968574>	I can't remember
+Jun 23 19:11:06 <Pecto>	reference being the position of a specific item in a list?
+Jun 23 19:11:23 <goncalopp>	hm, no. That's ok, we'll do a quick review
+Jun 23 19:11:27 <goncalopp>	Here we go:
+Jun 23 19:15:01 <goncalopp>	ok, I'll give you a minute to review this
+Jun 23 19:16:30 <goncalopp>	actually, python does say "a is b"...
+Jun 23 19:16:38 <goncalopp>	which is kind of unexpected
+Jun 23 19:17:03 <goncalopp>	Ok, I'll show it a different way then
+Jun 23 19:19:29 <goncalopp>	this suffices
+Jun 23 19:20:33 <goncalopp>	do try and run it
+Jun 23 19:20:41 <goncalopp>	and see if you are surprised by the result
+Jun 23 19:21:21 <Anonymous968574>	huh
+Jun 23 19:21:46 <goncalopp>	so? :)
+Jun 23 19:21:59 <Anonymous968574>	Now I remember when you explained this with lists.
+Jun 23 19:22:12 <goncalopp>	great :)
+Jun 23 19:22:21 <goncalopp>	kubra, Pecto?
+Jun 23 19:22:22 <Anonymous968574>	y is not a copy of x, y IS x
+Jun 23 19:22:46 <goncalopp>	exactly anon. and *that* is "passing by reference"
+Jun 23 19:23:13 <Kubra>	hey, sorry, i'm following a bit, just going over python a bit and trying to grasp it
+Jun 23 19:23:18 <Kubra>	lists are just arrays right?
+Jun 23 19:23:25 <Pecto>	ah, so it's because we're calling TemporaryClass() every time.
+Jun 23 19:23:36 <Kubra>	no use to the way theyre called
+Jun 23 19:23:43 <Kubra>	not*
+Jun 23 19:24:08 <goncalopp>	this is actually a fundamental operating difference in programming
+Jun 23 19:24:28 <goncalopp>	you either manipulate values or references
+Jun 23 19:24:41 <goncalopp>	if you change values, well, they change!:P
+Jun 23 19:25:01 <goncalopp>	if you change references... you need to remember they *are* references, or else you'll be surprised by the results
+Jun 23 19:25:10 <goncalopp>	what happens here is this
+Jun 23 19:25:21 <goncalopp>	variables x and y are both references
+Jun 23 19:25:29 <goncalopp>	TemporaryClass() creates a new object
+Jun 23 19:25:44 <goncalopp>	so, at line 6, x and y are references to different objects
+Jun 23 19:26:10 <goncalopp>	at line 9, what we say is: y is now a reference to the object referenced by x
+Jun 23 19:26:21 <goncalopp>	NOT "y is equal to x"
+Jun 23 19:26:35 <goncalopp>	as such, x and y become exactly the same object
+Jun 23 19:26:47 <goncalopp>	if you modify the object, both references reflect that change
+Jun 23 19:26:48 <goncalopp>	ok?
+Jun 23 19:27:16 <Kubra>	yeah i get it
+Jun 23 19:27:17 <Anonymous968574>	ok
+Jun 23 19:27:42 <goncalopp>	with that out of the way..
+Jun 23 19:28:49 <goncalopp>	Here's a class that has a reference to itself :)
+Jun 23 19:29:17 <goncalopp>	I hope that doesn't confuse you
+Jun 23 19:29:31 <goncalopp>	because linked lists take it a bit further
+Jun 23 19:30:08 <Anonymous968574>	it did exactly what I expected it to do
+Jun 23 19:30:17 <goncalopp>	ok, great!
+Jun 23 19:30:34 <goncalopp>	Now, a linked list is a data structure that is capable of holding a sequence of elements( a list, of course)
+Jun 23 19:30:55 <goncalopp>	However, unlike an array, it is NOT a contiguous block in memory
+Jun 23 19:31:21 <goncalopp>	instead, a small memory block is alocated for each element of the list
+Jun 23 19:31:33 <goncalopp>	this makes some operations over LLs very efficient
+Jun 23 19:32:00 <goncalopp>	How is this done? Simply put, each element in the lists contains a reference to the next element!
+Jun 23 19:32:35 <Pecto>	and the previous?
+Jun 23 19:32:53 <Pecto>	or does it have to go from start to end every time it looks through them?
+Jun 23 19:33:19 <goncalopp>	The two variants exist, Pecto
+Jun 23 19:33:34 <goncalopp>	called the "Singly linked list" and "doubly linked list"
+Jun 23 19:33:44 <Pecto>	ah i see.
+Jun 23 19:34:16 <goncalopp>	Of course, a linked list is not only those references (which are generally called "nodes")
+Jun 23 19:34:34 <goncalopp>	but also, the reference of the first element (usually called the "head" of the list)
+Jun 23 19:34:49 <goncalopp>	and, depending on the implementations, also the tail (last element)
+Jun 23 19:35:25 <goncalopp>	now, linked lists are a bit tricky to implement, for a simple reason
+Jun 23 19:35:35 <goncalopp>	what does a list hold when it's empty?
+Jun 23 19:35:47 <goncalopp>	also, what is the "next" reference in the last element of the list?
+Jun 23 19:36:05 <goncalopp>	python, like many languages, has a special kind of object to represent "nothing"
+Jun 23 19:36:13 <goncalopp>	which is "None"
+Jun 23 19:36:25 <goncalopp>	(null in C/java, nil in pascal, etc)
+Jun 23 19:36:41 <goncalopp>	so, the element after the last is None
+Jun 23 19:37:02 <goncalopp>	Also, the head is None, when the list is empty
+Jun 23 19:37:32 <goncalopp>	All this special cases take special care to implement
+Jun 23 19:38:23 <goncalopp>	Oh, here you see why the tail is usually added
+Jun 23 19:38:43 <goncalopp>	so you can immediately append an element at the end, without going through the whole list
+Jun 23 19:39:54 <goncalopp>	Actually, I think you guys will learn a bit more if you try to implement this yourselves!
+Jun 23 19:40:07 <goncalopp>	a lot of conditionals (if's) involved, I warn you
+Jun 23 19:40:21 <goncalopp>	everyone understood the concept?
+Jun 23 19:40:49 <goncalopp>	LinkedListNode holds the content (each element of the list - an integer if it's a linked list of integers)
+Jun 23 19:41:02 <goncalopp>	each node has a referent to the next node ("next")
+Jun 23 19:41:17 <goncalopp>	The LinkedList holds the head and tail of the list
+Jun 23 19:42:01 <goncalopp>	obviously, when you insert an element to the list, you must take care to modify the last node's (The one behind the one we insert) "next" reference
+Jun 23 19:42:25 <goncalopp>	got it?
+Jun 23 19:42:38 <goncalopp>	any questions?
+Jun 23 19:42:40 <Anonymous968574>	I think so
+Jun 23 19:42:54 <goncalopp>	Implementing a Singly Linked List is officially homework :P
+Jun 23 19:44:39 <goncalopp>	So, if there are no questions, We'll cover some basic graph concepts
+Jun 23 19:45:36 <goncalopp>	A graph is a mathematical construct (and also a data structure) which consists of "nodes" and "edges"
+Jun 23 19:46:09 <goncalopp>	Graphs are generally used to model specific real-world situations 
+Jun 23 19:46:24 <goncalopp>	for example, think of a social network
+Jun 23 19:46:59 <goncalopp>	In this case, the nodes would be the users of the social network, and the edges would represent the relationships between the users (nodes)
+Jun 23 19:47:30 <goncalopp>	So, if there's a edge between user A and user B, it means A and B are "friends" on the network
+Jun 23 19:47:33 <goncalopp>	ok so far?
+Jun 23 19:47:45 <Pecto>	Yeah
+Jun 23 19:47:48 <Anonymous968574>	yep
+Jun 23 19:48:02 <goncalopp>	Ok
+Jun 23 19:48:15 <goncalopp>	now, this scenario assumes that friendship is symmetric
+Jun 23 19:48:30 <goncalopp>	that is, if A is a friend of B, B is necessarily a friend of A
+Jun 23 19:48:39 <goncalopp>	As we know, this is not always the case
+Jun 23 19:48:55 <goncalopp>	so, convention states edges may have a "direction"
+Jun 23 19:49:35 <goncalopp>	Such an edge represents a single direction of friendship, in this case (A is a friend of B)
+Jun 23 19:50:01 <goncalopp>	A graph may either have all it's edges directed, or none at all
+Jun 23 19:50:17 <goncalopp>	if it has, it's called a "directed graph"
+Jun 23 19:50:29 <goncalopp>	an "undirected graph" otherwise
+Jun 23 19:50:49 <goncalopp>	mixing the two is very unusual
+Jun 23 19:51:02 <goncalopp>	another useful concept is the "loop"
+Jun 23 19:51:25 <goncalopp>	if a is a friend of b, b is a friend of c, and c is a friend of a, they form a loop!
+Jun 23 19:51:55 <goncalopp>	Also, sometimes you may hear some algorithms about "sparse graphs"
+Jun 23 19:52:32 <goncalopp>	a sparse graph is basically a graph with a small vertex/edge ration
+Jun 23 19:52:34 <goncalopp>	*ratio
+Jun 23 19:52:57 <goncalopp>	edge/vertex, I meant
+Jun 23 19:53:08 <goncalopp>	that is, a graph with few edges for each vertex
+Jun 23 19:54:04 <goncalopp>	A special kind of graph is the "tree"
+Jun 23 19:54:15 <goncalopp>	which is a graph in which there are no loops
+Jun 23 19:54:29 <goncalopp>	an example of a tree would be a (typical) filesystem
+Jun 23 19:54:50 <goncalopp>	if you think of your computer directories, they have a distinct hierarchy
+Jun 23 19:55:16 <goncalopp>	you can always "descend" on the filesystem, to a more specific folder
+Jun 23 19:55:25 <goncalopp>	or "go up", to a less specific
+Jun 23 19:56:03 <goncalopp>	"C:/", or "/" is called the "root" of the tree, both in filesystems and graph theory :)
+Jun 23 19:56:12 *	Disconnected (Connection reset by peer).
+**** ENDING LOGGING AT Sat Jun 23 19:56:12 2012
+
+**** BEGIN LOGGING AT Sat Jun 23 19:56:46 2012
+
+Jun 23 19:56:46 *	Now talking on ##programming-classes
+Jun 23 19:56:47 -ChanServ-	[##programming-classes] Linked list class starts at 18:00 UTC. Pad: http://piratepad.net/jlCA5YE9He
+Jun 23 19:57:00 <goncalopp1>	Connection down, sorry...
+Jun 23 19:57:24 <Anonymous968574>	np, I got started on the homework
+Jun 23 19:57:24 *	goncalopp has quit (Ping timeout: 245 seconds)
+Jun 23 19:57:28 <goncalopp1>	did you get the last comment about "filesystems and graph theory" ?
+Jun 23 19:58:10 <Anonymous968574>	The last I got was this:
+Jun 23 19:58:10 <Anonymous968574>	[04:52] <@goncalopp> edge/vertex, I meant
+Jun 23 19:58:25 <goncalopp1>	hoa. ok, I'll paste it
+Jun 23 19:58:25 <Pecto>	we got till "edge/vertex, i meant"
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> that is, a graph with few edges for each vertex
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> A special kind of graph is the "tree"
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> which is a graph in which there are no loops
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> an example of a tree would be a (typical) filesystem
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> if you think of your computer directories, they have a distinct hierarchy
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> you can always "descend" on the filesystem, to a more specific folder
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> or "go up", to a less specific
+Jun 23 19:58:32 <goncalopp1>	<goncalopp> "C:/", or "/" is called the "root" of the tree, both in filesystems and graph theory :)
+Jun 23 19:59:36 <Pecto>	and yet file systems can have symbolic links
+Jun 23 19:59:58 <goncalopp1>	sure! unix symbolic links break the "tree" assumption 
+Jun 23 20:00:06 <goncalopp1>	and complicate things a bit for programmers :)
+Jun 23 20:00:31 <goncalopp1>	which you can see if you create a directory with a link to itself inside and run "find" on it :)
+Jun 23 20:01:44 <goncalopp1>	if it assumed the filesystem was a tree, it would recurse forever!
+Jun 23 20:02:04 <goncalopp1>	Also, another kind of graph is the "weighted" graph
+Jun 23 20:02:16 <goncalopp1>	in which each edge has an associated weight
+Jun 23 20:02:27 <goncalopp1>	for example, think about a subway
+Jun 23 20:02:55 <goncalopp1>	stations would be nodes, station connections would be edges, and the weight could be the distance between the two stations!
+Jun 23 20:04:03 <goncalopp1>	So... social networks, filesystems, subway stations... They are from totally different scientific fields, but they are all graphs, and as such, you can run GRAPH ALGORITHMS on them!
+Jun 23 20:04:20 <goncalopp1>	which are very well researched :)
+Jun 23 20:05:06 <goncalopp1>	We'll talk about what kind of things can those algorithms do in next class
+Jun 23 20:05:25 <goncalopp1>	to help us solve problems in these very different topics
+Jun 23 20:05:45 <goncalopp1>	And I think that's it for today
+Jun 23 20:05:50 <goncalopp1>	any questions?
+Jun 23 20:07:09 <Pecto>	Not at the time being
+Jun 23 20:08:36 <goncalopp1>	ok then
+Jun 23 20:09:04 <goncalopp1>	I hope you guys take your time on the linked list implementation, since you'll learn a few things in the way
+Jun 23 20:09:24 <goncalopp1>	let me know if you have any trouble
+Jun 23 20:09:29 <goncalopp1>	or questions
