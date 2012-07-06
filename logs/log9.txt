@@ -1,0 +1,258 @@
+Jul 04 23:06:02 <goncalopp>	Well, I want you guys to review a small piece of code anyway, before we begin with the "real content"
+Jul 04 23:06:48 <dorako>	Do we have a pad yet?
+Jul 04 23:06:55 <goncalopp>	ok, great
+Jul 04 23:06:56 <goncalopp>	sure
+Jul 04 23:07:03 <goncalopp>	here you go: http://piratepad.net/mwqtlCigtz
+Jul 04 23:07:25 <dorako>	Because then I'll just copypaste some code while we wait
+Jul 04 23:07:47 <goncalopp>	Try to give the code a look. It uses recursion, but should be fairly easy to understand
+Jul 04 23:07:54 <dorako>	Still loading
+Jul 04 23:08:01 <goncalopp>	sure, play around with it for a bit
+Jul 04 23:08:23 <dorako>	It just gives me a blank page
+Jul 04 23:08:28 <dorako>	I'll try in another browser
+Jul 04 23:08:33 <goncalopp>	really?
+Jul 04 23:08:43 <goncalopp>	I'm using firefox here... chrome seems to work too
+Jul 04 23:08:48 <dorako>	Firefox can't find the server at www.piratepad.net.
+Jul 04 23:08:55 <dorako>	Might just be my connection
+Jul 04 23:09:14 <dorako>	Uh
+Jul 04 23:09:16 <dorako>	Hang on
+Jul 04 23:09:21 <goncalopp>	shouldn't have a "www", I believe
+Jul 04 23:09:24 <dorako>	Okay, definitely
+Jul 04 23:09:27 <dorako>	Nah, it's a problem here
+Jul 04 23:09:33 <dorako>	I currently "don't have a connection"
+Jul 04 23:09:41 <dorako>	That is, no more connections will go through
+Jul 04 23:09:48 <dorako>	Which is why you can still see me typing
+Jul 04 23:09:51 <goncalopp>	well, you have IRC, so you do:P "work offline"?
+Jul 04 23:09:53 <dorako>	Since this is "already connected"
+Jul 04 23:10:02 <dorako>	Nah, this happens quite often
+Jul 04 23:10:05 <dorako>	It'll take me a minute to fix
+Jul 04 23:10:06 <dorako>	BRB
+Jul 04 23:10:11 <goncalopp>	ok, sure
+Jul 04 23:15:13 *	dorako has quit (Ping timeout: 250 seconds)
+Jul 04 23:15:43 *	dorako (~dorako@2.111.28.230) has joined ##programming-classes
+Jul 04 23:16:19 <dorako>	Am I back?
+Jul 04 23:16:38 <Anonymous968574>	yep
+Jul 04 23:16:41 <goncalopp>	sure
+Jul 04 23:16:48 <dorako>	Great, PiratePad works too
+Jul 04 23:17:24 <dorako>	if not parent is None:
+Jul 04 23:17:26 <dorako>	is this the same as
+Jul 04 23:17:32 <dorako>	if parent is not None:?
+Jul 04 23:18:33 <goncalopp>	exactly the same, yes. You'll run into that version more commonly, but I personally prefer this one, since it follows the usual boolean expression syntax more closely, as opposed to "english-language syntax"
+Jul 04 23:19:43 <dorako>	I like the english version best, because of the "Executable pseudo-code"-nature of Python
+Jul 04 23:20:18 <goncalopp>	I've made a small change to print_parenthood, the rest should be equal, there
+Jul 04 23:20:36 <goncalopp>	sure, it's a matter of taste, use what you like best :)
+Jul 04 23:20:36 <dorako>	if x is y, seems better to me too, since I often remember to put two ='s, resulting in errors, when comparing
+Jul 04 23:20:45 <goncalopp>	oh
+Jul 04 23:20:58 <goncalopp>	"is" and "==" are not the same
+Jul 04 23:21:04 <goncalopp>	far from it
+Jul 04 23:21:22 <dorako>	What gives?
+Jul 04 23:21:25 <goncalopp>	well
+Jul 04 23:21:31 <goncalopp>	"is" compares by reference
+Jul 04 23:21:36 <goncalopp>	"==" compares by value
+Jul 04 23:21:44 <goncalopp>	so:
+Jul 04 23:21:51 <dorako>	(Also, what is d="" supposed to do?)
+Jul 04 23:21:58 <dorako>	Ah, I didn't know that
+Jul 04 23:22:05 <dorako>	I don't think it has mattered to me yet
+Jul 04 23:22:16 <dorako>	But nice knowing that there is a difference
+Jul 04 23:22:33 <goncalopp>	sure. In almost every case, you want to use ==
+Jul 04 23:22:46 <goncalopp>	"is" returns true ONLY if the objects are the same
+Jul 04 23:23:16 <goncalopp>	so, in this code, for example, you could have two TreeNode with the same name, same children and same parent
+Jul 04 23:23:28 <dorako>	I'm very-very new to OOP, so it makes sense that it hasn't troubled me (yet)
+Jul 04 23:23:28 <goncalopp>	tn1 == tn2 would be True
+Jul 04 23:23:34 <goncalopp>	tn1 is tn2 would be False
+Jul 04 23:24:01 <goncalopp>	yeah, it's a subtle thing, but it'll drive you crazy debugging for hours if you're not careful
+Jul 04 23:24:08 <dorako>	Roger
+Jul 04 23:24:24 <dorako>	But this function
+Jul 04 23:24:25 <dorako>	def print_children(self, d=""):
+Jul 04 23:24:25 <dorako>	        print d+self.name
+Jul 04 23:24:25 <dorako>	        for c in self.children:
+Jul 04 23:24:26 <dorako>	            c.print_children(d+"    ")
+Jul 04 23:24:36 <dorako>	What is the second argument good for?
+Jul 04 23:25:10 <goncalopp>	hmm, just a minute, I may have a small bug there
+Jul 04 23:25:34 <goncalopp>	oh, no, sure
+Jul 04 23:25:42 <goncalopp>	I always forget "self"
+Jul 04 23:25:50 <goncalopp>	see, it's a recursive function
+Jul 04 23:26:10 <goncalopp>	d starts as the empty string, but at each level of recursion, four whitespaces are added
+Jul 04 23:26:15 <goncalopp>	c.print_children(d+"    "
+Jul 04 23:26:33 <goncalopp>	so, new_d= previous_d+"    "
+Jul 04 23:26:36 <dorako>	But d isn't changed?
+Jul 04 23:26:49 <dorako>	d doesn't change value in the current code, does it?
+Jul 04 23:27:03 <goncalopp>	no... you call the next level with a different d :)
+Jul 04 23:27:30 <dorako>	Oh, ahh
+Jul 04 23:27:31 <goncalopp>	just like when printing 1..10 recursively, you call the next level with number+1
+Jul 04 23:27:40 <dorako>	So it starts as an empty string
+Jul 04 23:27:53 <dorako>	and each recursion the entirety of the paranthesis gets passed as d
+Jul 04 23:27:57 <dorako>	Now I get it
+Jul 04 23:28:04 <goncalopp>	great :)
+Jul 04 23:28:09 <goncalopp>	Anon, how are you doing?
+Jul 04 23:28:14 <Anonymous968574>	good
+Jul 04 23:28:24 <goncalopp>	got it all already? ;)
+Jul 04 23:28:29 <dorako>	I'm not familiar with __repr__, either
+Jul 04 23:28:35 <dorako>	Is it kind of like __str__?
+Jul 04 23:28:38 <Anonymous968574>	me neither
+Jul 04 23:28:46 <goncalopp>	yes, same as string, but a bit lower level
+Jul 04 23:28:53 <goncalopp>	*__str__, I meant
+Jul 04 23:29:22 <goncalopp>	I believe __str__ is only evaluated if you print it, not on the shell interpreter
+Jul 04 23:29:28 <goncalopp>	__repr__ is evaluated always
+Jul 04 23:29:36 <goncalopp>	But I'm not sure
+Jul 04 23:29:39 <dorako>	One more thing
+Jul 04 23:29:44 <dorako>	is (object) neccesary at all?
+Jul 04 23:30:32 <goncalopp>	short answer is: it's not strictly necessary, but do add it ALWAYS, unless you want to run into very strange problems
+Jul 04 23:30:42 <goncalopp>	google for "newstyle classes" for more info
+Jul 04 23:30:46 <dorako>	Okay
+Jul 04 23:31:23 <goncalopp>	Are we good to go?
+Jul 04 23:31:28 <dorako>	I think so
+Jul 04 23:31:32 <Anonymous968574>	yup
+Jul 04 23:31:38 <goncalopp>	great!
+Jul 04 23:31:41 <goncalopp>	Ok then
+Jul 04 23:31:48 <dorako>	Still no response from pecto, odds are he isn't online at all, but his phone is still on, or something
+Jul 04 23:32:05 <goncalopp>	Today's class, I'll talk a bit about trees and teach you the two basic tree algorithms
+Jul 04 23:32:19 <goncalopp>	I assume you remember what a tree is, from graph's class?
+Jul 04 23:32:25 <goncalopp>	*graphs'
+Jul 04 23:32:38 <dorako>	Yup
+Jul 04 23:32:46 <Anonymous968574>	yes
+Jul 04 23:32:52 <goncalopp>	ok!
+Jul 04 23:33:07 <dorako>	I've actually tried creating some tree code, but without classes. Needless to say, it went horribly wrong
+Jul 04 23:33:15 <goncalopp>	then, you remember that trees will have no loops in them
+Jul 04 23:34:17 <goncalopp>	so, transversing (moving through) them is particularly easy, since you don't have to check if you've visited a node already, as long as you take some care with the search direction
+Jul 04 23:34:53 <goncalopp>	btw, I'll use the terms Node/Vertex interchangeably in this class, though a Node may mean something else in other contexts
+Jul 04 23:35:27 <goncalopp>	So, as you may have recognize, the pad's code gives a very simple OOP model for arbitrary size trees
+Jul 04 23:35:46 <goncalopp>	each Node has a parent (may be None), and 0 or more children
+Jul 04 23:36:44 <goncalopp>	as such, you can transverse the tree upwards (approaching the tree root) or downwards (away from the root)
+Jul 04 23:37:30 <goncalopp>	finding the root is very easy: take a node, and check if it has a parent. if it has, check it's parent. and so on, until you have a node with no parent: that's the root!
+Jul 04 23:38:04 <goncalopp>	that's the philosophy behind the    print_parenthood method
+Jul 04 23:39:15 <goncalopp>	Au contraire, you can also tranverse downwars, taking the children of each children of each children of........ etc
+Jul 04 23:39:53 <goncalopp>	Now, we know how to find the root. What if we we have the root and we want to find a specific Node?
+Jul 04 23:40:37 <goncalopp>	Let's say we have, in the pad code, the "living being" node (which is the root), and we want to find the cat!
+Jul 04 23:40:39 <dorako>	We'd probably transverse until we find it
+Jul 04 23:40:54 <dorako>	Go one level down, check if any of the children match our case
+Jul 04 23:41:00 <dorako>	if not, look further down
+Jul 04 23:41:05 <goncalopp>	sure! and there's two different ways of doing that
+Jul 04 23:41:27 <goncalopp>	the one which you are describing is called Depth First Search, DFS for short
+Jul 04 23:42:10 <goncalopp>	It's similar to the way most people solve mazes: go right ahead, picking intersections, until you hit a wall (no more children!), then backtrace to the last node with children (intersection)
+Jul 04 23:42:33 <goncalopp>	It's also pretty trivial to implement recursively
+Jul 04 23:42:47 <goncalopp>	there you go :)
+Jul 04 23:42:50 <goncalopp>	try it on the cat!
+Jul 04 23:43:23 <dorako>	Woop wopp
+Jul 04 23:43:25 <dorako>	worked
+Jul 04 23:43:27 <goncalopp>	:)
+Jul 04 23:43:47 <goncalopp>	It's instructive to put prints in the recursive code, so you see what it is tranversing:
+Jul 04 23:43:59 <goncalopp>	there
+Jul 04 23:44:27 <dorako>	Yeah, now it prints cat twice, though
+Jul 04 23:44:29 <goncalopp>	You can see this was a pretty easy trace:
+Jul 04 23:44:34 <dorako>	Once for the node, and once as the answer
+Jul 04 23:44:39 <goncalopp>	yeah
+Jul 04 23:44:48 <goncalopp>	living being
+Jul 04 23:44:48 <goncalopp>	animalia
+Jul 04 23:44:48 <goncalopp>	mamalia
+Jul 04 23:44:48 <goncalopp>	felidae
+Jul 04 23:44:48 <goncalopp>	cat
+Jul 04 23:44:48 <goncalopp>	cat
+Jul 04 23:45:03 <goncalopp>	for "dog", it's a bit thougher:
+Jul 04 23:45:16 <goncalopp>	living being
+Jul 04 23:45:16 <goncalopp>	animalia
+Jul 04 23:45:16 <goncalopp>	mamalia
+Jul 04 23:45:16 <goncalopp>	felidae
+Jul 04 23:45:16 <goncalopp>	cat
+Jul 04 23:45:16 <goncalopp>	lion
+Jul 04 23:45:16 <goncalopp>	canidae
+Jul 04 23:45:16 <goncalopp>	dog
+Jul 04 23:45:16 <goncalopp>	dog
+Jul 04 23:45:30 <goncalopp>	as you can see, it backtracks (on lion to canidae)
+Jul 04 23:45:41 <goncalopp>	all good so far?
+Jul 04 23:46:02 <Anonymous968574>	yep
+Jul 04 23:47:26 <dorako>	(Why can't I use \t to print a tab?)
+Jul 04 23:47:30 <goncalopp>	oh, remember DFS only seaches whats below it. If you give it "dog", it'll never find "canidae"
+Jul 04 23:47:46 <goncalopp>	you should be able to, dorako
+Jul 04 23:47:51 <Anonymous968574>	"\t"?
+Jul 04 23:47:51 <goncalopp>	print "\t"
+Jul 04 23:48:02 <dorako>	Ah yeah, of course
+Jul 04 23:48:04 <dorako>	Silly me
+Jul 04 23:48:17 <dorako>	I even went as far as to str(node.name) to concaterate them
+Jul 04 23:48:20 <dorako>	Whoops
+Jul 04 23:48:30 <goncalopp>	:)
+Jul 04 23:48:46 <goncalopp>	ok
+Jul 04 23:49:17 <goncalopp>	Now, having this as a start, I'll teach  you how to turn a (simple) recursive algorithm into a non-recursive one!
+Jul 04 23:49:42 <goncalopp>	for this, we'll need our old friends Queue and Stack. Remember them?
+Jul 04 23:49:57 <dorako>	FIFO and LIFO?
+Jul 04 23:49:59 <goncalopp>	yup
+Jul 04 23:52:26 <dorako>	(Is not returning anything the same as returning None?)
+Jul 04 23:52:44 <goncalopp>	not doing a return returns None, yes
+Jul 04 23:52:58 <goncalopp>	You can't tell them appart
+Jul 04 23:53:33 <goncalopp>	here you go, iterative version :)
+Jul 04 23:54:50 <goncalopp>	oh, almost... one little detail left
+Jul 04 23:55:20 <dorako>	Is print_children supposed to print "None" too?
+Jul 04 23:55:52 <goncalopp>	no... it should always print the self node name, at least
+Jul 04 23:56:09 <dorako>	print lb.print_children()
+Jul 04 23:56:10 <dorako>	gives
+Jul 04 23:56:15 <goncalopp>	you're probably doing "print print_children()"
+Jul 04 23:56:16 <goncalopp>	yea
+Jul 04 23:56:17 <goncalopp>	sure
+Jul 04 23:56:21 <dorako>	living being
+Jul 04 23:56:21 <dorako>	    animalia
+Jul 04 23:56:21 <dorako>	        mamalia
+Jul 04 23:56:21 <dorako>	            felidae
+Jul 04 23:56:21 <dorako>	                cat
+Jul 04 23:56:23 <dorako>	                lion
+Jul 04 23:56:26 <dorako>	            canidae
+Jul 04 23:56:26 <goncalopp>	print_children already prints, and returns nothing
+Jul 04 23:56:28 <dorako>	                dog
+Jul 04 23:56:31 <dorako>	                wolf
+Jul 04 23:56:33 <dorako>	    plantae
+Jul 04 23:56:36 <dorako>	None
+Jul 04 23:56:38 <dorako>	Ah, that's it
+Jul 04 23:56:41 <dorako>	Of course
+Jul 04 23:56:48 <dorako>	Yup, no None now
+Jul 04 23:56:51 <goncalopp>	:)
+Jul 04 23:57:06 <goncalopp>	you could make it return a string, instead of printing, of course
+Jul 04 23:57:32 <goncalopp>	have you guys wrapped your minds around the iterative DFS yet?
+Jul 04 23:57:45 <goncalopp>	Note that's EXACTLY the same as the recursive version
+Jul 04 23:58:11 <goncalopp>	however, instead of using recursive calls, you put "the calls" into a stack, somewhat
+Jul 04 23:58:24 <goncalopp>	and "interpret them" outside, in a sense
+Jul 04 23:59:45 <dorako>	And this is better because?
+Jul 04 23:59:48 <dorako>	Performance?
+Jul 05 00:00:01 <goncalopp>	the iterative version, dorako?
+Jul 05 00:00:16 <dorako>	Yeah
+Jul 05 00:01:17 <goncalopp>	most people agree that it's slightly less readable, somewhat more efficient (fast), but its main advantage (in imperative languages) is that you don't run into "stack overflows"
+Jul 05 00:01:26 <dorako>	Oh, and right now they're different because no printing is involved in the iterative version, right?
+Jul 05 00:01:54 <goncalopp>	see, internally, you computer RAM and processor also keep a stack of function calls. 
+Jul 05 00:02:01 <dorako>	So, there's a risk of making a stock overflow when NOT USING A STACK, and when using a stack there isn't?
+Jul 05 00:02:10 <goncalopp>	(sure, dorako. here's a print)
+Jul 05 00:02:54 <dorako>	So, iterative is generally faster and safer, because the program handles the stack and not the RAM/CPU
+Jul 05 00:03:11 <goncalopp>	Well, you're using a stack either way :D if you use recursion, you're using the CALL stack, and your hardware handles it automatically
+Jul 05 00:03:29 <dorako>	Gotcha
+Jul 05 00:03:46 <goncalopp>	if you use a explicit stack, you have manual control over it. It can grow as big as your RAM, instead of being of a limited maximum size
+Jul 05 00:04:29 <goncalopp>	if you try recursive_DFS on a very long tree (depth-wise), you'll get a stack overflow :)
+Jul 05 00:07:24 <dorako>	284 directories, 22476 files
+Jul 05 00:07:24 <dorako>	dorako@Dorako-Laptop:~$
+Jul 05 00:07:40 <dorako>	Pretty fucking huge tree
+Jul 05 00:08:45 <goncalopp>	you're iterating your FS?
+Jul 05 00:08:57 <goncalopp>	about Stack Overflows, try this code:
+Jul 05 00:09:56 <dorako>	(Do you know how to create a symbolic link to the CONTENTS of a directory on Linux?)
+Jul 05 00:10:31 <goncalopp>	(see PM, dorako)
+Jul 05 00:11:18 <goncalopp>	anyway, you've now hopefully grasped both iterative and recursive DFS
+Jul 05 00:12:02 <goncalopp>	the other widely used (uninformed) tree search algorithm is called Breadth First Search (BFS)
+Jul 05 00:12:18 <goncalopp>	(BFS is sometimes used for Best First search too, don't mix them up!)
+Jul 05 00:13:45 <goncalopp>	BFS, unlike DFS, tries to search close to the root first
+Jul 05 00:14:25 <goncalopp>	in this example, it would explore, in this order: living being, animalia, plantae, mamalia, felidae, canidae, cat, lion, dog, wolf
+Jul 05 00:16:22 <goncalopp>	And, fortunately, going from iterative DFS to BFS is incredibly simple
+Jul 05 00:16:49 <goncalopp>	all you have to do is swap the stack (LIFO) for a queue (FIFO)
+Jul 05 00:17:16 <goncalopp>	so, in this code, pop()ing from position 0 (instead of the last element) sufices
+Jul 05 00:18:15 <goncalopp>	there you go :D
+Jul 05 00:18:57 <goncalopp>	Now you know about DFS and BFS. Which is better?
+Jul 05 00:19:07 <goncalopp>	It depends on the situation, really
+Jul 05 00:19:37 <goncalopp>	If you have reasons to believe the node you're looking for is close (depth-wise) to the root, always use BFS
+Jul 05 00:19:51 <goncalopp>	if you don't know anything about it, you can use either
+Jul 05 00:20:30 <goncalopp>	And that's about it I wanted to cover today :) any questions?
+Jul 05 00:20:39 <dorako>	Is the big-O (or whatever) the same for both methods
+Jul 05 00:20:43 <dorako>	Given that we don't know anything
+Jul 05 00:22:38 <goncalopp>	It's a bit tricky, but think about it this way
+Jul 05 00:23:07 <goncalopp>	both DFS and BFS go through each node EXACTLY ONE. That means they have the same complexity
+Jul 05 00:23:21 <goncalopp>	only the order (and thus practical performance) is different in the two
+Jul 05 00:23:42 <goncalopp>	this "practical performance" difference can be HUGE, depending on the size of your tree...
+Jul 05 00:23:57 <goncalopp>	say, 1 second instead of 1 year :)
+Jul 05 00:25:01 <dorako>	But if we don't know anything about the node we're searching for, am I right in saying that both methods would be equally slow
+Jul 05 00:25:07 <dorako>	So there's not one we should "default" to
+Jul 05 00:26:29 <goncalopp>	I'd personally use BFS
+Jul 05 00:26:40 <goncalopp>	since the node MAY be close to the root
+Jul 05 00:26:52 <goncalopp>	and DFS has no advantage anyway
+Jul 05 00:27:05 <goncalopp>	(unless on minimax algorithms, or whatever, advanced stuff)
